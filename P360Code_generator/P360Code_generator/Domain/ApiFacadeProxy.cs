@@ -11,7 +11,7 @@ namespace P360Code_generator.Domain
     {
         private Module Module { get; set; }
         public ApiFacadeProxyTemplate apiFacadeProxyTemplate { get; set; }
-        public ApiFacadeProxyProfileTemplate apiFacadeProxyProfileTemplate { get; set; }
+        //public ApiFacadeProxyProfileTemplate apiFacadeProxyProfileTemplate { get; set; }
 
         public ApiFacadeProxy(Module apiFacadeProxyModule)
         {

@@ -48,12 +48,6 @@
     <Compile Include="Domain\ApiRepository.cs" />
     <Compile Include="Domain\ApiWebController.cs" />
     <Compile Include="Domain\DomainModel.cs" />
-    <Compile Include="GeneratedCode\CyberDetectionFacadeProxy.cs" />
-    <Compile Include="GeneratedCode\CyberDetectionProfile.cs" />
-    <Compile Include="GeneratedCode\CyberDetectionProfileController.cs" />
-    <Compile Include="GeneratedCode\CyberDetectionProfileDto.cs" />
-    <Compile Include="GeneratedCode\CyberDetectionProfileRepository.cs" />
-    <Compile Include="GeneratedCode\ICyberDetectionProfileRepository.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,7 +90,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GeneratedCode\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Templates\ApiInterfaceRepositoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
