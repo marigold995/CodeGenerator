@@ -7,19 +7,19 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace P360Code_generator.Templates
+namespace _360Generator.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using P360Code_generator;
+    using _360Generator;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiFacadeProxyTemplate : ApiFacadeProxyTemplateBase
     {
@@ -32,7 +32,7 @@ namespace P360Code_generator.Templates
             this.Write("\r\nusing _360.Api.Facade.Document;\nusing _360.Api.Facade.FileSystem;\nusing _360.Ap" +
                     "i.Facade.GBM.Contracting;\nusing _360.Api.Facade.GBM.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -42,14 +42,14 @@ namespace P360Code_generator.Templates
                     "iguration;\nusing System.Diagnostics.CodeAnalysis;\n\nnamespace _360.Api.FacadeProx" +
                     "y.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("\n{\n    public partial class ");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -57,7 +57,7 @@ namespace P360Code_generator.Templates
             this.Write("FacadeProxy : BaseFacadeProxy\n    {\r\n\t\tprivate CoreFacadeProxy _coreFacadeProxy;\n" +
                     "\n        public ");
             
-            #line 10 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+            #line 10 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -65,7 +65,7 @@ namespace P360Code_generator.Templates
             this.Write("FacadeProxy(ICurrentUserWrapper currentUser) : base(currentUser) => ModuleTechnol" +
                     "ogy = \"");
             
-            #line 10 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+            #line 10 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -75,7 +75,7 @@ namespace P360Code_generator.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiFacadeProxyTemplate.tt"
 
 private string _moduleField;
 

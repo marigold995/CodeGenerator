@@ -2,7 +2,7 @@
 using _360.Api.Model.CyberDetection;
 using _360.Api.Repository.CyberDetection;
 using _360.Api.Web.CyberDetection.Infrastructure;
-using P360Code_generator.Templates;
+using _360Generator.Templates;
 using _360.Framework.Api.Helpers;
 using _360.Framework.Api.Infrastructure;
 using _360.Framework.Libs.Extensions;
@@ -19,11 +19,11 @@ namespace _360.Api.Web.CyberDetection.Controllers
 
 	[Route("api/v1/cyberDetectionProfiles")]
 	[P360AuthorizeApi]
-	[CyberDetectionExceptionFilter]
-	public class CyberDetectionController : ApiController {
+	[CyberDetectionProfileExceptionFilter]
+	public class CyberDetectionProfileController : ApiController {
 		private readonly ICyberDetectionProfileRepository _cyberDetectionProfileRepository;
 
-        public CyberDetectionController(ICyberDetectionProfileRepository cyberDetectionProfileRepository)
+        public CyberDetectionProfileController(ICyberDetectionProfileRepository cyberDetectionProfileRepository)
         {
             _cyberDetectionProfileRepository = cyberDetectionProfileRepository;
         }

@@ -1,14 +1,13 @@
-﻿using System;
+﻿using P360Code_generator.Templates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _360Generator.Metadata;
-using _360Generator.Templates;
 
-namespace _360Generator.Domain
+namespace P360Code_generator.Domain
 {
-    class ApiModelDTO : RootDomain
+    class ApiModelDTO
     {
         private Module Module { get; set; }
         public ApiModelDTOTemplate apiModelDTOTemplate { get; set; }

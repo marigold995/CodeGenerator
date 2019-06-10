@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>_360Generator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\ApiFacadeProxyProfileTemplate.tt" />
+    <None Remove="Templates\ApiFacadeProxyTemplate.tt" />
+    <None Remove="Templates\ApiInterfaceRepositoryTemplate.tt" />
+    <None Remove="Templates\ApiModelDTOTemplate.tt" />
+    <None Remove="Templates\ApiRepositoryTemplate.tt" />
+    <None Remove="Templates\ApiWebControllerTemplate.tt" />
+    <None Remove="Templates\DomainModelTemplate.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\ApiFacadeProxyProfileTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\ApiFacadeProxyTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\ApiInterfaceRepositoryTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\ApiModelDTOTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\ApiRepositoryTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\ApiWebControllerTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+    <Content Include="Templates\DomainModelTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Templates\ApiFacadeProxyProfileTemplate.cs">
+      <DependentUpon>ApiFacadeProxyProfileTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\ApiFacadeProxyTemplate.cs">
+      <DependentUpon>ApiFacadeProxyTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\ApiInterfaceRepositoryTemplate.cs">
+      <DependentUpon>ApiInterfaceRepositoryTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\ApiModelDTOTemplate.cs">
+      <DependentUpon>ApiModelDTOTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\ApiRepositoryTemplate.cs">
+      <DependentUpon>ApiRepositoryTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\ApiWebControllerTemplate.cs">
+      <DependentUpon>ApiWebControllerTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Templates\DomainModelTemplate.cs">
+      <DependentUpon>DomainModelTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+</Project>

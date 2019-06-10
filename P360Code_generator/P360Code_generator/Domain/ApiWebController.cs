@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using P360Code_generator.Templates;
+using _360Generator.Templates;
+using _360Generator.Metadata;
+using System.IO;
+using _360Generator.Domain;
 
-namespace P360Code_generator
+namespace _360Generator
 {
-    class ApiWebController
+    class ApiWebController: RootDomain
     {
         private Module Module { get; set; }
         public ApiWebControllerTemplate apiWebControllerTemplate { get; set; }
@@ -19,20 +22,31 @@ namespace P360Code_generator
 
         public void CreateApiWebControllerTemplate()
         {
-            apiWebControllerTemplate = new ApiWebControllerTemplate();
-            apiWebControllerTemplate.Session = new Dictionary<string, object>();
-            string moduleName = this.Module.ModuleName;
-            apiWebControllerTemplate.Session["module"] = moduleName;
-            apiWebControllerTemplate.Initialize();
+            string path1 = CreateFolder("Controllers");
 
-            StringBuilder path = new StringBuilder("../../GeneratedCode/");
-            path.Append(moduleName + "ProfileController.cs");
+            foreach (var entity in Module.Entities)
+            {
+                apiWebControllerTemplate = new ApiWebControllerTemplate();
+                apiWebControllerTemplate.Session = new Dictionary<string, object>();
+                //string moduleName = this.Module.ModuleName;
+                var module = this.Module;
+                apiWebControllerTemplate.Session["module"] = module;
+                apiWebControllerTemplate.Session["entity"] = entity.EntityName;
 
-            //StringBuilder path = new StringBuilder("../../../360.Api.Web.");
-            //path.Append(moduleName + "/Controllers/" + moduleName + "ProfileControllerNEW.cs");
+                apiWebControllerTemplate.Initialize();
 
-            string pageContent = apiWebControllerTemplate.TransformText();
-            System.IO.File.WriteAllText(path.ToString(), pageContent);
-        }            
+                //StringBuilder path = new StringBuilder("../../GeneratedCode/");
+                //path.Append(entity.EntityName + "Controller.cs");
+                string path = path1;
+                path += "/" + entity.EntityName + "Controller.cs";
+
+                //StringBuilder path = new StringBuilder("../../../360.Api.Web.");
+                //path.Append(moduleName + "/Controllers/" + moduleName + "ProfileControllerNEW.cs");
+
+                string pageContent = apiWebControllerTemplate.TransformText();
+                System.IO.File.WriteAllText(path.ToString(), pageContent);
+            }
+        }
+       
     }
 }

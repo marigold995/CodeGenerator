@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("_360Generator")]
+[assembly: AssemblyTitle("Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("_360Generator")]
+[assembly: AssemblyProduct("Test")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6b3e2958-8715-4ade-a415-e38fba3bc27a")]
+[assembly: Guid("0e4c0acb-5181-4030-a7eb-5866db8ab681")]
 
 // Version information for an assembly consists of the following four values:
 //

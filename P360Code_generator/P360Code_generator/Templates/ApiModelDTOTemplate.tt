@@ -3,12 +3,12 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="P360Code_generator" #>
+<#@ import namespace="_360Generator" #>
 <#@ parameter name="module" type="System.String"#>
 
 using _360.Api.Core.Models;
 using _360.Framework.Api.Models;
-using P360Code_generator.Templates;
+using _360Generator.Templates;
 using System;
 using System.Collections.Generic;
 

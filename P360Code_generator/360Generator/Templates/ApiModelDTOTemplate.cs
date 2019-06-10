@@ -7,19 +7,19 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates
+namespace P360Code_generator.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using _360Generator;
+    using P360Code_generator;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiModelDTOTemplate : ApiModelDTOTemplateBase
     {
@@ -33,14 +33,14 @@ namespace _360Generator.Templates
                     "erator.Templates;\nusing System;\nusing System.Collections.Generic;\n\nnamespace _36" +
                     "0.Api.Model.");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("\n{\n    public class ");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -49,7 +49,7 @@ namespace _360Generator.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -58,7 +58,7 @@ namespace _360Generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
 
 private string _moduleField;
 

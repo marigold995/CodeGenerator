@@ -3,13 +3,14 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="P360Code_generator" #>
-<#@ parameter name="module" type="System.String"#>
+<#@ import namespace="_360Generator" #>
+<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
+<#@ parameter name="entity" type="System.String"#>
 
-using _360.Api.Model.<#= module #>;
-using _360.Api.Repository.<#= module #>;
-using _360.Api.Web.<#= module #>.Infrastructure;
-using P360Code_generator.Templates;
+using _360.Api.Model.<#= module.ModuleName #>;
+using _360.Api.Repository.<#= module.ModuleName  #>;
+using _360.Api.Web.<#= module.ModuleName  #>.Infrastructure;
+using _360Generator.Templates;
 using _360.Framework.Api.Helpers;
 using _360.Framework.Api.Infrastructure;
 using _360.Framework.Libs.Extensions;
@@ -21,44 +22,44 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace _360.Api.Web.<#=module#>.Controllers
+namespace _360.Api.Web.<#=module.ModuleName #>.Controllers
 {
 
-	[Route("api/v1/<#= LowerInitial(module) #>Profiles")]
+	[Route("api/v1/<#= LowerInitial(entity ) #>s")]
 	[P360AuthorizeApi]
-	[<#= module #>ExceptionFilter]
-	public class <#=module #>Controller : ApiController {
-		private readonly I<#= module #>ProfileRepository _<#= LowerInitial(module) #>ProfileRepository;
+	[<#= entity  #>ExceptionFilter]
+	public class <#=entity #>Controller : ApiController {
+		private readonly I<#= entity  #>Repository _<#= LowerInitial(entity ) #>Repository;
 
-        public <#= module #>Controller(I<#= module #>ProfileRepository <#= LowerInitial(module) #>ProfileRepository)
+        public <#= entity  #>Controller(I<#= entity  #>Repository <#= LowerInitial(entity ) #>Repository)
         {
-            _<#= LowerInitial(module) #>ProfileRepository = <#= LowerInitial(module) #>ProfileRepository;
+            _<#= LowerInitial(entity ) #>Repository = <#= LowerInitial(entity ) #>Repository;
         }
 
 		[HttpGet]
-		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(module) #>Profiles")]
-		[ResponseType(typeof(CollectionResult<<#= module #>ProfileDto>))]
+		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s")]
+		[ResponseType(typeof(CollectionResult<<#= entity  #>Dto>))]
 		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
         {           
             return Ok(new NotImplementedException());
         }
 
 		[HttpGet]
-		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(module) #>Profiles/{<#= LowerInitial(module) #>ProfileId}", Name = "Get<#= module #>ProfileById")]
-        [ResponseType(typeof(<#= module #>ProfileDto))]
-		 public IHttpActionResult GetById(string companyId, string <#= LowerInitial(module) #>ProfileId)
+		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s/{<#= LowerInitial(entity ) #>Id}", Name = "Get<#= entity  #>ById")]
+        [ResponseType(typeof(<#= entity  #>Dto))]
+		 public IHttpActionResult GetById(string companyId, string <#= LowerInitial(entity ) #>Id)
         {
 			return Ok(new NotImplementedException());
 		}	
 
 		[HttpPost]       
-        public IHttpActionResult Post([FromBody] <#= module #>ProfileDto <#= LowerInitial(module) #>ProfileDto)
+        public IHttpActionResult Post([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
 			return BadRequest();
 		}
 
 		[HttpPut]       
-        public IHttpActionResult Put([FromBody] <#= module #>ProfileDto <#= LowerInitial(module) #>ProfileDto)
+        public IHttpActionResult Put([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
            return Ok(new NotImplementedException());
         }

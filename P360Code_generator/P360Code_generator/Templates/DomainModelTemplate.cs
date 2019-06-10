@@ -7,19 +7,19 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace P360Code_generator.Templates
+namespace _360Generator.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using P360Code_generator;
+    using _360Generator;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\DomainModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class DomainModelTemplate : DomainModelTemplateBase
     {
@@ -32,14 +32,14 @@ namespace P360Code_generator.Templates
             this.Write("\r\nusing _360.Domain.Core;\nusing System;\nusing System.Collections.Generic;\n\nnamesp" +
                     "ace _360.Domain.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("\n{\n    public class ");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
@@ -48,7 +48,7 @@ namespace P360Code_generator.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+        #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\DomainModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -57,7 +57,7 @@ namespace P360Code_generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\DomainModelTemplate.tt"
 
 private string _moduleField;
 

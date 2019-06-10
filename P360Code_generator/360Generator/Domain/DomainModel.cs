@@ -1,15 +1,13 @@
-﻿using System;
+﻿using P360Code_generator.Templates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _360Generator.Templates;
-using _360Generator.Metadata;
-using System.IO;
 
-namespace _360Generator.Domain
+namespace P360Code_generator.Domain
 {
-    class DomainModel : RootDomain
+    class DomainModel
     {
         private Module Module { get; set; }
         public DomainModelTemplate domainModelTemplate { get; set; }
@@ -27,14 +25,11 @@ namespace _360Generator.Domain
             domainModelTemplate.Session["module"] = moduleName;
             domainModelTemplate.Initialize();
 
-            string path = CreateFolder("Controllers");
-            path += moduleName + "Profile.cs";
+            StringBuilder path = new StringBuilder("../../GeneratedCode/");
+            path.Append(moduleName + "Profile.cs");       
 
             string pageContent = domainModelTemplate.TransformText();
             System.IO.File.WriteAllText(path.ToString(), pageContent);
         }
-
-       
-       
     }
 }

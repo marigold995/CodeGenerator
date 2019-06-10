@@ -7,21 +7,21 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates
+namespace P360Code_generator.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using _360Generator;
+    using P360Code_generator;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ApiModelDTOTemplate : ApiModelDTOTemplateBase
+    public partial class ApiRepositoryTemplate : ApiRepositoryTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,27 +29,61 @@ namespace _360Generator.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing _360.Api.Core.Models;\nusing _360.Framework.Api.Models;\nusing P360Code_gen" +
-                    "erator.Templates;\nusing System;\nusing System.Collections.Generic;\n\nnamespace _36" +
-                    "0.Api.Model.");
+            this.Write("\r\nusing _360.Api.FacadeProxy.");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            
+            #line default
+            #line hidden
+            this.Write(";\nusing _360.Domain.");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            
+            #line default
+            #line hidden
+            this.Write(";\nusing P360Code_generator.Templates;\nusing _360.Framework.Api.Repositories;\nusin" +
+                    "g _360.Framework.Libs;\n\nnamespace _360.Api.Repository.");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("\n{\n    public class ");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
-            this.Write("ProfileDto : BaseDto\n    {\r\n\r\n\t}\r\n}\r\n\r\n");
+            this.Write("ProfileRepository : BaseRepository, I");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            
+            #line default
+            #line hidden
+            this.Write("ProfileRepository\n    {\n        private readonly ");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            
+            #line default
+            #line hidden
+            this.Write("FacadeProxy _");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(module)));
+            
+            #line default
+            #line hidden
+            this.Write("FacadeProxy = null;\n    }\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -58,7 +92,7 @@ namespace _360Generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
 
 private string _moduleField;
 
@@ -113,7 +147,7 @@ if ((moduleValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ApiModelDTOTemplateBase
+    public class ApiRepositoryTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

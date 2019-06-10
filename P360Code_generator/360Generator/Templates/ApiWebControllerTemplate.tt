@@ -1,0 +1,71 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="P360Code_generator" #>
+<#@ parameter name="module" type="System.String"#>
+
+using _360.Api.Model.<#= module #>;
+using _360.Api.Repository.<#= module #>;
+using _360.Api.Web.<#= module #>.Infrastructure;
+using P360Code_generator.Templates;
+using _360.Framework.Api.Helpers;
+using _360.Framework.Api.Infrastructure;
+using _360.Framework.Libs.Extensions;
+using AutoMapper;
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
+
+namespace _360.Api.Web.<#=module#>.Controllers
+{
+
+	[Route("api/v1/<#= LowerInitial(module) #>Profiles")]
+	[P360AuthorizeApi]
+	[<#= module #>ExceptionFilter]
+	public class <#=module #>Controller : ApiController {
+		private readonly I<#= module #>ProfileRepository _<#= LowerInitial(module) #>ProfileRepository;
+
+        public <#= module #>Controller(I<#= module #>ProfileRepository <#= LowerInitial(module) #>ProfileRepository)
+        {
+            _<#= LowerInitial(module) #>ProfileRepository = <#= LowerInitial(module) #>ProfileRepository;
+        }
+
+		[HttpGet]
+		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(module) #>Profiles")]
+		[ResponseType(typeof(CollectionResult<<#= module #>ProfileDto>))]
+		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
+        {           
+            return Ok(new NotImplementedException());
+        }
+
+		[HttpGet]
+		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(module) #>Profiles/{<#= LowerInitial(module) #>ProfileId}", Name = "Get<#= module #>ProfileById")]
+        [ResponseType(typeof(<#= module #>ProfileDto))]
+		 public IHttpActionResult GetById(string companyId, string <#= LowerInitial(module) #>ProfileId)
+        {
+			return Ok(new NotImplementedException());
+		}	
+
+		[HttpPost]       
+        public IHttpActionResult Post([FromBody] <#= module #>ProfileDto <#= LowerInitial(module) #>ProfileDto)
+        {
+			return BadRequest();
+		}
+
+		[HttpPut]       
+        public IHttpActionResult Put([FromBody] <#= module #>ProfileDto <#= LowerInitial(module) #>ProfileDto)
+        {
+           return Ok(new NotImplementedException());
+        }
+	}
+}
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

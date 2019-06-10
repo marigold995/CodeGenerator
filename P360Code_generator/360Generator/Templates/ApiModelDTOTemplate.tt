@@ -3,16 +3,18 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
+<#@ import namespace="P360Code_generator" #>
 <#@ parameter name="module" type="System.String"#>
 
-using _360.Domain.Core;
+using _360.Api.Core.Models;
+using _360.Framework.Api.Models;
+using P360Code_generator.Templates;
 using System;
 using System.Collections.Generic;
 
-namespace _360.Domain.<#= module #>
+namespace _360.Api.Model.<#= module #>
 {
-    public class <#= module #>Profile
+    public class <#= module #>ProfileDto : BaseDto
     {
 
 	}

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using P360Code_generator.Domain;
 
-namespace P360Code_generator
+namespace P360Code_generator.Metadata
 {
     class Module
     {

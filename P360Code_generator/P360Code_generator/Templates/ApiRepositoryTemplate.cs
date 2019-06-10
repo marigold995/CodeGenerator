@@ -7,19 +7,19 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace P360Code_generator.Templates
+namespace _360Generator.Templates
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using P360Code_generator;
+    using _360Generator;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiRepositoryTemplate : ApiRepositoryTemplateBase
     {
@@ -31,50 +31,50 @@ namespace P360Code_generator.Templates
         {
             this.Write("\r\nusing _360.Api.FacadeProxy.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write(";\nusing _360.Domain.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
-            this.Write(";\nusing P360Code_generator.Templates;\nusing _360.Framework.Api.Repositories;\nusin" +
+            this.Write(";\nusing _360Generator.Templates;\nusing _360.Framework.Api.Repositories;\nusin" +
                     "g _360.Framework.Libs;\n\nnamespace _360.Api.Repository.");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("\n{\n    public class ");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("ProfileRepository : BaseRepository, I");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("ProfileRepository\n    {\n        private readonly ");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("FacadeProxy _");
             
-            #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(module)));
             
             #line default
@@ -83,7 +83,7 @@ namespace P360Code_generator.Templates
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 9 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+        #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -92,7 +92,7 @@ namespace P360Code_generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\P360Code_generator\P360Code_generator\Templates\ApiRepositoryTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiRepositoryTemplate.tt"
 
 private string _moduleField;
 
