@@ -19,7 +19,7 @@ namespace _360Generator.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiModelDTOTemplate : ApiModelDTOTemplateBase
     {
@@ -29,27 +29,27 @@ namespace _360Generator.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing _360.Api.Core.Models;\nusing _360.Framework.Api.Models;\nusing P360Code_gen" +
-                    "erator.Templates;\nusing System;\nusing System.Collections.Generic;\n\nnamespace _36" +
-                    "0.Api.Model.");
+            this.Write("\r\n\r\nusing _360.Api.Core.Models;\r\nusing _360.Framework.Api.Models;\r\nusing _360Gene" +
+                    "rator.Templates;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace " +
+                    "_360.Api.Model.");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public class ");
+            this.Write("\r\n{\r\n    public class ");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
-            this.Write("ProfileDto : BaseDto\n    {\r\n\r\n\t}\r\n}\r\n\r\n");
+            this.Write("ProfileDto : BaseDto\r\n    {\r\n\r\n\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 26 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -58,18 +58,44 @@ namespace _360Generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiModelDTOTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
 
-private string _moduleField;
+private global::_360Generator.Metadata.Module _moduleField;
 
 /// <summary>
 /// Access the module parameter of the template.
 /// </summary>
-private string module
+private global::_360Generator.Metadata.Module module
 {
     get
     {
         return this._moduleField;
+    }
+}
+
+private string _entityField;
+
+/// <summary>
+/// Access the entity parameter of the template.
+/// </summary>
+private string entity
+{
+    get
+    {
+        return this._entityField;
+    }
+}
+
+private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
+
+/// <summary>
+/// Access the screens parameter of the template.
+/// </summary>
+private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
+{
+    get
+    {
+        return this._screensField;
     }
 }
 
@@ -84,7 +110,7 @@ public virtual void Initialize()
 bool moduleValueAcquired = false;
 if (this.Session.ContainsKey("module"))
 {
-    this._moduleField = ((string)(this.Session["module"]));
+    this._moduleField = ((global::_360Generator.Metadata.Module)(this.Session["module"]));
     moduleValueAcquired = true;
 }
 if ((moduleValueAcquired == false))
@@ -92,7 +118,35 @@ if ((moduleValueAcquired == false))
     object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("module");
     if ((data != null))
     {
-        this._moduleField = ((string)(data));
+        this._moduleField = ((global::_360Generator.Metadata.Module)(data));
+    }
+}
+bool entityValueAcquired = false;
+if (this.Session.ContainsKey("entity"))
+{
+    this._entityField = ((string)(this.Session["entity"]));
+    entityValueAcquired = true;
+}
+if ((entityValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("entity");
+    if ((data != null))
+    {
+        this._entityField = ((string)(data));
+    }
+}
+bool screensValueAcquired = false;
+if (this.Session.ContainsKey("screens"))
+{
+    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
+    screensValueAcquired = true;
+}
+if ((screensValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
+    if ((data != null))
+    {
+        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 

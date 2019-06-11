@@ -21,40 +21,52 @@ namespace _360Generator.Domain
 
         public void CreateApiInterfaceRepositoryTemplate()
         {
-            apiInterfaceRepositoryTemplate = new ApiInterfaceRepositoryTemplate();
-            apiInterfaceRepositoryTemplate.Session = new Dictionary<string, object>();
-            string moduleName = this.Module.ModuleName;
-            apiInterfaceRepositoryTemplate.Session["module"] = moduleName;
-            apiInterfaceRepositoryTemplate.Initialize();
+            string path1 = CreateFolder("Repository");
 
-            StringBuilder path = new StringBuilder("../../GeneratedCode/I");
-            path.Append(moduleName + "ProfileRepository.cs");
+            foreach (var entity in Module.Entities)
+            {
+                apiInterfaceRepositoryTemplate = new ApiInterfaceRepositoryTemplate();               
+                apiInterfaceRepositoryTemplate.Session = new Dictionary<string, object>();
 
+                var module = this.Module;
+                var screensList = entity.Screens;
+                apiInterfaceRepositoryTemplate.Session["module"] = module;
+                apiInterfaceRepositoryTemplate.Session["entity"] = entity.EntityName;
+                apiInterfaceRepositoryTemplate.Session["screens"] = screensList;
 
-            //StringBuilder path = new StringBuilder("../../../360.Api.Repository.");
-            //path.Append(moduleName + "/I" + moduleName + "ProfileRepositoryNEW.cs");
+                apiInterfaceRepositoryTemplate.Initialize();
 
-            string pageContent = apiInterfaceRepositoryTemplate.TransformText();
-            System.IO.File.WriteAllText(path.ToString(), pageContent);
+                string path = path1;
+                path += "/I" + entity.EntityName + "Repository.cs";
+
+                string pageContent = apiInterfaceRepositoryTemplate.TransformText();
+                System.IO.File.WriteAllText(path.ToString(), pageContent);
+            }
             this.CreateApiRepositoryTemplate();
         }
 
         public void CreateApiRepositoryTemplate()
         {
-            apiRepositoryTemplate = new ApiRepositoryTemplate();
-            apiRepositoryTemplate.Session = new Dictionary<string, object>();
-            string moduleName = this.Module.ModuleName;
-            apiRepositoryTemplate.Session["module"] = moduleName;
-            apiRepositoryTemplate.Initialize();
+            string path1 = CreateFolder("Repository");
+            foreach (var entity in Module.Entities)
+            {
+                apiRepositoryTemplate = new ApiRepositoryTemplate();
+                apiRepositoryTemplate.Session = new Dictionary<string, object>();
 
-            StringBuilder path = new StringBuilder("../../GeneratedCode/");
-            path.Append(moduleName + "ProfileRepository.cs");
+                var module = this.Module;
+                var screensList = entity.Screens;
+                apiRepositoryTemplate.Session["module"] = module;
+                apiRepositoryTemplate.Session["entity"] = entity.EntityName;
+                apiRepositoryTemplate.Session["screens"] = screensList;
 
-            //StringBuilder path = new StringBuilder("../../../360.Api.Repository.");
-            //path.Append(moduleName + "/" + moduleName + "ProfileRepositoryNEW.cs");
+                apiRepositoryTemplate.Initialize();
 
-            string pageContent = apiRepositoryTemplate.TransformText();
-            System.IO.File.WriteAllText(path.ToString(), pageContent);
+                string path = path1;
+                path += "/" + entity.EntityName + "Repository.cs";
+
+                string pageContent = apiRepositoryTemplate.TransformText();
+                System.IO.File.WriteAllText(path.ToString(), pageContent);
+            }
         }
     }
 }

@@ -27,9 +27,8 @@ namespace _360Generator
             foreach (var entity in Module.Entities)
             {                
                 apiWebControllerTemplate = new ApiWebControllerTemplate();
-                
-                apiWebControllerTemplate.Session = new Dictionary<string, object>();
-                //string moduleName = this.Module.ModuleName;
+               //InitializeParameters(this.Module, apiWebControllerTemplate);
+                apiWebControllerTemplate.Session = new Dictionary<string, object>();                
                 
                 var module = this.Module;
                 var screensList = entity.Screens;
@@ -38,14 +37,9 @@ namespace _360Generator
                 apiWebControllerTemplate.Session["screens"] = screensList;
 
                 apiWebControllerTemplate.Initialize();
-
-                //StringBuilder path = new StringBuilder("../../GeneratedCode/");
-                //path.Append(entity.EntityName + "Controller.cs");
+                
                 string path = path1;
                 path += "/" + entity.EntityName + "Controller.cs";
-
-                //StringBuilder path = new StringBuilder("../../../360.Api.Web.");
-                //path.Append(moduleName + "/Controllers/" + moduleName + "ProfileControllerNEW.cs");
 
                 string pageContent = apiWebControllerTemplate.TransformText();
                 System.IO.File.WriteAllText(path.ToString(), pageContent);

@@ -13,13 +13,14 @@ namespace _360Generator.Templates
     using System.Text;
     using System.Collections.Generic;
     using _360Generator;
+    using _360Generator.Metadata;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiInterfaceRepositoryTemplate : ApiInterfaceRepositoryTemplateBase
     {
@@ -29,103 +30,173 @@ namespace _360Generator.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing _360.Domain.");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\nusing _360.Domain.");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360Generator.Templates;\nusing _360.Framework.Api.Repositories;\nusin" +
-                    "g _360.Framework.Libs;\n\nnamespace _360.Api.Repository.");
+            this.Write(";\nusing _360Generator.Templates;\nusing _360.Framework.Api.Repositories;\nusing _36" +
+                    "0.Framework.Libs;\n\nnamespace _360.Api.Repository.");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("\n{\n    public interface I");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("ProfileRepository : IBaseRepository\n    {\n        PagedCollection<");
+            this.Write("Repository : IBaseRepository\n    {\n\t\t");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("Profile> Get");
-            
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+if (screens.Contains(Entity.screenEnum.GetAll)){
             
             #line default
             #line hidden
-            this.Write("Profiles(string companyContext);\n        ");
+            this.Write("  \n        PagedCollection<");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("Profile Get");
-            
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Profile(string companyContext, string serviceOrderId);\n        ");
+            this.Write("> Get");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("Profile Add(");
-            
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Profile ");
+            this.Write("s(string companyContext);\n\t\t");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("Profile);\n        void Update(");
-            
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+ }
             
             #line default
             #line hidden
-            this.Write("Profile ");
+            this.Write("\t        \r\n\t\t\t\r\n\t\t");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("Profile);\n        void Approve");
-            
-            #line 9 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Get)){
             
             #line default
             #line hidden
-            this.Write("Profile(string companyContext, string serviceOrderId);\n    }\n}\r\n\r\n");
+            this.Write("\n        ");
+            
+            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" Get");
+            
+            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("(string companyContext, string serviceOrderId);\n\t\t");
+            
+            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write("\t        \r\n\t\t\t\r\n\t\t");
+            
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Post)){
+            
+            #line default
+            #line hidden
+            this.Write("\n        ");
+            
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" Add(");
+            
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(");\n\t\t");
+            
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t\t");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Put)){
+            
+            #line default
+            #line hidden
+            this.Write("\n        void Update(");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("); \n\t\t");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write(" \n\t\t");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Delete)){
+            
+            #line default
+            #line hidden
+            this.Write("\n\t\tvoid Delete(string companyContext, string serviceOrderId);\n\t\t");
+            
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write(" \n    }\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 11 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+        #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -134,18 +205,44 @@ namespace _360Generator.Templates
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\_360Generator\_360Generator\Templates\ApiInterfaceRepositoryTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiInterfaceRepositoryTemplate.tt"
 
-private string _moduleField;
+private global::_360Generator.Metadata.Module _moduleField;
 
 /// <summary>
 /// Access the module parameter of the template.
 /// </summary>
-private string module
+private global::_360Generator.Metadata.Module module
 {
     get
     {
         return this._moduleField;
+    }
+}
+
+private string _entityField;
+
+/// <summary>
+/// Access the entity parameter of the template.
+/// </summary>
+private string entity
+{
+    get
+    {
+        return this._entityField;
+    }
+}
+
+private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
+
+/// <summary>
+/// Access the screens parameter of the template.
+/// </summary>
+private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
+{
+    get
+    {
+        return this._screensField;
     }
 }
 
@@ -160,7 +257,7 @@ public virtual void Initialize()
 bool moduleValueAcquired = false;
 if (this.Session.ContainsKey("module"))
 {
-    this._moduleField = ((string)(this.Session["module"]));
+    this._moduleField = ((global::_360Generator.Metadata.Module)(this.Session["module"]));
     moduleValueAcquired = true;
 }
 if ((moduleValueAcquired == false))
@@ -168,7 +265,35 @@ if ((moduleValueAcquired == false))
     object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("module");
     if ((data != null))
     {
-        this._moduleField = ((string)(data));
+        this._moduleField = ((global::_360Generator.Metadata.Module)(data));
+    }
+}
+bool entityValueAcquired = false;
+if (this.Session.ContainsKey("entity"))
+{
+    this._entityField = ((string)(this.Session["entity"]));
+    entityValueAcquired = true;
+}
+if ((entityValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("entity");
+    if ((data != null))
+    {
+        this._entityField = ((string)(data));
+    }
+}
+bool screensValueAcquired = false;
+if (this.Session.ContainsKey("screens"))
+{
+    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
+    screensValueAcquired = true;
+}
+if ((screensValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
+    if ((data != null))
+    {
+        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 

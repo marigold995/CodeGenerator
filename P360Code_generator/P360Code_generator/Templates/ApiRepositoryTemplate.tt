@@ -4,19 +4,49 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="_360Generator" #>
-<#@ parameter name="module" type="System.String"#>
+<#@ import namespace="_360Generator.Metadata" #>
+<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
+<#@ parameter name="entity" type="System.String"#>
+<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
-using _360.Api.FacadeProxy.<#= module #>;
-using _360.Domain.<#= module #>;
+using _360.Api.FacadeProxy.<#= module.ModuleName #>;
+using _360.Domain.<#= module.ModuleName #>;
 using _360Generator.Templates;
 using _360.Framework.Api.Repositories;
 using _360.Framework.Libs;
 
-namespace _360.Api.Repository.<#= module #>
+namespace _360.Api.Repository.<#= module.ModuleName #>
 {
-    public class <#= module #>ProfileRepository : BaseRepository, I<#= module #>ProfileRepository
+    public class <#= entity #>Repository : BaseRepository, I<#= entity #>Repository
     {
-        private readonly <#= module #>FacadeProxy _<#= LowerInitial(module) #>FacadeProxy = null;
+        private readonly <#= entity #>FacadeProxy _<#= LowerInitial(entity) #>FacadeProxy = null;
+		protected <#= module.ModuleName #>FacadeProxy <#= module.ModuleName #>FacadeProxy => _<#= LowerInitial(module.ModuleName) #>FacadeProxy ?? new <#= module.ModuleName #>FacadeProxy(CurrentUser);
+
+		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+         public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
+        {
+            return <#= entity #>FacadeProxy.Get<#= entity #>s(companyContext);
+        }
+		<# }#>	        
+			
+		<#if (screens.Contains(Entity.screenEnum.Get)){#>
+       public <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>)
+        {
+            <#= LowerInitial(entity) #>.CreatedBy = CurrentUser.Name;
+            return <#= module.ModuleName #>FacadeProxy.Add<#= entity #>(<#=LowerInitial(module.ModuleName) #>);
+        }
+		<# }#>	        
+			
+		<#if (screens.Contains(Entity.screenEnum.Post)){#>
+       
+		<# }#>
+
+		<#if (screens.Contains(Entity.screenEnum.Put)){#>
+        
+		<# }#> 
+		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
+		
+		<# }#> 
     }
 }
 

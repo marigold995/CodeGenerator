@@ -13,13 +13,13 @@ using _360.Framework.Libs;
 
 namespace _360.Api.Repository.<#= module #>
 {
-    public interface I<#= module #>ProfileRepository : IBaseRepository
+    public interface I<#= module.ModuleName #>ProfileRepository : IBaseRepository
     {
-        PagedCollection<<#= module #>Profile> Get<#= module #>Profiles(string companyContext);
-        <#= module #>Profile Get<#= module #>Profile(string companyContext, string serviceOrderId);
-        <#= module #>Profile Add(<#= module #>Profile <#= module #>Profile);
-        void Update(<#= module #>Profile <#= module #>Profile);
-        void Approve<#= module #>Profile(string companyContext, string serviceOrderId);
+        PagedCollection<<#= module #>Profile> Get<#= module.ModuleName #>Profiles(string companyContext);
+        <#= module.ModuleName #>Profile Get<#= module.ModuleName #>Profile(string companyContext, string serviceOrderId);
+        <#= module.ModuleName #>Profile Add(<#= module #>Profile <#= module.ModuleName #>Profile);
+        void Update(<#= module #>Profile <#= module.ModuleName #>Profile);
+        void Approve<#= module.ModuleName #>Profile(string companyContext, string serviceOrderId);
     }
 }
 

@@ -4,22 +4,37 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="_360Generator" #>
-<#@ parameter name="module" type="System.String"#>
-
-using _360.Domain.<#= module #>;
+<#@ import namespace="_360Generator.Metadata" #>
+<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
+<#@ parameter name="entity" type="System.String"#>
+<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
+using _360.Domain.<#= module.ModuleName #>;
 using _360Generator.Templates;
 using _360.Framework.Api.Repositories;
 using _360.Framework.Libs;
 
-namespace _360.Api.Repository.<#= module #>
+namespace _360.Api.Repository.<#= module.ModuleName #>
 {
-    public interface I<#= module #>ProfileRepository : IBaseRepository
+    public interface I<#= entity #>Repository : IBaseRepository
     {
-        PagedCollection<<#= module #>Profile> Get<#= module #>Profiles(string companyContext);
-        <#= module #>Profile Get<#= module #>Profile(string companyContext, string serviceOrderId);
-        <#= module #>Profile Add(<#= module #>Profile <#= module #>Profile);
-        void Update(<#= module #>Profile <#= module #>Profile);
-        void Approve<#= module #>Profile(string companyContext, string serviceOrderId);
+		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+        PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext);
+		<# }#>	        
+			
+		<#if (screens.Contains(Entity.screenEnum.Get)){#>
+        <#= entity #> Get<#= entity #>(string companyContext, string serviceOrderId);
+		<# }#>	        
+			
+		<#if (screens.Contains(Entity.screenEnum.Post)){#>
+        <#= entity #> Add(<#= entity #> <#= entity #>);
+		<# }#>
+
+		<#if (screens.Contains(Entity.screenEnum.Put)){#>
+        void Update(<#= entity #> <#= entity #>); 
+		<# }#> 
+		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
+		void Delete(string companyContext, string serviceOrderId);
+		<# }#> 
     }
 }
 
