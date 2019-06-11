@@ -25,13 +25,17 @@ namespace _360Generator
             string path1 = CreateFolder("Controllers");
 
             foreach (var entity in Module.Entities)
-            {
+            {                
                 apiWebControllerTemplate = new ApiWebControllerTemplate();
+                
                 apiWebControllerTemplate.Session = new Dictionary<string, object>();
                 //string moduleName = this.Module.ModuleName;
+                
                 var module = this.Module;
+                var screensList = entity.Screens;
                 apiWebControllerTemplate.Session["module"] = module;
                 apiWebControllerTemplate.Session["entity"] = entity.EntityName;
+                apiWebControllerTemplate.Session["screens"] = screensList;
 
                 apiWebControllerTemplate.Initialize();
 

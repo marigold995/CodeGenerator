@@ -16,7 +16,6 @@ using System.Web.Http.Description;
 
 namespace _360.Api.Web.CyberDetection.Controllers
 {
-
 	[Route("api/v1/cyberServices")]
 	[P360AuthorizeApi]
 	[CyberServiceExceptionFilter]
@@ -28,33 +27,18 @@ namespace _360.Api.Web.CyberDetection.Controllers
             _cyberServiceRepository = cyberServiceRepository;
         }
 
+		                
 		[HttpGet]
 		[Route("~/api/v1/companies/{companyId}/cyberServices")]
 		[ResponseType(typeof(CollectionResult<CyberServiceDto>))]
 		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
-        {           
-            return Ok(new NotImplementedException());
-        }
-
-		[HttpGet]
-		[Route("~/api/v1/companies/{companyId}/cyberServices/{cyberServiceId}", Name = "GetCyberServiceById")]
-        [ResponseType(typeof(CyberServiceDto))]
-		 public IHttpActionResult GetById(string companyId, string cyberServiceId)
-        {
+		{           
 			return Ok(new NotImplementedException());
-		}	
-
-		[HttpPost]       
-        public IHttpActionResult Post([FromBody] CyberServiceDto cyberServiceDto)
-        {
-			return BadRequest();
-		}
-
-		[HttpPut]       
-        public IHttpActionResult Put([FromBody] CyberServiceDto cyberServiceDto)
-        {
-           return Ok(new NotImplementedException());
-        }
-	}
+		}	        
+			
+		
+		
+				
+			}
 }
 

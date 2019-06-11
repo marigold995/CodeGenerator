@@ -23,8 +23,8 @@ namespace _360Generator.Generator
             var apiWebController = new ApiWebController(this.Module);
             apiWebController.CreateApiWebControllerTemplate();
 
-            //var apiRepository = new ApiRepository(this.Module);
-            //apiRepository.CreateApiInterfaceRepositoryTemplate();
+            var apiRepository = new ApiRepository(this.Module);
+            apiRepository.CreateApiInterfaceRepositoryTemplate();
 
             //var apiModelDTO = new ApiModelDTO(this.Module);
             //apiModelDTO.CreateApiModelTemplate();

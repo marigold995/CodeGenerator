@@ -16,45 +16,48 @@ using System.Web.Http.Description;
 
 namespace _360.Api.Web.CyberDetection.Controllers
 {
-
-	[Route("api/v1/securityAndITPolicys")]
+	[Route("api/v1/securityAndItPolicys")]
 	[P360AuthorizeApi]
-	[SecurityAndITPolicyExceptionFilter]
-	public class SecurityAndITPolicyController : ApiController {
-		private readonly ISecurityAndITPolicyRepository _securityAndITPolicyRepository;
+	[SecurityAndItPolicyExceptionFilter]
+	public class SecurityAndItPolicyController : ApiController {
+		private readonly ISecurityAndItPolicyRepository _securityAndItPolicyRepository;
 
-        public SecurityAndITPolicyController(ISecurityAndITPolicyRepository securityAndITPolicyRepository)
+        public SecurityAndItPolicyController(ISecurityAndItPolicyRepository securityAndItPolicyRepository)
         {
-            _securityAndITPolicyRepository = securityAndITPolicyRepository;
+            _securityAndItPolicyRepository = securityAndItPolicyRepository;
         }
 
+		                
 		[HttpGet]
-		[Route("~/api/v1/companies/{companyId}/securityAndITPolicys")]
-		[ResponseType(typeof(CollectionResult<SecurityAndITPolicyDto>))]
+		[Route("~/api/v1/companies/{companyId}/securityAndItPolicys")]
+		[ResponseType(typeof(CollectionResult<SecurityAndItPolicyDto>))]
 		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
-        {           
-            return Ok(new NotImplementedException());
-        }
-
-		[HttpGet]
-		[Route("~/api/v1/companies/{companyId}/securityAndITPolicys/{securityAndITPolicyId}", Name = "GetSecurityAndITPolicyById")]
-        [ResponseType(typeof(SecurityAndITPolicyDto))]
-		 public IHttpActionResult GetById(string companyId, string securityAndITPolicyId)
+		{           
+			return Ok(new NotImplementedException());
+		}	        
+			
+				[HttpGet]
+		[Route("~/api/v1/companies/{companyId}/securityAndItPolicys/{securityAndItPolicyId}", Name = "GetSecurityAndItPolicyById")]
+        [ResponseType(typeof(SecurityAndItPolicyDto))]
+		 public IHttpActionResult GetById(string companyId, string securityAndItPolicyId)
         {
 			return Ok(new NotImplementedException());
-		}	
-
-		[HttpPost]       
-        public IHttpActionResult Post([FromBody] SecurityAndITPolicyDto securityAndITPolicyDto)
+		}
+				[HttpPost]       
+        public IHttpActionResult Post([FromBody] SecurityAndItPolicyDto securityAndItPolicyDto)
         {
 			return BadRequest();
 		}
-
-		[HttpPut]       
-        public IHttpActionResult Put([FromBody] SecurityAndITPolicyDto securityAndITPolicyDto)
+				[HttpPut]       
+        public IHttpActionResult Put([FromBody] SecurityAndItPolicyDto securityAndItPolicyDto)
         {
            return Ok(new NotImplementedException());
+        }		
+				[HttpDelete]
+		public IHttpActionResult Delete(string companyId, string securityAndItPolicyId)
+        {
+            return StatusCode(HttpStatusCode.NoContent);
         }
-	}
+			}
 }
 

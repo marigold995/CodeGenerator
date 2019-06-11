@@ -4,8 +4,10 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="_360Generator" #>
+<#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
+<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
 using _360.Api.Model.<#= module.ModuleName #>;
 using _360.Api.Repository.<#= module.ModuleName  #>;
@@ -24,7 +26,6 @@ using System.Web.Http.Description;
 
 namespace _360.Api.Web.<#=module.ModuleName #>.Controllers
 {
-
 	[Route("api/v1/<#= LowerInitial(entity ) #>s")]
 	[P360AuthorizeApi]
 	[<#= entity  #>ExceptionFilter]
@@ -36,33 +37,45 @@ namespace _360.Api.Web.<#=module.ModuleName #>.Controllers
             _<#= LowerInitial(entity ) #>Repository = <#= LowerInitial(entity ) #>Repository;
         }
 
+		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>                
 		[HttpGet]
 		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s")]
 		[ResponseType(typeof(CollectionResult<<#= entity  #>Dto>))]
 		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
-        {           
-            return Ok(new NotImplementedException());
-        }
-
+		{           
+			return Ok(new NotImplementedException());
+		}<# }#>	        
+			
+		<#if (screens.Contains(Entity.screenEnum.Get)){#>
 		[HttpGet]
 		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s/{<#= LowerInitial(entity ) #>Id}", Name = "Get<#= entity  #>ById")]
         [ResponseType(typeof(<#= entity  #>Dto))]
 		 public IHttpActionResult GetById(string companyId, string <#= LowerInitial(entity ) #>Id)
         {
 			return Ok(new NotImplementedException());
-		}	
+		}<# }#>
 
+		<#if (screens.Contains(Entity.screenEnum.Post)){#>
 		[HttpPost]       
         public IHttpActionResult Post([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
 			return BadRequest();
-		}
+		}<# }#>
 
+		<#if (screens.Contains(Entity.screenEnum.Put)){#>
 		[HttpPut]       
         public IHttpActionResult Put([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
            return Ok(new NotImplementedException());
+        }<# }#>
+		
+		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
+		[HttpDelete]
+		public IHttpActionResult Delete(string companyId, string <#= LowerInitial(entity ) #>Id)
+        {
+            return StatusCode(HttpStatusCode.NoContent);
         }
+		<# }#>
 	}
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _360Generator.Metadata;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,6 @@ namespace _360Generator.Domain
             finally { }
 
             return path;
-        }
+        }        
     }
 }

@@ -12,11 +12,43 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            var getAll = Entity.screenEnum.GetAll;
+            var getById = Entity.screenEnum.Get;
+            var post = Entity.screenEnum.Post;
+            var put = Entity.screenEnum.Put;
+            var delete = Entity.screenEnum.Delete;
+
             var newModule = new Module("CyberDetection");
-            newModule.AddEntity(new Entity("CyberDetectionProfile"));
-            newModule.AddEntity(new Entity("CyberService"));
-            newModule.AddEntity(new Entity("SecurityAndITPolicy"));
-            newModule.AddEntity(new Entity("ZoneProfile"));
+            
+
+            Entity cyberDetectionProfile = new Entity("CyberDetectionProfile");
+            Entity cyberService = new Entity("CyberService");
+            Entity securityAndItPolicy = new Entity("SecurityAndItPolicy");
+            Entity zoneProfile = new Entity("ZoneProfile");
+
+            cyberDetectionProfile.AddScreen(getAll);
+            cyberDetectionProfile.AddScreen(getById);
+            cyberDetectionProfile.AddScreen(post);
+            cyberDetectionProfile.AddScreen(put);
+
+            cyberService.AddScreen(getAll);
+
+            securityAndItPolicy.AddScreen(getAll);
+            securityAndItPolicy.AddScreen(getById);
+            securityAndItPolicy.AddScreen(post);
+            securityAndItPolicy.AddScreen(put);
+            securityAndItPolicy.AddScreen(delete);
+
+            zoneProfile.AddScreen(getAll);
+            zoneProfile.AddScreen(getById);
+            zoneProfile.AddScreen(post);
+            zoneProfile.AddScreen(put);
+            zoneProfile.AddScreen(delete);
+
+            newModule.AddEntity(cyberDetectionProfile);
+            newModule.AddEntity(cyberService);
+            newModule.AddEntity(securityAndItPolicy);
+            newModule.AddEntity(zoneProfile);
 
             var generator = new Generator(newModule);
             generator.CreateBackend();

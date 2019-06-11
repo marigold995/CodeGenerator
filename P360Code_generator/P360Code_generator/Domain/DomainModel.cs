@@ -32,9 +32,6 @@ namespace _360Generator.Domain
 
             string pageContent = domainModelTemplate.TransformText();
             System.IO.File.WriteAllText(path.ToString(), pageContent);
-        }
-
-       
-       
+        }   
     }
 }
