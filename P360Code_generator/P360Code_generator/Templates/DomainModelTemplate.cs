@@ -38,30 +38,21 @@ namespace _360Generator.Templates
             this.Write("\n\nusing _360.Domain.Core;\nusing System;\nusing System.Collections.Generic;\n\nnamesp" +
                     "ace _360.Domain.");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("\n{\n    public class ");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 3 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Profile\n    {\n\n\t}\n}\n\n");
+            this.Write("\n    {\n\n\t}\n}\n");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
-
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-
-        
-        #line default
-        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\DomainModelTemplate.tt"
 

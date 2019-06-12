@@ -35,8 +35,8 @@ namespace _360Generator.Generator
             var apiFacade = new ApiFacade(this.Module);
             apiFacade.CreateApiFacadeTemplate();
 
-            //var domainModel = new DomainModel(this.Module);
-            //domainModel.CreateDomainModelTemplate();
+            var domainModel = new DomainModel(this.Module);
+            domainModel.CreateDomainModelTemplate();
         }
 
     }

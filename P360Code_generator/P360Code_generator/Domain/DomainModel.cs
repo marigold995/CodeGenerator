@@ -20,18 +20,28 @@ namespace _360Generator.Domain
         }
 
         public void CreateDomainModelTemplate()
-        {
-            domainModelTemplate = new DomainModelTemplate();
-            domainModelTemplate.Session = new Dictionary<string, object>();
-            string moduleName = this.Module.ModuleName;
-            domainModelTemplate.Session["module"] = moduleName;
-            domainModelTemplate.Initialize();
+        {            
+            string pathDomain = CreateFolder(rootPath, "Domain");
 
-            //string path = CreateFolder("Controllers");
-            //path += moduleName + "Profile.cs";
+            foreach (var entity in Module.Entities)
+            {
+                domainModelTemplate = new DomainModelTemplate();               
+                domainModelTemplate.Session = new Dictionary<string, object>();
 
-            //string pageContent = domainModelTemplate.TransformText();
-            //System.IO.File.WriteAllText(path.ToString(), pageContent);
+                var module = this.Module;
+                var screensList = entity.Screens;
+                domainModelTemplate.Session["module"] = module;
+                domainModelTemplate.Session["entity"] = entity.EntityName;
+                domainModelTemplate.Session["screens"] = screensList;
+
+                domainModelTemplate.Initialize();
+
+                string path = pathDomain;
+                path += "/" + entity.EntityName + ".cs";
+
+                string pageContent = domainModelTemplate.TransformText();
+                System.IO.File.WriteAllText(path.ToString(), pageContent);
+            }
         }   
     }
 }
