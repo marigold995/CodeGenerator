@@ -20,17 +20,28 @@ namespace _360Generator.Domain
 
         public void CreateApiModelTemplate()
         {
-            apiModelDTOTemplate = new ApiModelDTOTemplate();
-            apiModelDTOTemplate.Session = new Dictionary<string, object>();
-            string moduleName = this.Module.ModuleName;
-            apiModelDTOTemplate.Session["module"] = moduleName;
-            apiModelDTOTemplate.Initialize();
+            string pathDomain = CreateFolder(rootPath, "Model");
 
-            StringBuilder path = new StringBuilder("../../GeneratedCode/");
-            path.Append(moduleName + "ProfileDto.cs");                     
+            foreach (var entity in Module.Entities)
+            {
+                apiModelDTOTemplate = new ApiModelDTOTemplate();
+                apiModelDTOTemplate.Session = new Dictionary<string, object>();
 
-            string pageContent = apiModelDTOTemplate.TransformText();
-            System.IO.File.WriteAllText(path.ToString(), pageContent);
+                var module = this.Module;
+                var screensList = entity.Screens;
+                apiModelDTOTemplate.Session["module"] = module;
+                apiModelDTOTemplate.Session["entity"] = entity.EntityName;
+                apiModelDTOTemplate.Session["screens"] = screensList;
+
+                apiModelDTOTemplate.Initialize();
+
+                string path = pathDomain;
+                path += "/" + entity.EntityName + "DTO.cs";
+
+                string pageContent = apiModelDTOTemplate.TransformText();
+                System.IO.File.WriteAllText(path.ToString(), pageContent);
+            }    
+              
         }
     }
 }

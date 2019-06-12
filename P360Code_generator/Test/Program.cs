@@ -18,8 +18,7 @@ namespace Test
             var put = Entity.screenEnum.Put;
             var delete = Entity.screenEnum.Delete;
 
-            var newModule = new Module("CyberDetection");
-            
+            var newModule = new Module("CyberDetection");            
 
             Entity cyberDetectionProfile = new Entity("CyberDetectionProfile");
             Entity cyberService = new Entity("CyberService");
@@ -30,25 +29,31 @@ namespace Test
             cyberDetectionProfile.AddScreen(getById);
             cyberDetectionProfile.AddScreen(post);
             cyberDetectionProfile.AddScreen(put);
+            cyberDetectionProfile.Facade = Entity.facadeEnum.GBM;
 
             cyberService.AddScreen(getAll);
+            cyberService.Facade = Entity.facadeEnum.GBM;
 
             securityAndItPolicy.AddScreen(getAll);
             securityAndItPolicy.AddScreen(getById);
             securityAndItPolicy.AddScreen(post);
             securityAndItPolicy.AddScreen(put);
             securityAndItPolicy.AddScreen(delete);
+            securityAndItPolicy.Facade = Entity.facadeEnum.GBM;
 
             zoneProfile.AddScreen(getAll);
             zoneProfile.AddScreen(getById);
             zoneProfile.AddScreen(post);
             zoneProfile.AddScreen(put);
             zoneProfile.AddScreen(delete);
+            zoneProfile.Facade = Entity.facadeEnum.GBM;
 
             newModule.AddEntity(cyberDetectionProfile);
             newModule.AddEntity(cyberService);
             newModule.AddEntity(securityAndItPolicy);
             newModule.AddEntity(zoneProfile);
+
+            
 
             var generator = new Generator(newModule);
             generator.CreateBackend();

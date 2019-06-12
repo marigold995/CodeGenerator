@@ -26,11 +26,14 @@ namespace _360Generator.Generator
             var apiRepository = new ApiRepository(this.Module);
             apiRepository.CreateApiInterfaceRepositoryTemplate();
 
-            //var apiModelDTO = new ApiModelDTO(this.Module);
-            //apiModelDTO.CreateApiModelTemplate();
+            var apiModelDTO = new ApiModelDTO(this.Module);
+            apiModelDTO.CreateApiModelTemplate();
 
-            //var apiFacadeProxy = new ApiFacadeProxy(this.Module);
-            //apiFacadeProxy.CreateApiFacadeProxyTemplate();
+            var apiFacadeProxy = new ApiFacadeProxy(this.Module);
+            apiFacadeProxy.CreateApiFacadeProxyTemplate();
+
+            var apiFacade = new ApiFacade(this.Module);
+            apiFacade.CreateApiFacadeTemplate();
 
             //var domainModel = new DomainModel(this.Module);
             //domainModel.CreateDomainModelTemplate();

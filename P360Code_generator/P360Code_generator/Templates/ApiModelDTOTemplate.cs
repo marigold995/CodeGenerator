@@ -13,6 +13,7 @@ namespace _360Generator.Templates
     using System.Text;
     using System.Collections.Generic;
     using _360Generator;
+    using _360Generator.Metadata;
     using System;
     
     /// <summary>
@@ -29,27 +30,29 @@ namespace _360Generator.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n\r\nusing _360.Api.Core.Models;\r\nusing _360.Framework.Api.Models;\r\nusing _360Gene" +
-                    "rator.Templates;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace " +
-                    "_360.Api.Model.");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("using _360.Api.Core.Models;\r\nusing _360.Framework.Api.Models;\r\nusing _360Generato" +
+                    "r.Templates;\r\nusing System;\r\nusing System.Collections.Generic;\r\n\r\nnamespace _360" +
+                    ".Api.Model.");
             
-            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public class ");
             
-            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 17 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("ProfileDto : BaseDto\r\n    {\r\n\r\n\t}\r\n}\r\n\r\n");
+            this.Write("Dto : BaseDto\r\n    {\r\n\r\n\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 26 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
+        #line 23 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiModelDTOTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

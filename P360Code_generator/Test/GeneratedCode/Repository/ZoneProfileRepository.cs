@@ -16,32 +16,43 @@ namespace _360.Api.Repository.CyberDetection
 {
     public class ZoneProfileRepository : BaseRepository, IZoneProfileRepository
     {
-        private readonly ZoneProfileFacadeProxy _zoneProfileFacadeProxy = null;
+        private readonly CyberDetectionFacadeProxy _cyberDetectionFacadeProxy = null;
 		protected CyberDetectionFacadeProxy CyberDetectionFacadeProxy => _cyberDetectionFacadeProxy ?? new CyberDetectionFacadeProxy(CurrentUser);
 
 		  
-         public PagedCollection<ZoneProfile> GetZoneProfiles(string companyContext)
+        public PagedCollection<ZoneProfile> GetZoneProfiles(string companyContext)
         {
             return ZoneProfileFacadeProxy.GetZoneProfiles(companyContext);
         }
 			        
 			
 		
-       public ZoneProfile Add(ZoneProfile zoneProfile)
+        public ZoneProfile GetZoneProfile(string companyContext, string serviceOrderId)
         {
-            zoneProfile.CreatedBy = CurrentUser.Name;
-            return CyberDetectionFacadeProxy.AddZoneProfile(cyberDetection);
+            return ZoneProfileFacadeProxy.GetZoneProfile(companyContext, serviceOrderId);
         }
 			        
 			
 		
-       
+		public ZoneProfile Add(ZoneProfile zoneProfile)
+        {
+            zoneProfile.CreatedBy = CurrentUser.Name;
+            return CyberDetectionFacadeProxy.AddZoneProfile(cyberDetection);
+        }
 		
 		
-        
+        public void Update( ZoneProfile  zoneProfile)
+        {
+            zoneProfile.LastModifiedBy = CurrentUser.Name;
+            CyberDetectionFacadeProxy.Update ZoneProfile (zoneProfile);
+        }
 		 
+
 		
-		
+			public void Delete(string companyContext, string zoneProfileId)
+        {
+            CyberDetectionFacadeProxy.Delete ZoneProfile(zoneProfileId);
+        }
 		 
     }
 }

@@ -23,7 +23,16 @@ namespace _360Generator.Metadata
         public List<screenEnum> Screens { get; set; }
         
         public bool Cache { get; set; }
-        public string Facade { get; set; }        
+         
+        public enum facadeEnum
+        {
+            GBM,
+            ABM,
+            API,
+            USM
+        }
+
+        public facadeEnum Facade { get; set; }
 
         public Entity(string EntityName)
         {

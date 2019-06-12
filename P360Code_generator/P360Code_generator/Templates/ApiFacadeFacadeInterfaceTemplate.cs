@@ -13,15 +13,16 @@ namespace _360Generator.Templates
     using System.Text;
     using System.Collections.Generic;
     using _360Generator;
+    using _360Generator.Metadata;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class ApiFacadeProxyProfileTemplate : ApiFacadeProxyProfileTemplateBase
+    public partial class ApiFacadeFacadeInterfaceTemplate : ApiFacadeFacadeInterfaceTemplateBase
     {
 #line hidden
         /// <summary>
@@ -31,57 +32,76 @@ namespace _360Generator.Templates
         {
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nusing _360.Api.Facade.Document;\nusing _360.Api.Facade.FileSystem;\nusing _360.Api" +
-                    ".Facade.GBM.Contracting;\nusing _360.Api.Facade.GBM.");
+            this.Write("using _360.Domain.");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360.Api.Facade.Order;\nusing _360.Api.Facade.ServiceBus;\nusing _360.Api.F" +
-                    "acadeProxy.Base;\nusing _360.Api.FacadeProxy.Core;\nusing _360.Framework.Libs.Conf" +
-                    "iguration;\nusing System.Diagnostics.CodeAnalysis;\n\nnamespace _360.Api.FacadeProx" +
-                    "y.");
+            this.Write(";\nusing _360.Framework.Libs;\n\nnamespace _360.Api.Facade.");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public partial class ");
+            this.Write(".");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
-            
-            #line default
-            #line hidden
-            this.Write("FacadeProxy : BaseFacadeProxy\n    {\n\t\tprivate CoreFacadeProxy _coreFacadeProxy;\n\n" +
-                    "        public ");
-            
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("FacadeProxy(ICurrentUserWrapper currentUser) : base(currentUser) => ModuleTechnol" +
-                    "ogy = \"");
+            this.Write("\n{\n    public partial interface I");
             
-            #line 4 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("\";\n\n\t\tprivate CoreFacadeProxy CoreFacadeProxy => _coreFacadeProxy ?? (_coreFacade" +
-                    "Proxy = new CoreFacadeProxy(CurrentUser));\n\t}\n}");
+            this.Write("Facade\n    {\n        PagedCollection<");
+            
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("> Get");
+            
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("s(string companyContext);\n\n        ");
+            
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" Get");
+            
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("(string id, string companyContext);\n    }\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeProxyProfileTemplate.tt"
+        #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+
+        
+        #line default
+        #line hidden
+        
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\ApiFacadeFacadeInterfaceTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 
@@ -119,6 +139,19 @@ private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.sc
     get
     {
         return this._screensField;
+    }
+}
+
+private global::_360Generator.Metadata.Entity.facadeEnum _facadeField;
+
+/// <summary>
+/// Access the facade parameter of the template.
+/// </summary>
+private global::_360Generator.Metadata.Entity.facadeEnum facade
+{
+    get
+    {
+        return this._facadeField;
     }
 }
 
@@ -172,6 +205,20 @@ if ((screensValueAcquired == false))
         this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
+bool facadeValueAcquired = false;
+if (this.Session.ContainsKey("facade"))
+{
+    this._facadeField = ((global::_360Generator.Metadata.Entity.facadeEnum)(this.Session["facade"]));
+    facadeValueAcquired = true;
+}
+if ((facadeValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("facade");
+    if ((data != null))
+    {
+        this._facadeField = ((global::_360Generator.Metadata.Entity.facadeEnum)(data));
+    }
+}
 
 
     }
@@ -190,7 +237,7 @@ if ((screensValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class ApiFacadeProxyProfileTemplateBase
+    public class ApiFacadeFacadeInterfaceTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

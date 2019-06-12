@@ -21,7 +21,7 @@ namespace _360Generator.Domain
 
         public void CreateApiInterfaceRepositoryTemplate()
         {
-            string path1 = CreateFolder("Repository");
+            string pathDomain = CreateFolder(rootPath, "Repository");
 
             foreach (var entity in Module.Entities)
             {
@@ -36,7 +36,7 @@ namespace _360Generator.Domain
 
                 apiInterfaceRepositoryTemplate.Initialize();
 
-                string path = path1;
+                string path = pathDomain;
                 path += "/I" + entity.EntityName + "Repository.cs";
 
                 string pageContent = apiInterfaceRepositoryTemplate.TransformText();
@@ -47,7 +47,7 @@ namespace _360Generator.Domain
 
         public void CreateApiRepositoryTemplate()
         {
-            string path1 = CreateFolder("Repository");
+            string pathDomain = CreateFolder(rootPath, "Repository");
             foreach (var entity in Module.Entities)
             {
                 apiRepositoryTemplate = new ApiRepositoryTemplate();
@@ -61,7 +61,7 @@ namespace _360Generator.Domain
 
                 apiRepositoryTemplate.Initialize();
 
-                string path = path1;
+                string path = pathDomain;
                 path += "/" + entity.EntityName + "Repository.cs";
 
                 string pageContent = apiRepositoryTemplate.TransformText();

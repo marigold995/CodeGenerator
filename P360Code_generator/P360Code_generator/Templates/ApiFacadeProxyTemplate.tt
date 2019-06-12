@@ -4,14 +4,16 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="_360Generator" #>
+<#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
+<#@ parameter name="facade" type="_360Generator.Metadata.Entity.facadeEnum"#>
 
 using _360.Api.Facade.Document;
 using _360.Api.Facade.FileSystem;
-using _360.Api.Facade.GBM.Contracting;
-using _360.Api.Facade.GBM.<#= module #>;
+using _360.Api.Facade.<#= facade #>.Contracting;
+using _360.Api.Facade.<#= facade #>.<#= module.ModuleName #>;
 using _360.Api.Facade.Order;
 using _360.Api.Facade.ServiceBus;
 using _360.Api.FacadeProxy.Base;
@@ -19,14 +21,49 @@ using _360.Api.FacadeProxy.Core;
 using _360.Framework.Libs.Configuration;
 using System.Diagnostics.CodeAnalysis;
 
-namespace _360.Api.FacadeProxy.<#= module #>
+namespace _360.Api.FacadeProxy.<#= module.ModuleName #>
 {
-    public partial class <#= module #>FacadeProxy : BaseFacadeProxy
+    public partial class <#= entity #>FacadeProxy : BaseFacadeProxy
     {
-		private CoreFacadeProxy _coreFacadeProxy;
-
-        public <#= module #>FacadeProxy(ICurrentUserWrapper currentUser) : base(currentUser) => ModuleTechnology = "<#= module #>";
-
-		private CoreFacadeProxy CoreFacadeProxy => _coreFacadeProxy ?? (_coreFacadeProxy = new CoreFacadeProxy(CurrentUser));
+		<#if (facade.Equals (Entity.facadeEnum.GBM)){#>  
+			<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+				public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
+				{
+					return <#= module.ModuleName #>Facade.Get<#= entity #>s(companyContext);
+				}
+			<# }#>
+			<#if (screens.Contains(Entity.screenEnum.Get)){#>  
+				public <#= entity #> Get<#= entity #>(string companyContext, string id)
+				{
+					return <#= module.ModuleName #>Facade.Get<#= entity #>(companyContext, id);
+				}
+			<# }#>
+			<#if (screens.Contains(Entity.screenEnum.Post)){#>  
+				public <#= entity #> Add<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
+				{
+					<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity ) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
+					return <#= LowerInitial(entity ) #>;
+				}
+			<# }#>
+			<#if (screens.Contains(Entity.screenEnum.Put)){#>  
+				public <#= entity #> Update<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
+				{
+					<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity ) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
+					return <#= LowerInitial(entity ) #>;
+				}
+			<# }#>
+			<#if (screens.Contains(Entity.screenEnum.Delete)){#>  
+				public void Delete<#= entity #>(string id)
+				{
+					// placeholder
+				}
+			<# }#>
+		<# }#>
 	}
 }
+
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

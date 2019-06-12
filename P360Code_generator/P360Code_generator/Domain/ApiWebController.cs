@@ -22,7 +22,7 @@ namespace _360Generator
 
         public void CreateApiWebControllerTemplate()
         {
-            string path1 = CreateFolder("Controllers");
+            string pathDomain = CreateFolder(rootPath, "Controllers");
 
             foreach (var entity in Module.Entities)
             {                
@@ -38,7 +38,7 @@ namespace _360Generator
 
                 apiWebControllerTemplate.Initialize();
                 
-                string path = path1;
+                string path = pathDomain;
                 path += "/" + entity.EntityName + "Controller.cs";
 
                 string pageContent = apiWebControllerTemplate.TransformText();

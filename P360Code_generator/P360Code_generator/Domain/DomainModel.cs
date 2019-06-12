@@ -27,11 +27,11 @@ namespace _360Generator.Domain
             domainModelTemplate.Session["module"] = moduleName;
             domainModelTemplate.Initialize();
 
-            string path = CreateFolder("Controllers");
-            path += moduleName + "Profile.cs";
+            //string path = CreateFolder("Controllers");
+            //path += moduleName + "Profile.cs";
 
-            string pageContent = domainModelTemplate.TransformText();
-            System.IO.File.WriteAllText(path.ToString(), pageContent);
+            //string pageContent = domainModelTemplate.TransformText();
+            //System.IO.File.WriteAllText(path.ToString(), pageContent);
         }   
     }
 }

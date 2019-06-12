@@ -11,9 +11,11 @@ namespace _360Generator.Domain
 {
     abstract class RootDomain
     {
-        public string CreateFolder(string folderName)
+        public string rootPath = "../../GeneratedCode";
+        public string CreateFolder(string path, string folderName)
         {
-            string path = "../../GeneratedCode/" + folderName;
+            //string path = "../../GeneratedCode/" + folderName;
+            path += "/" + folderName;
 
             try
             {
@@ -27,6 +29,8 @@ namespace _360Generator.Domain
 
             return path;
         }
+
+
 
         //public void InitializeParameters(Module module, Object temp)
         //{

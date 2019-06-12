@@ -19,33 +19,44 @@ namespace _360.Api.Repository.<#= module.ModuleName #>
 {
     public class <#= entity #>Repository : BaseRepository, I<#= entity #>Repository
     {
-        private readonly <#= entity #>FacadeProxy _<#= LowerInitial(entity) #>FacadeProxy = null;
+        private readonly <#= module.ModuleName #>FacadeProxy _<#= LowerInitial(module.ModuleName) #>FacadeProxy = null;
 		protected <#= module.ModuleName #>FacadeProxy <#= module.ModuleName #>FacadeProxy => _<#= LowerInitial(module.ModuleName) #>FacadeProxy ?? new <#= module.ModuleName #>FacadeProxy(CurrentUser);
 
 		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
-         public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
+        public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
         {
             return <#= entity #>FacadeProxy.Get<#= entity #>s(companyContext);
         }
 		<# }#>	        
 			
 		<#if (screens.Contains(Entity.screenEnum.Get)){#>
-       public <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>)
+        public <#= entity #> Get<#= entity #>(string companyContext, string serviceOrderId)
         {
-            <#= LowerInitial(entity) #>.CreatedBy = CurrentUser.Name;
-            return <#= module.ModuleName #>FacadeProxy.Add<#= entity #>(<#=LowerInitial(module.ModuleName) #>);
+            return <#= entity #>FacadeProxy.Get<#= entity #>(companyContext, serviceOrderId);
         }
 		<# }#>	        
 			
 		<#if (screens.Contains(Entity.screenEnum.Post)){#>
-       
+		public <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>)
+        {
+            <#= LowerInitial(entity) #>.CreatedBy = CurrentUser.Name;
+            return <#= module.ModuleName #>FacadeProxy.Add<#= entity #>(<#=LowerInitial(module.ModuleName) #>);
+        }
 		<# }#>
 
 		<#if (screens.Contains(Entity.screenEnum.Put)){#>
-        
+        public void Update( <#= entity #>  <#= LowerInitial(entity) #>)
+        {
+            <#= LowerInitial(entity) #>.LastModifiedBy = CurrentUser.Name;
+            <#= module.ModuleName #>FacadeProxy.Update <#= entity #> (<#= LowerInitial(entity) #>);
+        }
 		<# }#> 
+
 		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
-		
+			public void Delete(string companyContext, string <#= LowerInitial(entity) #>Id)
+        {
+            <#= module.ModuleName #>FacadeProxy.Delete <#= entity #>(<#= LowerInitial(entity) #>Id);
+        }
 		<# }#> 
     }
 }
