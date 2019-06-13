@@ -9,6 +9,26 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { EntityParameters } from 'App/Base/Framework/EntityParameters';
+import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
+
+export class <#=entity #>Initializer {
+    public static initialize(): void {
+        EntityParameters.setParameters('<#= LowerInitial(entity) #>', new Array());
+        
+        DefaultParameterText['<#= LowerInitial(entity) #>Id'] = 'name';
+
+        System.config({
+            map: {
+                <#=entity #>ListView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>ListView',
+                <#=entity #>DetailView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>DetailView',
+                <#=entity #>CreateView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>CreateView',
+                <#=entity #>UpdateView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>UpdateView'
+            }
+        });
+    }
+}  
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
