@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
 using _360Generator.Templates;
+using _360Generator.Templates.Backend.Facade;
 
 namespace _360Generator.Domain
 {
@@ -24,7 +25,7 @@ namespace _360Generator.Domain
 
         public void CreateApiFacadeTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "Facade");
+            //string pathDomain = CreateFolder(rootPath, "Facade");
             //string pathGenerated = CreateFolder(pathDomain, "generated");
 
             foreach (var entity in Module.Entities)
@@ -32,8 +33,10 @@ namespace _360Generator.Domain
                 var module = this.Module;
                 var screensList = entity.Screens;
 
-                string pathFacadeType = CreateFolder(pathDomain, entity.Facade.ToString());
-                string pathGenerated = CreateFolder(pathFacadeType, "generated");
+                string path0 = CreateFolder(rootPath, "360.Api.Facade." + entity.Facade + "." + Module.ModuleName);
+
+                //string pathFacadeType = CreateFolder(pathDomain, entity.Facade.ToString());
+                string pathGenerated = CreateFolder(path0, "generated");
                 string pathEntity = CreateFolder(pathGenerated, entity.EntityName);
                 string pathEntityConverter = CreateFolder(pathEntity, "Converter");
                 string pathEntityFacade = CreateFolder(pathEntity, "Facade");

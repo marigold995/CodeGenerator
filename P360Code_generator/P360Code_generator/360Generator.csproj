@@ -53,112 +53,235 @@
     <Compile Include="Domain\ApiRepository.cs" />
     <Compile Include="Domain\ApiWebController.cs" />
     <Compile Include="Domain\DomainModel.cs" />
+    <Compile Include="Domain\PortalData.cs" />
+    <Compile Include="Domain\PortalInitializer.cs" />
+    <Compile Include="Domain\PortalModel.cs" />
+    <Compile Include="Domain\PortalValidator.cs" />
+    <Compile Include="Domain\PortalView.cs" />
+    <Compile Include="Domain\PortalViewModel.cs" />
     <Compile Include="Domain\RootDomain.cs" />
     <Compile Include="Generator\Generator.cs" />
     <Compile Include="Metadata\Entity.cs" />
     <Compile Include="Metadata\Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Templates\ApiFacadeConverterTemplate.cs">
+    <Compile Include="Templates\Backend\Facade\ApiFacadeConverterTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiFacadeConverterTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\ApiFacadeFacadeInterfaceTemplate.cs">
+    <Compile Include="Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiFacadeFacadeInterfaceTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\ApiFacadeFacadeTemplate.cs">
+    <Compile Include="Templates\Backend\Facade\ApiFacadeFacadeTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiFacadeFacadeTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\ApiFacadeServiceInterfaceTemplate.cs">
+    <Compile Include="Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiFacadeServiceInterfaceTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\ApiFacadeServiceTemplate.cs">
+    <Compile Include="Templates\Backend\Facade\ApiFacadeServiceTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiFacadeServiceTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\ApiInterfaceRepositoryTemplate.cs">
+    <Compile Include="Templates\Backend\Repository\ApiInterfaceRepositoryTemplate.cs">
       <DependentUpon>ApiInterfaceRepositoryTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\ApiModelDTOTemplate.cs">
+    <Compile Include="Templates\Backend\ModelDTO\ApiModelDTOTemplate.cs">
       <DependentUpon>ApiModelDTOTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\ApiFacadeProxyTemplate.cs">
+    <Compile Include="Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.cs">
       <DependentUpon>ApiFacadeProxyTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\ApiRepositoryTemplate.cs">
+    <Compile Include="Templates\Backend\Repository\ApiRepositoryTemplate.cs">
       <DependentUpon>ApiRepositoryTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\ApiWebControllerTemplate.cs">
+    <Compile Include="Templates\Backend\Controller\ApiWebControllerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ApiWebControllerTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\DomainModelTemplate.cs">
+    <Compile Include="Templates\Backend\Domain\DomainModelTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DomainModelTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Frontend\Data\PortalDataProviderTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalDataProviderTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\Data\PortalDataServiceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalDataServiceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\Include\PortalInitializerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalInitializerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\Model\PortalModelTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\Validator\PortalValidatorTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalValidatorTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.cs">
+      <DependentUpon>PortalCreateViewModelTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.cs">
+      <DependentUpon>PortalDetailsViewModelTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\PortalListViewModelTemplate.cs">
+      <DependentUpon>PortalListViewModelTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.cs">
+      <DependentUpon>PortalUpdateViewModelTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Frontend\View\PortalCreateViewTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalCreateViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\View\PortalDetailsViewTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalDetailsViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\View\PortalListViewTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalListViewTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Frontend\View\PortalUpdateViewTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalUpdateViewTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Templates\ApiFacadeConverterTemplate.tt">
+    <Content Include="Templates\Backend\Facade\ApiFacadeConverterTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeConverterTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiFacadeFacadeInterfaceTemplate.tt">
+    <Content Include="Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeFacadeInterfaceTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiFacadeFacadeTemplate.tt">
+    <Content Include="Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeFacadeTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiFacadeServiceInterfaceTemplate.tt">
+    <Content Include="Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeServiceInterfaceTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiFacadeServiceTemplate.tt">
+    <Content Include="Templates\Backend\Facade\ApiFacadeServiceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeServiceTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiInterfaceRepositoryTemplate.tt">
+    <Content Include="Templates\Backend\Repository\ApiInterfaceRepositoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiInterfaceRepositoryTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiModelDTOTemplate.tt">
+    <Content Include="Templates\Backend\ModelDTO\ApiModelDTOTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiModelDTOTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiFacadeProxyTemplate.tt">
+    <Content Include="Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiFacadeProxyTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiRepositoryTemplate.tt">
+    <Content Include="Templates\Backend\Repository\ApiRepositoryTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiRepositoryTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\ApiWebControllerTemplate.tt">
+    <Content Include="Templates\Backend\Controller\ApiWebControllerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiWebControllerTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\DomainModelTemplate.tt">
+    <Content Include="Templates\Backend\Domain\DomainModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DomainModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\Data\PortalDataProviderTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalDataProviderTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\Data\PortalDataServiceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalDataServiceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\Include\PortalInitializerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalInitializerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\Model\PortalModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\Validator\PortalValidatorTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalValidatorTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalCreateViewModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalDetailsViewModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\ViewModel\PortalListViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalListViewModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalUpdateViewModelTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\View\PortalCreateViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalCreateViewTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\View\PortalDetailsViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalDetailsViewTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\View\PortalListViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalListViewTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Frontend\View\PortalUpdateViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PortalUpdateViewTemplate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

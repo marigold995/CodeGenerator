@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
 using _360Generator.Templates;
+using _360Generator.Templates.Backend.Repository;
 
 namespace _360Generator.Domain
 {
@@ -21,7 +22,7 @@ namespace _360Generator.Domain
 
         public void CreateApiInterfaceRepositoryTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "Repository");
+            string pathDomain = CreateFolder(rootPath, "360.Api.Repository." + Module.ModuleName);
 
             foreach (var entity in Module.Entities)
             {
@@ -47,7 +48,7 @@ namespace _360Generator.Domain
 
         public void CreateApiRepositoryTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "Repository");
+            string pathDomain = CreateFolder(rootPath, "360.Api.Repository." + Module.ModuleName);
             foreach (var entity in Module.Entities)
             {
                 apiRepositoryTemplate = new ApiRepositoryTemplate();

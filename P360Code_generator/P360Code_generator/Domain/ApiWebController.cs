@@ -7,6 +7,7 @@ using _360Generator.Templates;
 using _360Generator.Metadata;
 using System.IO;
 using _360Generator.Domain;
+using _360Generator.Templates.Backend.Controller;
 
 namespace _360Generator
 {
@@ -22,7 +23,8 @@ namespace _360Generator
 
         public void CreateApiWebControllerTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "Controllers");
+            string path0 = CreateFolder(rootPath, "360.Api.Web." + Module.ModuleName);
+            string pathDomain = CreateFolder(path0, "Controllers");
 
             foreach (var entity in Module.Entities)
             {                

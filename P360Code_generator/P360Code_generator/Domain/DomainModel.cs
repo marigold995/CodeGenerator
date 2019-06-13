@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _360Generator.Templates;
 using _360Generator.Metadata;
 using System.IO;
+using _360Generator.Templates.Backend.Domain;
 
 namespace _360Generator.Domain
 {
@@ -20,9 +21,9 @@ namespace _360Generator.Domain
         }
 
         public void CreateDomainModelTemplate()
-        {            
-            string pathDomain = CreateFolder(rootPath, "Domain");
-
+        {
+            string pathDomain = CreateFolder(rootPath, "360.Domain." + Module.ModuleName);
+            
             foreach (var entity in Module.Entities)
             {
                 domainModelTemplate = new DomainModelTemplate();               

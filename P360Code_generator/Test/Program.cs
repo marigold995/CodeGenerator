@@ -53,10 +53,9 @@ namespace Test
             newModule.AddEntity(securityAndItPolicy);
             newModule.AddEntity(zoneProfile);
 
-            
-
             var generator = new Generator(newModule);
             generator.CreateBackend();
+            generator.CreateFrontend();
 
             Console.ReadKey();
         }

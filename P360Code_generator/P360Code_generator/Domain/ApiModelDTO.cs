@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
 using _360Generator.Templates;
+using _360Generator.Templates.Backend.ModelDTO;
 
 namespace _360Generator.Domain
 {
@@ -20,7 +21,7 @@ namespace _360Generator.Domain
 
         public void CreateApiModelTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "Model");
+            string pathDomain = CreateFolder(rootPath, "360.Api.Model." + Module.ModuleName);            
 
             foreach (var entity in Module.Entities)
             {

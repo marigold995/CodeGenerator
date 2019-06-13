@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
 using _360Generator.Templates;
+using _360Generator.Templates.Backend.FacadeProxy;
 
 namespace _360Generator.Domain
 {
@@ -20,8 +21,9 @@ namespace _360Generator.Domain
 
         public void CreateApiFacadeProxyTemplate()
         {
-            string pathDomain = CreateFolder(rootPath, "FacadeProxy");
-            string pathGenerated = CreateFolder(pathDomain, "generated");
+            string path0 = CreateFolder(rootPath, "360.Api.FacadeProxy." + Module.ModuleName);
+            //string pathDomain = CreateFolder(rootPath, "FacadeProxy");
+            string pathGenerated = CreateFolder(path0, "generated");
 
             foreach (var entity in Module.Entities)
             {

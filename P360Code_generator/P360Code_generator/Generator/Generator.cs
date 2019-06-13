@@ -39,5 +39,26 @@ namespace _360Generator.Generator
             domainModel.CreateDomainModelTemplate();
         }
 
+        public void CreateFrontend()
+        {
+            var portalData = new PortalData(this.Module);
+            portalData.CreatePortalDataTemplate();
+
+            var portalInitializer = new PortalInitializer(this.Module);
+            portalInitializer.CreatePortalInitializerTemplate();
+
+            var portalModel = new PortalModel(this.Module);
+            portalModel.CreatePortalModelTemplate();
+
+            var portalValidator = new PortalValidator(this.Module);
+            portalValidator.CreatePortalValidatorTemplate();
+
+            var portalView = new PortalView(this.Module);
+            portalView.CreatePortalViewTemplate();
+
+            var portalViewModel = new PortalViewModel(this.Module);
+            portalViewModel.CreatePortalViewModelTemplate();
+        }
+
     }
 }
