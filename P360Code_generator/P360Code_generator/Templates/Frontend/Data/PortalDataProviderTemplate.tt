@@ -8,3 +8,195 @@
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
+
+import { BaseDataProvider } from 'App/Base/BaseDataProvider';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DateHelper } from "App/Base/Helpers/DateHelper";
+import { <#= entity #>DataService } from 'App/<#= module.ModuleName #>/<#= entity #>/Data/<#= entity #>DataService';
+import { <#= entity #> } from 'App/<#= module.ModuleName #>/<#= entity #>/Model/<#= entity #>';
+import * as _ from 'underscore';
+import { <#= module.ModuleName #>Constants } from 'App/<#= module.ModuleName #>/<#= module.ModuleName #>Constants';
+import { UserInfo } from 'App/Base/Framework/UserInfo';
+
+export class <#= entity #>DataProvider extends BaseDataProvider {
+    public static getDataSource(<#= LowerInitial(entity) #>List: Array<<#= entity #>>): kendo.data.DataSource {
+        var dataSourceOptions: kendo.data.DataSourceOptions = {};
+
+        dataSourceOptions.schema = {};
+
+        dataSourceOptions.data = <#= LowerInitial(entity) #>List;
+
+        dataSourceOptions.pageSize = Constants.defaultPageSize;
+
+        dataSourceOptions.schema.model = <#= entity #>DataProvider.getKendoModel();
+        dataSourceOptions.schema.parse = (data: any): any => {
+            return <#= entity #>DataProvider.preParseResponse(data);
+        };
+
+        var dataSource: kendo.data.DataSource = new kendo.data.DataSource(dataSourceOptions);
+
+        return dataSource;
+    }
+
+    public static getList(callOptions: DataProviderCallOptions): kendo.data.DataSource {
+        callOptions.dataModel = <#= entity #>DataProvider.getKendoModel();
+
+        callOptions.preParseResponse = (data: any): any => {
+            return <#= entity #>DataProvider.preParseResponse(data);
+        };
+
+        return <#= entity #>DataService.getInstance().getList(
+            callOptions);
+    }
+
+    public static getLookupListExecuted(executeOptions: DataProviderExecuteOptions): void {
+        <#= entity #>DataService.getInstance().getLookupListExecuted(
+            executeOptions);
+    }
+
+    public static refresh(executeOptions: DataProviderExecuteOptions): JQueryPromise<any> {
+        return <#= entity #>DataService.getInstance().refresh(executeOptions);
+    }
+
+    public static getLookupList(callOptions: DataProviderCallOptions, isAggregated: boolean): kendo.data.DataSource {
+        callOptions.dataModel = <#= entity #>DataProvider.getKendoModel();
+
+        callOptions.preParseResponse = (data: any): any => {
+            return <#= entity #>DataProvider.preParseResponse(data);
+        };
+
+        return <#= entity #>DataService.getInstance().getLookupList(
+            callOptions, isAggregated);
+    }
+<#if (screens.Contains(Entity.screenEnum.Get)){#>  
+
+    public static getDetailAsync(executeOptions: DataProviderExecuteOptions, <#= LowerInitial(entity) #>Id: string): Promise<<#= entity #>> {
+        executeOptions.preParseExecute = (<#= LowerInitial(entity) #>: <#= entity #>): <#= entity #> => {
+            return <#= entity #>DataProvider.preParseExecute(<#= LowerInitial(entity) #>);
+        };
+
+        var promise = new Promise<<#= entity #>>((resolve, reject) => {
+            executeOptions.callback = (<#= LowerInitial(entity) #>: <#= entity #>): void => {
+                resolve(<#= LowerInitial(entity) #>);
+            }
+        });
+
+        <#= entity #>DataService.getInstance().getDetail(
+            executeOptions,
+            <#= LowerInitial(entity) #>Id);
+
+        return promise;
+    }
+
+
+    public static getDetail(executeOptions: DataProviderExecuteOptions, <#= LowerInitial(entity) #>Id: string): void {
+        executeOptions.preParseExecute = (<#= LowerInitial(entity) #>: <#= entity #>): <#= entity #> => {
+            return <#= entity #>DataProvider.preParseExecute(<#= LowerInitial(entity) #>);
+        };
+
+        <#= entity #>DataService.getInstance().getDetail(
+            executeOptions,
+            <#= LowerInitial(entity) #>Id);
+    }
+<# } #>
+
+<#if (screens.Contains(Entity.screenEnum.Post)){#>  
+
+    public static create(executeOptions: DataProviderExecuteOptions,
+        <#= LowerInitial(entity) #>: <#= entity #>): void {
+        <#= LowerInitial(entity) #>.companyContext = executeOptions.companyContext;
+
+        <#= entity #>DataService.getInstance().create(
+            executeOptions,
+            <#= LowerInitial(entity) #>);
+    }
+<# }#>
+
+<#if (screens.Contains(Entity.screenEnum.Put)){#>  
+
+    public static update(executeOptions: DataProviderExecuteOptions,
+        <#= LowerInitial(entity) #>: <#= entity #>): void {
+        <#= LowerInitial(entity) #>.companyContext = executeOptions.companyContext;
+
+        <#= entity #>DataService.getInstance().update(
+            executeOptions,
+            <#= LowerInitial(entity) #>);
+    }
+<# }#>
+    private static getKendoModel(): typeof kendo.data.Model {
+        var fields: any = <#= entity #>DataProvider.getFields();
+
+        var model: typeof kendo.data.Model = kendo.data.Model.define({
+            fields: fields
+        });
+
+        return model;
+    }
+
+    private static getFields(): any {
+        return {
+            refreshedOn: { type: 'date' },
+            <#= LowerInitial(entity) #>Id: { type: 'string' },
+            name: { type: 'string' },
+            description: { type: 'string' },
+            companyContext: { type: 'string' },
+            createdOn: { type: 'date' }
+        };
+    }
+
+    private static preParseResponse(data: any): any {
+        var <#= LowerInitial(entity) #>List: Array<<#= entity #>> = data.result;
+
+        if (data.result === void 0) {
+            <#= LowerInitial(entity) #>List = data;
+        }
+
+        _.each<<#= entity #>>(<#= LowerInitial(entity) #>List, (<#= LowerInitial(entity) #>: <#= entity #>): void => {
+            <#= entity #>DataProvider.preParseExecute(<#= LowerInitial(entity) #>);
+        });
+
+        return data;
+    }
+
+    protected static preParseExecute(<#= LowerInitial(entity) #>: <#= entity #>): <#= entity #> {
+        if (<#= LowerInitial(entity) #>.<#= LowerInitial(entity) #>Id.length === 0) {
+            <#= LowerInitial(entity) #>.<#= LowerInitial(entity) #>Id = null;
+        }
+
+        <#= LowerInitial(entity) #>.createdOn = DateHelper.fromUtcDateTime(BaseDataProvider.parseDate(<#= LowerInitial(entity) #>.createdOn));
+
+        switch (<#= LowerInitial(entity) #>.package.packageCode) {
+            case <#= module.ModuleName #>Constants.profileEntryPackageCode:
+                <#= LowerInitial(entity) #>.package.packageDisplayName = <#= module.ModuleName #>Constants.entryPackageName;
+                break;
+            case <#= module.ModuleName #>Constants.profileBusinessPackageCode:
+                <#= LowerInitial(entity) #>.package.packageDisplayName = <#= module.ModuleName #>Constants.businessPackageName;
+                break;
+            default:
+                break;
+        }
+
+        <#= LowerInitial(entity) #>.companyName = UserInfo.getCompanyName(<#= LowerInitial(entity) #>.companyContext);
+
+        return <#= LowerInitial(entity) #>;
+    }
+
+    private static getKendoTreeListModel(): typeof kendo.data.TreeListModel {
+        var fields: any = <#= entity #>DataProvider.getFields();
+
+        var model: typeof kendo.data.TreeListModel = kendo.data.TreeListModel.define({
+            id: '<#= LowerInitial(entity) #>Id',
+            fields: fields,
+            expanded: true
+        });
+
+        return model;
+    }
+}
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

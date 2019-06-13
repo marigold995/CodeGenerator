@@ -30,8 +30,736 @@ namespace _360Generator.Templates.Frontend.Data
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write(@"
+import { BaseDataProvider } from 'App/Base/BaseDataProvider';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DateHelper } from ""App/Base/Helpers/DateHelper"";
+import { ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService } from \'App/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Data/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService\';\nimport { ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" } from \'App/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Model/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\nimport * as _ from \'underscore\';\nimport { ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants } from \'App/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants\';\nimport { UserInfo } from \'App/Base/Framework/UserInfo\';\n\nexport class" +
+                    " ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider extends BaseDataProvider {\n    public static getDataSource(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("List: Array<");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(">): kendo.data.DataSource {\n        var dataSourceOptions: kendo.data.DataSourceO" +
+                    "ptions = {};\n\n        dataSourceOptions.schema = {};\n\n        dataSourceOptions." +
+                    "data = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("List;\n\n        dataSourceOptions.pageSize = Constants.defaultPageSize;\n\n        d" +
+                    "ataSourceOptions.schema.model = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.getKendoModel();\n        dataSourceOptions.schema.parse = (data: any" +
+                    "): any => {\n            return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(@"DataProvider.preParseResponse(data);
+        };
+
+        var dataSource: kendo.data.DataSource = new kendo.data.DataSource(dataSourceOptions);
+
+        return dataSource;
+    }
+
+    public static getList(callOptions: DataProviderCallOptions): kendo.data.DataSource {
+        callOptions.dataModel = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.getKendoModel();\n\n        callOptions.preParseResponse = (data: any)" +
+                    ": any => {\n            return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.preParseResponse(data);\n        };\n\n        return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().getList(\n            callOptions);\n    }\n\n    public st" +
+                    "atic getLookupListExecuted(executeOptions: DataProviderExecuteOptions): void {\n " +
+                    "       ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().getLookupListExecuted(\n            executeOptions);\n   " +
+                    " }\n\n    public static refresh(executeOptions: DataProviderExecuteOptions): JQuer" +
+                    "yPromise<any> {\n        return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().refresh(executeOptions);\n    }\n\n    public static getLo" +
+                    "okupList(callOptions: DataProviderCallOptions, isAggregated: boolean): kendo.dat" +
+                    "a.DataSource {\n        callOptions.dataModel = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.getKendoModel();\n\n        callOptions.preParseResponse = (data: any)" +
+                    ": any => {\n            return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.preParseResponse(data);\n        };\n\n        return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().getLookupList(\n            callOptions, isAggregated);\n" +
+                    "    }\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Get)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n\n    public static getDetailAsync(executeOptions: DataProviderExecuteOptions, " +
+                    "");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string): Promise<");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("> {\n        executeOptions.preParseExecute = (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" => {\n            return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.preParseExecute(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n        };\n\n        var promise = new Promise<");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(">((resolve, reject) => {\n            executeOptions.callback = (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): void => {\n                resolve(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n            }\n        });\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().getDetail(\n            executeOptions,\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id);\n\n        return promise;\n    }\n\n\n    public static getDetail(executeOptions:" +
+                    " DataProviderExecuteOptions, ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string): void {\n        executeOptions.preParseExecute = (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" => {\n            return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.preParseExecute(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n        };\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().getDetail(\n            executeOptions,\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id);\n    }\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\n\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Post)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n\n    public static create(executeOptions: DataProviderExecuteOptions,\n        " +
+                    "");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): void {\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".companyContext = executeOptions.companyContext;\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().create(\n            executeOptions,\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n    }\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write("\n\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Put)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n\n    public static update(executeOptions: DataProviderExecuteOptions,\n        " +
+                    "");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): void {\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".companyContext = executeOptions.companyContext;\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataService.getInstance().update(\n            executeOptions,\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n    }\n");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+ }
+            
+            #line default
+            #line hidden
+            this.Write("\n    private static getKendoModel(): typeof kendo.data.Model {\n        var fields" +
+                    ": any = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(@"DataProvider.getFields();
+
+        var model: typeof kendo.data.Model = kendo.data.Model.define({
+            fields: fields
+        });
+
+        return model;
+    }
+
+    private static getFields(): any {
+        return {
+            refreshedOn: { type: 'date' },
+            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(@"Id: { type: 'string' },
+            name: { type: 'string' },
+            description: { type: 'string' },
+            companyContext: { type: 'string' },
+            createdOn: { type: 'date' }
+        };
+    }
+
+    private static preParseResponse(data: any): any {
+        var ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("List: Array<");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("> = data.result;\n\n        if (data.result === void 0) {\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("List = data;\n        }\n\n        _.each<");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(">(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("List, (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): void => {\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.preParseExecute(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n        });\n\n        return data;\n    }\n\n    protected static preParseExecute(" +
+                    "");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("): ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" {\n        if (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id.length === 0) {\n            ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id = null;\n        }\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".createdOn = DateHelper.fromUtcDateTime(BaseDataProvider.parseDate(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".createdOn));\n\n        switch (");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".package.packageCode) {\n            case ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants.profileEntryPackageCode:\n                ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".package.packageDisplayName = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants.entryPackageName;\n                break;\n            case ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants.profileBusinessPackageCode:\n                ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".package.packageDisplayName = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("Constants.businessPackageName;\n                break;\n            default:\n      " +
+                    "          break;\n        }\n\n        ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".companyName = UserInfo.getCompanyName(");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(".companyContext);\n\n        return ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(";\n    }\n\n    private static getKendoTreeListModel(): typeof kendo.data.TreeListMo" +
+                    "del {\n        var fields: any = ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.getFields();\n\n        var model: typeof kendo.data.TreeListModel = k" +
+                    "endo.data.TreeListModel.define({\n            id: \'");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id\',\n            fields: fields,\n            expanded: true\n        });\n\n        " +
+                    "return model;\n    }\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+
+        
+        #line default
+        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Data\PortalDataProviderTemplate.tt"
 

@@ -30,8 +30,18 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+
+        
+        #line default
+        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
 
