@@ -30,11 +30,208 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write(@"
+import { BaseDetailView } from 'App/Base/BaseDetailView';
+import { CommandButton } from 'App/Base/Controls/CommandButton';
+import { CommandEvent } from 'App/Base/Controls/CommandEvent';
+import { GridColumnOption } from ""App/Base/Controls/Grid/GridColumnOption"";
+import { GridControl } from ""App/Base/Controls/Grid/GridControl"";
+import { GridOptions } from ""App/Base/Controls/Grid/GridOptions"";
+import { ViewAction } from 'App/Base/Controls/SideNavbar/ViewAction';
+import { TemplateDialogOptions } from 'App/Base/Dialog/TemplateDialogOptions';
+import { NavigateParameters } from 'App/Base/Framework/NavigateParameters';
+import { UserInfo } from 'App/Base/Framework/UserInfo';
+import { TemplateBody } from 'App/Base/Model/TemplateBody';
+
+import { ");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator } from \'App/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Validator/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator\';\nimport { ");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateViewModel } from \'App/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/ViewModel/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateViewModel\';\n\r\nimport { Site } from \'App/Core/Site/Model/Site\';\nimport { Per" +
+                    "missions } from \'App/Base/Permissions\';\nimport { Security } from \'App/Base/Frame" +
+                    "work/Security\';\nimport * as _ from \'underscore\';\r\n\r\nexport class ");
+            
+            #line 17 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateView<T extends ");
+            
+            #line 17 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(@"CreateViewModel> extends BaseDetailView<T> {
+	 constructor(viewModel: T) {
+        super(viewModel);
+	 }
+	
+	public init(e: kendo.ViewEvent): void {
+        super.init(e);
+    }
+
+    public show(): void {
+        super.show();
+
+        this.viewModel.loadData();
+    }
+
+    public hide(): void {
+        super.hide();
+    }
+
+    protected initControls(): void {
+        super.initControls();        
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+    }
+
+	public beforeCreate(): void {
+        // placeholder
+    }
+
+    public afterCreate(");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string): void {\n        // placeholder\n    }\n\n    private onCreate(callback: " +
+                    "(success: boolean) => void): void {\n        this.beforeCreate();\n\n        this.v" +
+                    "iewModel.create((success: boolean, ");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string): void => {\n            if (success) {\n                this.onAfterCre" +
+                    "ate(");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id);\n            } else {\n                this.showErrorSummaryContainer();\n     " +
+                    "       }\n        });\n    }\n\n    private onAfterCreate(");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string): void {\n        this.afterCreate(");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id);\n\n        this.navigateToUrl(new NavigateParameters(this.afterCreateUrl(");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id === \'\' ? ");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id : \'\')));\n    }\n\n    public static create(): ");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateView<");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateViewModel> {\n        return new ");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateView(new ");
+            
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateViewModel());\n    }\n\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
+        #line 23 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalCreateViewTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

@@ -9,6 +9,85 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseDetailView } from 'App/Base/BaseDetailView';
+import { CommandButton } from 'App/Base/Controls/CommandButton';
+import { CommandEvent } from 'App/Base/Controls/CommandEvent';
+import { GridColumnOption } from "App/Base/Controls/Grid/GridColumnOption";
+import { GridControl } from "App/Base/Controls/Grid/GridControl";
+import { GridOptions } from "App/Base/Controls/Grid/GridOptions";
+import { ViewAction } from 'App/Base/Controls/SideNavbar/ViewAction';
+import { TemplateDialogOptions } from 'App/Base/Dialog/TemplateDialogOptions';
+import { NavigateParameters } from 'App/Base/Framework/NavigateParameters';
+import { UserInfo } from 'App/Base/Framework/UserInfo';
+import { TemplateBody } from 'App/Base/Model/TemplateBody';
+
+import { <#=entity #>Validator } from 'App/<#=module.ModuleName #>/<#=entity #>/Validator/<#=entity #>Validator';
+import { <#=entity #>CreateViewModel } from 'App/<#=module.ModuleName #>/<#=entity #>/ViewModel/<#=entity #>CreateViewModel';
+
+import { Site } from 'App/Core/Site/Model/Site';
+import { Permissions } from 'App/Base/Permissions';
+import { Security } from 'App/Base/Framework/Security';
+import * as _ from 'underscore';
+
+export class <#=entity #>CreateView<T extends <#=entity #>CreateViewModel> extends BaseDetailView<T> {
+	 constructor(viewModel: T) {
+        super(viewModel);
+	 }
+	
+	public init(e: kendo.ViewEvent): void {
+        super.init(e);
+    }
+
+    public show(): void {
+        super.show();
+
+        this.viewModel.loadData();
+    }
+
+    public hide(): void {
+        super.hide();
+    }
+
+    protected initControls(): void {
+        super.initControls();        
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+    }
+
+	public beforeCreate(): void {
+        // placeholder
+    }
+
+    public afterCreate(<#=LowerInitial(entity) #>Id: string): void {
+        // placeholder
+    }
+
+    private onCreate(callback: (success: boolean) => void): void {
+        this.beforeCreate();
+
+        this.viewModel.create((success: boolean, <#=LowerInitial(entity) #>Id: string): void => {
+            if (success) {
+                this.onAfterCreate(<#=LowerInitial(entity) #>Id);
+            } else {
+                this.showErrorSummaryContainer();
+            }
+        });
+    }
+
+    private onAfterCreate(<#=LowerInitial(entity) #>Id: string): void {
+        this.afterCreate(<#=LowerInitial(entity) #>Id);
+
+        this.navigateToUrl(new NavigateParameters(this.afterCreateUrl(<#=LowerInitial(entity) #>Id === '' ? <#=LowerInitial(entity) #>Id : '')));
+    }
+
+    public static create(): <#=entity #>CreateView<<#=entity #>CreateViewModel> {
+        return new <#=entity #>CreateView(new <#=entity #>CreateViewModel());
+    }
+
+}
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

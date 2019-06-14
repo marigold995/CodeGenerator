@@ -37,65 +37,72 @@ namespace _360Generator.Domain
                 string pathData = CreateFolder(pathEntity, "View");
 
                 //create
-                portalCreateViewTemplate = new PortalCreateViewTemplate();
-                portalCreateViewTemplate.Session = new Dictionary<string, object>();
-                portalCreateViewTemplate.Session["module"] = module;
-                portalCreateViewTemplate.Session["entity"] = entity.EntityName;
-                portalCreateViewTemplate.Session["screens"] = screensList;
+                if (entity.Screens.Contains(Entity.screenEnum.Post)){ 
+                    portalCreateViewTemplate = new PortalCreateViewTemplate();
+                    portalCreateViewTemplate.Session = new Dictionary<string, object>();
+                    portalCreateViewTemplate.Session["module"] = module;
+                    portalCreateViewTemplate.Session["entity"] = entity.EntityName;
+                    portalCreateViewTemplate.Session["screens"] = screensList;
 
-                portalCreateViewTemplate.Initialize();
+                    portalCreateViewTemplate.Initialize();
 
-                string pathCreate = pathData;
-                pathCreate += "/" + entity.EntityName + "CreateView.ts";
+                    string pathCreate = pathData;
+                    pathCreate += "/" + entity.EntityName + "CreateView.ts";
 
-                string pageContentCreate = portalCreateViewTemplate.TransformText();
-                System.IO.File.WriteAllText(pathCreate.ToString(), pageContentCreate);
-
+                    string pageContentCreate = portalCreateViewTemplate.TransformText();
+                    System.IO.File.WriteAllText(pathCreate.ToString(), pageContentCreate);
+                }
                 //details
-                portalDetailsViewTemplate = new PortalDetailsViewTemplate();
-                portalDetailsViewTemplate.Session = new Dictionary<string, object>();
-                portalDetailsViewTemplate.Session["module"] = module;
-                portalDetailsViewTemplate.Session["entity"] = entity.EntityName;
-                portalDetailsViewTemplate.Session["screens"] = screensList;
+                if (entity.Screens.Contains(Entity.screenEnum.Get))
+                {
+                    portalDetailsViewTemplate = new PortalDetailsViewTemplate();
+                    portalDetailsViewTemplate.Session = new Dictionary<string, object>();
+                    portalDetailsViewTemplate.Session["module"] = module;
+                    portalDetailsViewTemplate.Session["entity"] = entity.EntityName;
+                    portalDetailsViewTemplate.Session["screens"] = screensList;
 
-                portalDetailsViewTemplate.Initialize();
+                    portalDetailsViewTemplate.Initialize();
 
-                string pathDetails = pathData;
-                pathDetails += "/" + entity.EntityName + "DetailView.ts";
+                    string pathDetails = pathData;
+                    pathDetails += "/" + entity.EntityName + "DetailView.ts";
 
-                string pageContentDetails = portalDetailsViewTemplate.TransformText();
-                System.IO.File.WriteAllText(pathDetails.ToString(), pageContentDetails);
-
+                    string pageContentDetails = portalDetailsViewTemplate.TransformText();
+                    System.IO.File.WriteAllText(pathDetails.ToString(), pageContentDetails);
+                }
                 //list
-                portalListViewTemplate = new PortalListViewTemplate();
-                portalListViewTemplate.Session = new Dictionary<string, object>();
-                portalListViewTemplate.Session["module"] = module;
-                portalListViewTemplate.Session["entity"] = entity.EntityName;
-                portalListViewTemplate.Session["screens"] = screensList;
+                if (entity.Screens.Contains(Entity.screenEnum.GetAll))
+                {
+                    portalListViewTemplate = new PortalListViewTemplate();
+                    portalListViewTemplate.Session = new Dictionary<string, object>();
+                    portalListViewTemplate.Session["module"] = module;
+                    portalListViewTemplate.Session["entity"] = entity.EntityName;
+                    portalListViewTemplate.Session["screens"] = screensList;
 
-                portalListViewTemplate.Initialize();
+                    portalListViewTemplate.Initialize();
 
-                string pathList = pathData;
-                pathList += "/" + entity.EntityName + "ListView.ts";
+                    string pathList = pathData;
+                    pathList += "/" + entity.EntityName + "ListView.ts";
 
-                string pageContentList = portalListViewTemplate.TransformText();
-                System.IO.File.WriteAllText(pathList.ToString(), pageContentList);
-
+                    string pageContentList = portalListViewTemplate.TransformText();
+                    System.IO.File.WriteAllText(pathList.ToString(), pageContentList);
+                }
                 //update
-                portalUpdateViewTemplate = new PortalUpdateViewTemplate();
-                portalUpdateViewTemplate.Session = new Dictionary<string, object>();
-                portalUpdateViewTemplate.Session["module"] = module;
-                portalUpdateViewTemplate.Session["entity"] = entity.EntityName;
-                portalUpdateViewTemplate.Session["screens"] = screensList;
+                if (entity.Screens.Contains(Entity.screenEnum.Put))
+                {
+                    portalUpdateViewTemplate = new PortalUpdateViewTemplate();
+                    portalUpdateViewTemplate.Session = new Dictionary<string, object>();
+                    portalUpdateViewTemplate.Session["module"] = module;
+                    portalUpdateViewTemplate.Session["entity"] = entity.EntityName;
+                    portalUpdateViewTemplate.Session["screens"] = screensList;
 
-                portalUpdateViewTemplate.Initialize();
+                    portalUpdateViewTemplate.Initialize();
 
-                string pathUpdate = pathData;
-                pathUpdate += "/" + entity.EntityName + "UpdateView.ts";
+                    string pathUpdate = pathData;
+                    pathUpdate += "/" + entity.EntityName + "UpdateView.ts";
 
-                string pageContentUpdate = portalUpdateViewTemplate.TransformText();
-                System.IO.File.WriteAllText(pathUpdate.ToString(), pageContentUpdate);
-
+                    string pageContentUpdate = portalUpdateViewTemplate.TransformText();
+                    System.IO.File.WriteAllText(pathUpdate.ToString(), pageContentUpdate);
+                }
             }
         }
     }

@@ -9,6 +9,82 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseDetailView } from "App/Base/BaseDetailView";
+import { PopUpOptions } from 'App/Base/Dialog/PopUpOptions';
+import { ViewAction } from "App/Base/Controls/SideNavbar/ViewAction";
+import { <#= entity #>DetailViewModel } from "App/<#= module.ModuleName #>/<#= entity #>/ViewModel/<#= entity #>DetailViewModel";
+import { GridOptions } from "App/Base/Controls/Grid/GridOptions";
+import { GridColumnOption } from "App/Base/Controls/Grid/GridColumnOption";
+import { GridControl } from "App/Base/Controls/Grid/GridControl";
+
+export class <#= entity #>DetailView<T extends <#= entity #>DetailViewModel> extends BaseDetailView<T>{
+
+    constructor(viewModel: T) {
+        super(viewModel);
+    }
+
+    public init(e: kendo.ViewEvent): void {
+        super.init(e);
+    }
+
+    protected initControls(): void {
+        super.initControls();
+    }
+
+    public show(): void {
+        super.show();
+        this.viewModel.loadData();
+    }
+
+    public hide(): void {
+        super.hide();
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+    }
+
+    public loadViewActions(viewActions: Array<ViewAction>): void {
+        super.loadViewActions(viewActions);
+    }
+
+    protected onNavigateHandler(e: JQueryEventObject): void {
+        super.onNavigateHandler(e);
+    }
+<#if(screens.Contains(Entity.screenEnum.Post)){#>
+    protected onCreate(callback: (success: boolean) => void): void {
+        callback(true);
+    }
+<#}#>
+<#if(screens.Contains(Entity.screenEnum.Put)){#>
+    protected onEdit(callback: (success: boolean) => void): void {
+        callback(true);
+    }
+<#} #>
+<#if(screens.Contains(Entity.screenEnum.Delete)){#>
+    protected onDelete(callback: (success: boolean) => void): void {
+        var displayName: string = this.viewModel.<#= LowerInitial(entity) #>.<#= LowerInitial(entity) #>Id;
+        var title: string = 'ConfirmDelete';
+        var message: string = 'ConfirmDeleteMessage';
+
+        var popUpOptions: PopUpOptions = new PopUpOptions(title, message, displayName)
+            .setOkButtonName('Delete');
+
+        this.showPopUpDialog(popUpOptions,
+            (responseOk: boolean): void => {
+                if (responseOk) {
+                    this.onDeleteConfirm(callback);
+                }
+            });
+    }
+    protected onDeleteConfirm(callback: (success: boolean) => void): void {
+        // placeholder
+    }
+<# }#>
+    public static create(): <#=entity #>DetailView<<#=entity #>DetailViewModel> {
+        return new <#=entity #>DetailView(new <#=entity #>DetailViewModel());
+    }
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

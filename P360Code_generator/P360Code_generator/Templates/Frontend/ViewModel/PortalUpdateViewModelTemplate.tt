@@ -9,6 +9,90 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseViewModel } from 'App/Base/BaseViewModel';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { ZoneProfileDataProvider } from 'App/<#= module.ModuleName #>/ZoneProfile/Data/ZoneProfileDataProvider';
+import { ZoneProfile } from 'App/<#= module.ModuleName #>/ZoneProfile/Model/ZoneProfile';
+import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
+import { CustomZoneType } from 'App/<#= module.ModuleName #>/CustomZoneType/Model/CustomZoneType';
+import { ZoneProfileValidator } from 'App/<#= module.ModuleName #>/ZoneProfile/Validator/ZoneProfileValidator';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import * as _ from 'underscore';
+
+export class <#= entity #>UpdateViewModel extends BaseViewModel {
+
+    public <#= LowerInitial(entity) #>: <#= entity #> = null;
+
+	constructor() {
+        super();
+
+        this.setViewTitle('<#= entity #>');
+        this.setViewIconClass('fal fa-shiel-alt');
+
+        this.entityName = '<#= entity #>';
+
+        super.init(this);
+    }
+
+    public loadData(): void {
+        var promise<#= entity #> = <#= entity #>DataProvider.getDetailAsync(new DataProviderExecuteOptions(this), this.dp.<#= LowerInitial(entity) #>Id);
+        promise<#= entity #>
+            .then((<#= LowerInitial(entity) #>: <#= entity #>) => {
+                this.set('<#= LowerInitial(entity) #>', <#= LowerInitial(entity) #>);
+            });
+
+        Promise.all([promise<#= entity #>])
+            .then(() => this.trigger(Constants.afterLoadDataEventName));
+
+        this.initializeValidation();
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+
+        this.loadRelatedEntitiesFor<#= entity #>();
+    }
+
+    public loadRelatedEntitiesFor<#= entity #>(): void {
+
+	}
+
+	 public initializeValidators(viewDom: JQuery): void {
+        this.validator = new <#= entity #>Validator('update<#= entity #>ContentContainer', viewDom, this);
+    }
+
+    public update(callback: (success: boolean, <#= LowerInitial(entity) #>Id: string) => void): void {
+        var validationResult: ValidationResult = this.validator.validate();
+
+        if (validationResult.isValid) {
+            var executeOptions: DataProviderExecuteOptions = new DataProviderExecuteOptions(this);
+
+            executeOptions.callback = (<#= LowerInitial(entity) #>Id: string): void => {
+                callback(true, <#= LowerInitial(entity) #>Id);
+            };
+
+            executeOptions.setCloseLoader(false);
+
+            this.<#= LowerInitial(entity) #>.sites = DataSourceHelper.getCollection<Site>(this.sitesDataSource);
+            this.<#= LowerInitial(entity) #>.usedSoftwares = DataSourceHelper.getCollection<Software>(this.usedSoftwaresDataSource);
+            this.<#= LowerInitial(entity) #>.blockedUrls = DataSourceHelper.getCollection<BlockedUrl>(this.blockedUrlsDataSource);
+            this.<#= LowerInitial(entity) #>.directAccessAndVPNs = DataSourceHelper.getCollection<DirectAccessAndVPN>(this.directAccessAndVPNsDataSource);
+            this.<#= LowerInitial(entity) #>.criticalBusinessApplications = DataSourceHelper.getCollection<Software>(this.criticalBusinessApplicationsDataSource);
+            this.<#= LowerInitial(entity) #>.corporateThreats = DataSourceHelper.getCollection<CorporateThreat>(this.corporateThreatsDataSource);
+
+            <#= entity #>DataProvider.update(executeOptions, this.<#= LowerInitial(entity) #>);
+        } else {
+            this.setErrorMessages(validationResult.errorMessages);
+            callback(false, null);
+        }
+    }
+
+
+}
+
+
 
 <#+
  private string LowerInitial(string name)

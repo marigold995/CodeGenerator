@@ -9,6 +9,83 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+
+import { BaseGridView } from 'App/Base/BaseGridView';
+import { Constants } from 'App/Base/Constants';
+import { CommandEvent } from 'App/Base/Controls/CommandEvent';
+import { GridColumnOption } from 'App/Base/Controls/Grid/GridColumnOption';
+import { GridOptions } from 'App/Base/Controls/Grid/GridOptions';
+import { NavigateToEvent } from 'App/Base/Controls/NavigateToEvent';
+import { ViewAction } from 'App/Base/Controls/SideNavbar/ViewAction';
+import { DateHelper } from 'App/Base/Helpers/DateHelper';
+import { Permissions } from 'App/Base/Permissions';
+import { <#= entity #> } from 'App/CyberDetection/<#= entity #>/Model/<#= entity #>';
+import { <#= entity #>ListViewModel } from 'App/CyberDetection/<#= entity #>/ViewModel/<#= entity #>ListViewModel';
+import { CompanyHelper } from 'App/Base/Helpers/CompanyHelper';
+import { Security } from 'App/Base/Framework/Security';
+import { CompanyInfo } from "App/Base/Framework/CompanyInfo";
+
+export class <#= entity #>ListView extends BaseGridView<<#= entity #>ListViewModel> {
+
+    constructor() {
+        super(new <#= entity #>ListViewModel());
+	}
+
+	public init(e: kendo.ViewEvent): void {
+        super.init(e);
+
+        this.viewModel.bind(Constants.dataSourceChangedEventName, (): void => this.onGridDataSourceChanged());
+    }
+
+    public show(): void {
+        super.show();
+        
+        this.viewModel.loadData();
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+        this.showCompanyColumn(true);
+    }
+
+    protected initControls(): void {
+        super.initControls();
+
+        this.initGrid(this.gridOptions);
+    }
+
+    public loadViewActions(viewActions: Array<ViewAction>): void {
+        super.loadViewActions(viewActions);
+    }
+
+    protected canShowNewButton(canShowNewButton: boolean): boolean {
+        return canShowNewButton
+            && !CompanyHelper.isRootCompany(this.viewModel.dp.companyContext)
+            && CompanyInfo.hasCyberDetectionContract;
+    }
+
+    protected canNavigateTo(canNavigateTo: boolean): boolean {
+        return true;
+    }
+
+    public onGridDataSourceChanged(): void {
+        this.setDataSource(this.viewModel.<#= LowerInitial(entity) #>DataSource);
+    }
+
+    protected onNavigateTo(e: NavigateToEvent<<#= entity #>>): void {
+
+    }
+
+    protected onCommand(e: CommandEvent<<#= entity #>>): void {
+
+    }
+
+    public static create(): <#= entity #>ListView {
+        return new <#= entity #>ListView();
+    }
+
+}
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

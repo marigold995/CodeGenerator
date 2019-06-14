@@ -30,11 +30,19 @@ namespace _360Generator.Templates.Frontend.Model
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write("\r\nimport { BaseEntity } from \'App/Base/BaseEntity\';\nimport { Site } from \'App/Cor" +
+                    "e/Site/Model/Site\';\n\nexport class ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Model\PortalModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" extends BaseEntity {    \n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Model\PortalModelTemplate.tt"
+        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Model\PortalModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

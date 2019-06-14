@@ -9,6 +9,79 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseDetailView } from 'App/Base/BaseDetailView';
+import { CommandButton } from 'App/Base/Controls/CommandButton';
+import { CommandEvent } from 'App/Base/Controls/CommandEvent';
+import { GridColumnOption } from "App/Base/Controls/Grid/GridColumnOption";
+import { GridControl } from "App/Base/Controls/Grid/GridControl";
+import { GridOptions } from "App/Base/Controls/Grid/GridOptions";
+import { ViewAction } from 'App/Base/Controls/SideNavbar/ViewAction';
+import { TemplateDialogOptions } from 'App/Base/Dialog/TemplateDialogOptions';
+import { NavigateParameters } from 'App/Base/Framework/NavigateParameters';
+import { UserInfo } from 'App/Base/Framework/UserInfo';
+import { TemplateBody } from 'App/Base/Model/TemplateBody';
+import { <#=entity #>Validator } from 'App/<#= module.ModuleName #>/<#=entity #>/Validator/<#=entity #>Validator';
+import {<#=entity #>UpdateViewModel } from 'App/<#= module.ModuleName #>/<#=entity #>/ViewModel/<#=entity #>UpdateViewModel';
+import { Permissions } from 'App/Base/Permissions';
+import { Security } from 'App/Base/Framework/Security';
+
+export class <#=entity #>UpdateView<T extends <#=entity #>UpdateViewModel> extends BaseDetailView<T> {
+	constructor(viewModel: T) {
+        super(viewModel);
+	}
+
+	public init(e: kendo.ViewEvent): void {
+        super.init(e);
+    }
+
+    public show(): void {
+        super.show();
+
+        this.viewModel.loadData();
+    }
+
+    public hide(): void {
+        super.hide();
+	}
+	
+    protected initControls(): void {
+        super.initControls();
+	}
+
+	public afterLoadData(): void {
+        super.afterLoadData();
+	}
+
+	public beforeUpdate(): void {
+        // placeholder
+    }
+
+    public afterUpdate(<#= LowerInitial(entity) #>Id: string): void {
+        // placeholder
+    }
+
+    private onUpdate(callback: (success: boolean) => void): void {
+        this.beforeUpdate();
+
+        this.viewModel.update((success: boolean, <#= LowerInitial(entity) #>Id: string): void => {
+            if (success) {
+                this.onAfterUpdate(<#= LowerInitial(entity) #>Id);
+            } else {
+                this.showErrorSummaryContainer();
+            }
+        });
+    }
+
+    private onAfterUpdate(<#= LowerInitial(entity) #>Id: string): void {
+        this.afterUpdate(<#= LowerInitial(entity) #>Id);
+
+        this.navigateToUrl(new NavigateParameters(this.afterEditUrl(<#= LowerInitial(entity) #>Id === '' ? <#= LowerInitial(entity) #>Id : '')));
+    }
+
+    public static create(): <#=entity #>UpdateView<<#=entity #>UpdateViewModel> {
+        return new <#=entity #>UpdateView(new <#=entity #>UpdateViewModel());
+    }
+}
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

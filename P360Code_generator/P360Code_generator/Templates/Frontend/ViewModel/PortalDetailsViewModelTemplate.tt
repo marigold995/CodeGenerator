@@ -9,6 +9,75 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseViewModel } from "App/Base/BaseViewModel";
+import { Constants } from "App/Base/Constants";
+import { DataProviderExecuteOptions } from "App/Base/Data/DataProviderExecuteOptions";
+import { <#= entity #>DataProvider } from "App/<#= module.ModuleName #>/<#= entity #>/Data/<#= entity #>DataProvider";
+import { <#= entity #> } from "App/<#= module.ModuleName #>/<#= entity #>/Model/<#= entity #>";
+import { Security } from 'App/Base/Framework/Security';
+import { Permissions } from 'App/Base/Permissions';
+import { CompanyHelper } from 'App/Base/Helpers/CompanyHelper';
+import { CompanyInfo } from "App/Base/Framework/CompanyInfo";
+
+export class <#= entity #>DetailViewModel extends BaseViewModel {
+
+    public <#= LowerInitial(entity) #>: <#= entity #>;
+
+	constructor() {
+        super();
+
+        this.setViewTitle('<#= entity #>');
+        this.setViewIconClass('fal fa-shiel-alt');
+        this.entityName = '<#= entity #>';
+
+        this.<#= LowerInitial(entity) #> = null;
+
+        super.init(this);
+    }
+
+    public loadData(): void {
+        var promise<#= entity #> = <#= entity #>DataProvider.getDetailAsync(new DataProviderExecuteOptions(this), this.dp.<#= LowerInitial(entity) #>Id);
+        promise<#= entity #>
+            .then((<#= LowerInitial(entity) #>: <#= entity #>) => {
+                this.set('<#= LowerInitial(entity) #>', <#= LowerInitial(entity) #>);
+            });
+        
+        Promise.all([promise<#= entity #>])
+            .then(() => this.trigger(Constants.afterLoadDataEventName));
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+	}
+
+	public refresh(): void {
+        this.loadData();
+    }
+    
+<#if (screens.Contains(Entity.screenEnum.Put)){#>  
+
+    public getEditPermission(): boolean {
+        return Security.hasPermission(Permissions.updateSITPolicy)
+            && !CompanyHelper.isRootCompany(this.dp.companyContext)
+            && CompanyInfo.hasCyberDetectionContract;
+    }
+<#} #>
+<#if (screens.Contains(Entity.screenEnum.Post)){#>  
+    public getAddPermission(): boolean {
+        return Security.hasPermission(Permissions.createSITPolicy)
+            && !CompanyHelper.isRootCompany(this.dp.companyContext)
+            && CompanyInfo.hasCyberDetectionContract;
+    }
+<#} #>
+<#if (screens.Contains(Entity.screenEnum.Delete)){#>  
+
+    // Not used yet
+    public getDeletePermission(): boolean {
+        return false && Security.hasPermission(Permissions.deleteSITPolicy);
+    }
+<#} #>
+}
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

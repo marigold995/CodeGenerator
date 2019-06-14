@@ -30,11 +30,43 @@ namespace _360Generator.Templates.Frontend.Validator
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write("\r\nimport { BaseValidator } from \'App/Base/BaseValidator\';\nimport { ValidationResu" +
+                    "lt } from \'App/Base/Model/ValidationResult\';\nimport { Localization } from \'App/B" +
+                    "ase/Framework/Localization\';\n\nexport class ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(@"Validator extends BaseValidator {
+    
+    public setRules(rules: any): void {
+        super.setRules(rules);
+    }
+
+    public setMessages(messages: any): void {
+        super.setMessages(messages);
+    }
+
+    public pushValidators(validators: Array<kendo.ui.Validator>): void {
+        super.pushValidators(validators);
+    }
+
+    public hideMessages(): void {
+        super.hideMessages();
+    }
+
+    public validate(): ValidationResult {
+        return super.validate();
+    }
+}
+
+");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

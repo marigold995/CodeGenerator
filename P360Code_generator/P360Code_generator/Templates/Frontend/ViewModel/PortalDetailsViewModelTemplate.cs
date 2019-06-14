@@ -30,11 +30,229 @@ namespace _360Generator.Templates.Frontend.ViewModel
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write("\r\nimport { BaseViewModel } from \"App/Base/BaseViewModel\";\nimport { Constants } fr" +
+                    "om \"App/Base/Constants\";\nimport { DataProviderExecuteOptions } from \"App/Base/Da" +
+                    "ta/DataProviderExecuteOptions\";\nimport { ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider } from \"App/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Data/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider\";\nimport { ");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" } from \"App/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Model/");
+            
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\";\nimport { Security } from \'App/Base/Framework/Security\';\nimport { Permissions }" +
+                    " from \'App/Base/Permissions\';\nimport { CompanyHelper } from \'App/Base/Helpers/Co" +
+                    "mpanyHelper\';\nimport { CompanyInfo } from \"App/Base/Framework/CompanyInfo\";\n\r\nex" +
+                    "port class ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DetailViewModel extends BaseViewModel {\n\n    public ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(";\n\n\tconstructor() {\n        super();\n\n        this.setViewTitle(\'");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\');\n        this.setViewIconClass(\'fal fa-shiel-alt\');\n        this.entityName = " +
+                    "\'");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\n\n        this.");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(" = null;\n\n        super.init(this);\n    }\n\n    public loadData(): void {\n        " +
+                    "var promise");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" = ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider.getDetailAsync(new DataProviderExecuteOptions(this), this.dp.");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id);\n        promise");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\n            .then((");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(") => {\n                this.set(\'");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("\', ");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(");\n            });\n        \n        Promise.all([promise");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("])\n            .then(() => this.trigger(Constants.afterLoadDataEventName));\n    }" +
+                    "\n\n    public afterLoadData(): void {\n        super.afterLoadData();\n\t}\n\n\tpublic " +
+                    "refresh(): void {\n        this.loadData();\n    }\n    \n");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Put)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n\n    public getEditPermission(): boolean {\n        return Security.hasPermissi" +
+                    "on(Permissions.updateSITPolicy)\n            && !CompanyHelper.isRootCompany(this" +
+                    ".dp.companyContext)\n            && CompanyInfo.hasCyberDetectionContract;\n    }\n" +
+                    "");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+} 
+            
+            #line default
+            #line hidden
+            this.Write("\n");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Post)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n    public getAddPermission(): boolean {\n        return Security.hasPermission" +
+                    "(Permissions.createSITPolicy)\n            && !CompanyHelper.isRootCompany(this.d" +
+                    "p.companyContext)\n            && CompanyInfo.hasCyberDetectionContract;\n    }\n");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+} 
+            
+            #line default
+            #line hidden
+            this.Write("\n");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+if (screens.Contains(Entity.screenEnum.Delete)){
+            
+            #line default
+            #line hidden
+            this.Write("  \n\n    // Not used yet\n    public getDeletePermission(): boolean {\n        retur" +
+                    "n false && Security.hasPermission(Permissions.deleteSITPolicy);\n    }\n");
+            
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+} 
+            
+            #line default
+            #line hidden
+            this.Write("\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
+        #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalDetailsViewModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

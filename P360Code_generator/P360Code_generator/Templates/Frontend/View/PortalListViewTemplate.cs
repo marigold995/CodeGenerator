@@ -30,11 +30,163 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write(@"
+
+import { BaseGridView } from 'App/Base/BaseGridView';
+import { Constants } from 'App/Base/Constants';
+import { CommandEvent } from 'App/Base/Controls/CommandEvent';
+import { GridColumnOption } from 'App/Base/Controls/Grid/GridColumnOption';
+import { GridOptions } from 'App/Base/Controls/Grid/GridOptions';
+import { NavigateToEvent } from 'App/Base/Controls/NavigateToEvent';
+import { ViewAction } from 'App/Base/Controls/SideNavbar/ViewAction';
+import { DateHelper } from 'App/Base/Helpers/DateHelper';
+import { Permissions } from 'App/Base/Permissions';
+import { ");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" } from \'App/CyberDetection/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Model/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\nimport { ");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListViewModel } from \'App/CyberDetection/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/ViewModel/");
+            
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListViewModel\';\nimport { CompanyHelper } from \'App/Base/Helpers/CompanyHelper\';\ni" +
+                    "mport { Security } from \'App/Base/Framework/Security\';\nimport { CompanyInfo } fr" +
+                    "om \"App/Base/Framework/CompanyInfo\";\n\r\nexport class ");
+            
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListView extends BaseGridView<");
+            
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListViewModel> {\n\n    constructor() {\n        super(new ");
+            
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(@"ListViewModel());
+	}
+
+	public init(e: kendo.ViewEvent): void {
+        super.init(e);
+
+        this.viewModel.bind(Constants.dataSourceChangedEventName, (): void => this.onGridDataSourceChanged());
+    }
+
+    public show(): void {
+        super.show();
+        
+        this.viewModel.loadData();
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+        this.showCompanyColumn(true);
+    }
+
+    protected initControls(): void {
+        super.initControls();
+
+        this.initGrid(this.gridOptions);
+    }
+
+    public loadViewActions(viewActions: Array<ViewAction>): void {
+        super.loadViewActions(viewActions);
+    }
+
+    protected canShowNewButton(canShowNewButton: boolean): boolean {
+        return canShowNewButton
+            && !CompanyHelper.isRootCompany(this.viewModel.dp.companyContext)
+            && CompanyInfo.hasCyberDetectionContract;
+    }
+
+    protected canNavigateTo(canNavigateTo: boolean): boolean {
+        return true;
+    }
+
+    public onGridDataSourceChanged(): void {
+        this.setDataSource(this.viewModel.");
+            
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("DataSource);\n    }\n\n    protected onNavigateTo(e: NavigateToEvent<");
+            
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(">): void {\n\n    }\n\n    protected onCommand(e: CommandEvent<");
+            
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(">): void {\n\n    }\n\n    public static create(): ");
+            
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListView {\n        return new ");
+            
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ListView();\n    }\r\n\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+        #line 23 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

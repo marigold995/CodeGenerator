@@ -9,6 +9,33 @@
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 
+import { BaseValidator } from 'App/Base/BaseValidator';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { Localization } from 'App/Base/Framework/Localization';
+
+export class <#=entity #>Validator extends BaseValidator {
+    
+    public setRules(rules: any): void {
+        super.setRules(rules);
+    }
+
+    public setMessages(messages: any): void {
+        super.setMessages(messages);
+    }
+
+    public pushValidators(validators: Array<kendo.ui.Validator>): void {
+        super.pushValidators(validators);
+    }
+
+    public hideMessages(): void {
+        super.hideMessages();
+    }
+
+    public validate(): ValidationResult {
+        return super.validate();
+    }
+}
+
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

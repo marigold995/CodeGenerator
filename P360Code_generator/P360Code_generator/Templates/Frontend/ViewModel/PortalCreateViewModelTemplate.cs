@@ -30,11 +30,33 @@ namespace _360Generator.Templates.Frontend.ViewModel
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
+            this.Write("\r\nimport { BaseViewModel } from \'App/Base/BaseViewModel\';\nimport { Constants } fr" +
+                    "om \'App/Base/Constants\';\nimport { DataProviderCallOptions } from \'App/Base/Data/" +
+                    "DataProviderCallOptions\';\nimport { DataProviderExecuteOptions } from \'App/Base/D" +
+                    "ata/DataProviderExecuteOptions\';\nimport { DataSourceHelper } from \'App/Base/Help" +
+                    "ers/DataSourceHelper\';\nimport { ValidationResult } from \'App/Base/Model/Validati" +
+                    "onResult\';\nimport { Site } from \'App/Core/Site/Model/Site\';\nimport { ZoneProfile" +
+                    "DataProvider } from \'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider" +
+                    "\';\nimport { ZoneProfile } from \'App/CyberDetection/ZoneProfile/Model/ZoneProfile" +
+                    "\';\nimport { ZoneProfileValidator } from \'App/CyberDetection/ZoneProfile/Validato" +
+                    "r/ZoneProfileValidator\';\nimport * as _ from \'underscore\';\n\nexport class Security" +
+                    "AndITPolicyCreateViewModel extends BaseViewModel {\n    public securityAndITPolic" +
+                    "y: SecurityAndITPolicy = null;\n\t constructor() {\n        super();\n\n        this." +
+                    "setViewTitle(\'SecurityAndITPolicy\');\n        this.setViewIconClass(\'fal fa-shiel" +
+                    "-alt\');\n\n        this.entityName = \'SecurityAndITPolicy\';\n\n        super.init(th" +
+                    "is);\n    }\n\n    public loadData(): void {\n        this.set(\'securityAndITPolicy\'" +
+                    ", new SecurityAndITPolicy());\n\n        this.initializeValidation();\n\n        thi" +
+                    "s.trigger(Constants.afterLoadDataEventName);\n    }\n\n    public afterLoadData(): " +
+                    "void {\n        super.afterLoadData();\n\n        this.loadRelatedEntitiesForSecuri" +
+                    "tyAndITPolicy();\n    }\n\n\t public loadRelatedEntitiesForSecurityAndITPolicy(): vo" +
+                    "id {\n\n\t}\n\n\tpublic initializeValidators(viewDom: JQuery): void {\n        this.val" +
+                    "idator = new SecurityAndITPolicyValidator(\'createSecurityAndITPolicyContentConta" +
+                    "iner\', viewDom, this);\n    }\n\n    public create(callback: (success: boolean, sec" +
+                    "urityAndITPolicyId: string) => void): void {\n\n\t}\n}\n\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
