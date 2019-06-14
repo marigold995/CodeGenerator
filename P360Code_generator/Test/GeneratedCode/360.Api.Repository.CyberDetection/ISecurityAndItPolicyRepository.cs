@@ -29,8 +29,6 @@ namespace _360.Api.Repository.CyberDetection
 		
         void Update(SecurityAndItPolicy SecurityAndItPolicy); 
 		 
-		
-		void Delete(string companyContext, string serviceOrderId);
 		 
     }
 }

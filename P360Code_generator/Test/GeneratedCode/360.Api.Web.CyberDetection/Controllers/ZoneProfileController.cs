@@ -53,11 +53,6 @@ namespace _360.Api.Web.CyberDetection.Controllers
         {
            return Ok(new NotImplementedException());
         }		
-				[HttpDelete]
-		public IHttpActionResult Delete(string companyId, string zoneProfileId)
-        {
-            return StatusCode(HttpStatusCode.NoContent);
-        }
 			}
 }
 

@@ -59,12 +59,6 @@ export class SecurityAndItPolicyDetailViewModel extends BaseViewModel {
             && CompanyInfo.hasCyberDetectionContract;
     }
 
-  
-
-    // Not used yet
-    public getDeletePermission(): boolean {
-        return false && Security.hasPermission(Permissions.deleteSITPolicy);
-    }
 
 }
 

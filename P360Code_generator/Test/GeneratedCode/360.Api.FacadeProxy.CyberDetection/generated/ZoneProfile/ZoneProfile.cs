@@ -48,11 +48,6 @@ namespace _360.Api.FacadeProxy.CyberDetection
 					return zoneProfile;
 				}
 			
-			  
-				public void DeleteZoneProfile(string id)
-				{
-					// placeholder
-				}
 			
 		
 	}

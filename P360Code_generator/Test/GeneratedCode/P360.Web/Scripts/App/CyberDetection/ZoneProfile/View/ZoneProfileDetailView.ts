@@ -52,25 +52,6 @@ export class ZoneProfileDetailView<T extends ZoneProfileDetailViewModel> extends
     }
 
 
-    protected onDelete(callback: (success: boolean) => void): void {
-        var displayName: string = this.viewModel.zoneProfile.zoneProfileId;
-        var title: string = 'ConfirmDelete';
-        var message: string = 'ConfirmDeleteMessage';
-
-        var popUpOptions: PopUpOptions = new PopUpOptions(title, message, displayName)
-            .setOkButtonName('Delete');
-
-        this.showPopUpDialog(popUpOptions,
-            (responseOk: boolean): void => {
-                if (responseOk) {
-                    this.onDeleteConfirm(callback);
-                }
-            });
-    }
-    protected onDeleteConfirm(callback: (success: boolean) => void): void {
-        // placeholder
-    }
-
     public static create(): ZoneProfileDetailView<ZoneProfileDetailViewModel> {
         return new ZoneProfileDetailView(new ZoneProfileDetailViewModel());
     }

@@ -48,11 +48,6 @@ namespace _360.Api.FacadeProxy.CyberDetection
 					return securityAndItPolicy;
 				}
 			
-			  
-				public void DeleteSecurityAndItPolicy(string id)
-				{
-					// placeholder
-				}
 			
 		
 	}

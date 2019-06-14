@@ -11,11 +11,17 @@ namespace _360Generator.Generator
 {
     public class Generator
     {
-        public Module Module{ get; set; }
+        public Module Module { get; set; }
 
         public Generator(Module newModule)
         {
             this.Module = newModule;
+        }
+
+        public void Generate()
+        {
+            CreateBackend();
+            CreateFrontend();
         }
 
         public void CreateBackend()

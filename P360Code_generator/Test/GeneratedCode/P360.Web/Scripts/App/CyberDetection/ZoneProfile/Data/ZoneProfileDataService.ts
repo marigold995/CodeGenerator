@@ -79,12 +79,4 @@ export class ZoneProfileDataService extends CyberDetectionBaseDataService {
         return this.getSearchablePagingDataSource(url, callOptions);
     }
 
-  
-
-	public deleteItem(executeOptions: DataProviderExecuteOptions, securityAndITPolicyId: string): void {
-        var url: string = '/api/SecurityAndITPolicy?companyContext=' + executeOptions.companyContext + '&securityAndITPolicyId=' + securityAndITPolicyId;
-
-        this.executeDelete(url, executeOptions);
-    }
-}
 
