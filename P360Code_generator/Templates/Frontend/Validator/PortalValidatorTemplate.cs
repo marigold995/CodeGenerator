@@ -20,7 +20,7 @@ namespace _360Generator.Templates.Frontend.Validator
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalValidatorTemplate : PortalValidatorTemplateBase
     {
@@ -30,11 +30,20 @@ namespace _360Generator.Templates.Frontend.Validator
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nimport { BaseValidator } from \'App/Base/BaseValidator\';\nimport { ValidationResu" +
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n\nimport { BaseValidator } from \'App/Base/BaseValidator\';\nimport { ValidationResu" +
                     "lt } from \'App/Base/Model/ValidationResult\';\nimport { Localization } from \'App/B" +
                     "ase/Framework/Localization\';\n\nexport class ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -66,7 +75,7 @@ namespace _360Generator.Templates.Frontend.Validator
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -75,7 +84,7 @@ namespace _360Generator.Templates.Frontend.Validator
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

@@ -47,19 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\ApiFacade.cs" />
-    <Compile Include="Domain\ApiFacadeProxy.cs" />
-    <Compile Include="Domain\ApiModelDTO.cs" />
-    <Compile Include="Domain\ApiRepository.cs" />
-    <Compile Include="Domain\ApiWebController.cs" />
-    <Compile Include="Domain\DomainModel.cs" />
-    <Compile Include="Domain\PortalData.cs" />
-    <Compile Include="Domain\PortalInitializer.cs" />
-    <Compile Include="Domain\PortalModel.cs" />
-    <Compile Include="Domain\PortalValidator.cs" />
-    <Compile Include="Domain\PortalView.cs" />
-    <Compile Include="Domain\PortalViewModel.cs" />
-    <Compile Include="Domain\LayerBase.cs" />
+    <Compile Include="Layer\Backend\ApiFacade.cs" />
+    <Compile Include="Layer\Backend\ApiFacadeProxy.cs" />
+    <Compile Include="Layer\Backend\ApiModelDTO.cs" />
+    <Compile Include="Layer\Backend\ApiRepository.cs" />
+    <Compile Include="Layer\Backend\ApiWebController.cs" />
+    <Compile Include="Layer\Backend\DomainModel.cs" />
+    <Compile Include="Layer\Frontend\PortalData.cs" />
+    <Compile Include="Layer\Frontend\PortalInitializer.cs" />
+    <Compile Include="Layer\Frontend\PortalModel.cs" />
+    <Compile Include="Layer\Frontend\PortalValidator.cs" />
+    <Compile Include="Layer\Frontend\PortalView.cs" />
+    <Compile Include="Layer\Frontend\PortalViewModel.cs" />
+    <Compile Include="Layer\LayerBase.cs" />
     <Compile Include="Generator\Generator.cs" />
     <Compile Include="Metadata\Entity.cs" />
     <Compile Include="Metadata\Module.cs" />
@@ -130,6 +130,8 @@
     </Compile>
     <Compile Include="Templates\Backend\Repository\IRepositoryLayer.cs" />
     <Compile Include="Templates\Backend\Repository\RepositoryLayer.cs" />
+    <Compile Include="Templates\Frontend\Data\DataServiceTemplate.cs" />
+    <Compile Include="Templates\Frontend\Data\DataProviderTemplate.cs" />
     <Compile Include="Templates\Frontend\Data\PortalDataProviderTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,21 +142,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PortalDataServiceTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Frontend\Include\InitializerTemplate.cs" />
     <Compile Include="Templates\Frontend\Include\PortalInitializerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PortalInitializerTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Frontend\Model\ModelTemplate.cs" />
     <Compile Include="Templates\Frontend\Model\PortalModelTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PortalModelTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Frontend\Validator\ValidatorTemplate.cs" />
     <Compile Include="Templates\Frontend\Validator\PortalValidatorTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PortalValidatorTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\CreateViewModelTemplate.cs" />
+    <Compile Include="Templates\Frontend\ViewModel\DetailsViewModelTemplate.cs" />
+    <Compile Include="Templates\Frontend\ViewModel\ListViewModelTemplate.cs" />
     <Compile Include="Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.cs">
       <DependentUpon>PortalCreateViewModelTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -175,6 +183,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Templates\Frontend\ViewModel\UpdateViewModelTemplate.cs" />
+    <Compile Include="Templates\Frontend\View\UpdateViewTemplate.cs" />
+    <Compile Include="Templates\Frontend\View\ListViewTemplate.cs" />
+    <Compile Include="Templates\Frontend\View\DetailsViewTemplate.cs" />
+    <Compile Include="Templates\Frontend\View\CreateViewTemplate.cs" />
     <Compile Include="Templates\Frontend\View\PortalCreateViewTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

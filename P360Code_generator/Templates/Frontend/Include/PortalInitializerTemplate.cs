@@ -20,7 +20,7 @@ namespace _360Generator.Templates.Frontend.Include
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalInitializerTemplate : PortalInitializerTemplateBase
     {
@@ -30,11 +30,20 @@ namespace _360Generator.Templates.Frontend.Include
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nimport { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport " +
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n\nimport { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport " +
                     "{ DefaultParameterText } from \'App/Base/Controls/Breadcrumbs/DefaultParameterTex" +
                     "t\';\n\nexport class ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -42,135 +51,135 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("Initializer {\n    public static initialize(): void {\n        EntityParameters.set" +
                     "Parameters(\'");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("\', new Array());\n        \n        DefaultParameterText[\'");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("Id\'] = \'name\';\n\n        System.config({\n            map: {\n                ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListView: \'App/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/View/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("ListView\',\n                ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailView: \'App/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/View/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("DetailView\',\n                ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("CreateView: \'App/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/View/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("CreateView\',\n                ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("UpdateView: \'App/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/View/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write("UpdateView\'\n            }\n        });\n    }\n}  \r\n\r\n");
+            this.Write("UpdateView\'\n            }\n        });\n    }\n}  \n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -179,7 +188,7 @@ namespace _360Generator.Templates.Frontend.Include
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 
