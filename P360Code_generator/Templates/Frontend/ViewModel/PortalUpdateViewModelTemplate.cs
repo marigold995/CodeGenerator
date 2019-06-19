@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.ViewModel
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Frontend.ViewModel
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalUpdateViewModelTemplate : PortalUpdateViewModelTemplateBase
     {
@@ -30,67 +26,132 @@ namespace _360Generator.Templates.Frontend.ViewModel
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             this.Write(@"
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
-import { ZoneProfileDataProvider } from 'App/");
+import { ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("/ZoneProfile/Data/ZoneProfileDataProvider\';\nimport { ZoneProfile } from \'App/");
+            this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Data/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider\';\nimport { ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("/ZoneProfile/Model/ZoneProfile\';\nimport { DataSourceHelper } from \'App/Base/Helpe" +
-                    "rs/DataSourceHelper\';\nimport { CustomZoneType } from \'App/");
+            this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Model/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\nimport { DataSourceHelper } from \'App/Base/Helpers/DataSourceHelper\';\nimport {" +
+                    " CustomZoneType } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("/CustomZoneType/Model/CustomZoneType\';\nimport { ZoneProfileValidator } from \'App/" +
-                    "");
+            this.Write("/CustomZoneType/Model/CustomZoneType\';\nimport { ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("/ZoneProfile/Validator/ZoneProfileValidator\';\nimport { DataProviderCallOptions } " +
-                    "from \'App/Base/Data/DataProviderCallOptions\';\nimport * as _ from \'underscore\';\n\n" +
-                    "export class ");
+            this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Validator/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator\';\nimport { DataProviderCallOptions } from \'App/Base/Data/DataProviderCa" +
+                    "llOptions\';\nimport * as _ from \'underscore\';\n\nexport class ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("UpdateViewModel extends BaseViewModel {\n\n    public ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" = null;\n\n\tconstructor() {\n        super();\n\n        this.setViewTitle(\'");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -98,7 +159,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write("\');\n        this.setViewIconClass(\'fal fa-shiel-alt\');\n\n        this.entityName =" +
                     " \'");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -106,63 +167,63 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write("\';\n\n        super.init(this);\n    }\n\n    public loadData(): void {\n        var pr" +
                     "omise");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DataProvider.getDetailAsync(new DataProviderExecuteOptions(this), this.dp.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("Id);\n        promise");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("\n            .then((");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(") => {\n                this.set(\'");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("\', ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write(");\n            });\n\n        Promise.all([promise");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -171,14 +232,14 @@ import { ZoneProfileDataProvider } from 'App/");
                     "    this.initializeValidation();\n    }\n\n    public afterLoadData(): void {\n     " +
                     "   super.afterLoadData();\n\n        this.loadRelatedEntitiesFor");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("();\n    }\n\n    public loadRelatedEntitiesFor");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -186,14 +247,14 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write("(): void {\n\n\t}\n\n\t public initializeValidators(viewDom: JQuery): void {\n        th" +
                     "is.validator = new ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Validator(\'update");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -201,7 +262,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write("ContentContainer\', viewDom, this);\n    }\n\n    public update(callback: (success: b" +
                     "oolean, ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -214,14 +275,14 @@ import { ZoneProfileDataProvider } from 'App/");
 
             executeOptions.callback = (");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("Id: string): void => {\n                callback(true, ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -229,7 +290,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write("Id);\n            };\n\n            executeOptions.setCloseLoader(false);\n\n         " +
                     "   this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -237,7 +298,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".sites = DataSourceHelper.getCollection<Site>(this.sitesDataSource);\n            " +
                     "this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -245,7 +306,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".usedSoftwares = DataSourceHelper.getCollection<Software>(this.usedSoftwaresDataS" +
                     "ource);\n            this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -253,7 +314,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".blockedUrls = DataSourceHelper.getCollection<BlockedUrl>(this.blockedUrlsDataSou" +
                     "rce);\n            this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -261,7 +322,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".directAccessAndVPNs = DataSourceHelper.getCollection<DirectAccessAndVPN>(this.di" +
                     "rectAccessAndVPNsDataSource);\n            this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -269,7 +330,7 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".criticalBusinessApplications = DataSourceHelper.getCollection<Software>(this.cri" +
                     "ticalBusinessApplicationsDataSource);\n            this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -277,24 +338,24 @@ import { ZoneProfileDataProvider } from 'App/");
             this.Write(".corporateThreats = DataSourceHelper.getCollection<CorporateThreat>(this.corporat" +
                     "eThreatsDataSource);\n\n            ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DataProvider.update(executeOptions, this.");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write(");\n        } else {\n            this.setErrorMessages(validationResult.errorMessa" +
-                    "ges);\n            callback(false, null);\n        }\n    }\n\n\n}\n\r\n\r\n\r\n");
+                    "ges);\n            callback(false, null);\n        }\n    }\n}\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -303,7 +364,7 @@ import { ZoneProfileDataProvider } from 'App/");
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalUpdateViewModelTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

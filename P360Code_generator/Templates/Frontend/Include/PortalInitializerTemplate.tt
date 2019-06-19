@@ -1,14 +1,7 @@
 ﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
 <#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-
 import { EntityParameters } from 'App/Base/Framework/EntityParameters';
 import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
 
@@ -20,10 +13,10 @@ export class <#=entity #>Initializer {
 
         System.config({
             map: {
-                <#=entity #>ListView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>ListView',
-                <#=entity #>DetailView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>DetailView',
-                <#=entity #>CreateView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>CreateView',
-                <#=entity #>UpdateView: 'App/<#=module #>/<#=entity #>/View/<#= LowerInitial(entity) #>UpdateView'
+                <#=entity #>ListView: 'App/<#= module.ModuleName #>/<#=entity #>/View/<#= LowerInitial(entity) #>ListView',
+                <#=entity #>DetailView: 'App/<#=module.ModuleName #>/<#=entity #>/View/<#= LowerInitial(entity) #>DetailView',
+                <#=entity #>CreateView: 'App/<#=module.ModuleName #>/<#=entity #>/View/<#= LowerInitial(entity) #>CreateView',
+                <#=entity #>UpdateView: 'App/<#=module.ModuleName #>/<#=entity #>/View/<#= LowerInitial(entity) #>UpdateView'
             }
         });
     }

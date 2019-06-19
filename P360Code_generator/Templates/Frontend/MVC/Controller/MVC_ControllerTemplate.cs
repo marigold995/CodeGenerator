@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.MVC.Controller
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -32,11 +28,9 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
         {
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\nusing System.Web.Mvc;\nusing System.Web.UI;\n\nnamespace _360.Portal.");
+            this.Write("\nusing System.Web.Mvc;\nusing System.Web.UI;\n\nnamespace _360.Portal.");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
@@ -44,7 +38,7 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
             this.Write(".Controllers\n{\n    [Authorize]\n    [OutputCache(Duration = 0, NoStore = true, Loc" +
                     "ation = OutputCacheLocation.None)]\n    public class ");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -52,14 +46,14 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
             this.Write("Controller : Controller\n    {\n        public ActionResult Index()\n        {\n     " +
                     "       return View(\"");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("List\");\n        }\n\n        public ActionResult ");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -67,7 +61,7 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
             this.Write("List()\n        {\n            return View();\n        }\n\n        public ActionResul" +
                     "t ");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -75,7 +69,7 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
             this.Write("Detail()\n        {\n            return View();\n        }\n\n        public ActionRes" +
                     "ult ");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -83,23 +77,14 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
             this.Write("Create()\n        {\n            return View();\n        }\n\n        public ActionRes" +
                     "ult ");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Update()\n        {\n            return View();\n        }\n    }\n}\n\n");
+            this.Write("Update()\n        {\n            return View();\n        }\n    }\n}\n");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-
-        
-        #line default
-        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
 
@@ -126,19 +111,6 @@ private string entity
     get
     {
         return this._entityField;
-    }
-}
-
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
-
-/// <summary>
-/// Access the screens parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
-{
-    get
-    {
-        return this._screensField;
     }
 }
 
@@ -176,20 +148,6 @@ if ((entityValueAcquired == false))
     if ((data != null))
     {
         this._entityField = ((string)(data));
-    }
-}
-bool screensValueAcquired = false;
-if (this.Session.ContainsKey("screens"))
-{
-    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
-    screensValueAcquired = true;
-}
-if ((screensValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
-    if ((data != null))
-    {
-        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 

@@ -1,13 +1,17 @@
 
+
+
+
+
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
+import { CyberDetectionProfileDataProvider } from 'App/CyberDetection/CyberDetectionProfile/Data/CyberDetectionProfileDataProvider';
+import { CyberDetectionProfile } from 'App/CyberDetection/CyberDetectionProfile/Model/CyberDetectionProfile';
 import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
 import { CustomZoneType } from 'App/CyberDetection/CustomZoneType/Model/CustomZoneType';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import { CyberDetectionProfileValidator } from 'App/CyberDetection/CyberDetectionProfile/Validator/CyberDetectionProfileValidator';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
 import * as _ from 'underscore';
 
@@ -78,9 +82,4 @@ export class CyberDetectionProfileUpdateViewModel extends BaseViewModel {
             callback(false, null);
         }
     }
-
-
 }
-
-
-

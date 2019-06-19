@@ -1,5 +1,8 @@
 
 
+
+
+
 using _360.Framework.Api.CyberDetection;
 using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;
@@ -20,4 +23,3 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
         public ZoneProfileDto GetById(string id) => Execute(() => BusinessMap.Api.ZoneProfile.GetById(id));
     }
 }
-

@@ -3,9 +3,6 @@
 
 
 
-
-
-
 using _360.Api.FacadeProxy.CyberDetection;
 using _360.Domain.CyberDetection;
 using _360Generator.Templates;
@@ -29,6 +26,7 @@ namespace _360.Api.Repository.CyberDetection
 			        
 			
 		
+
 		 
 
 		 

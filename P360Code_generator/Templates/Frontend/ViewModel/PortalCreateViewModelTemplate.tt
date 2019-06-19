@@ -1,14 +1,8 @@
 ﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
 <#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
 <#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
@@ -16,26 +10,26 @@ import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOpt
 import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
 import { Site } from 'App/Core/Site/Model/Site';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import { <#= entity #>DataProvider } from 'App/<#= module.ModuleName #>/<#= entity #>/Data/<#= entity #>DataProvider';
+import { <#= entity #> } from 'App/<#= module.ModuleName #>/<#= entity #>/Model/<#= entity #>';
+import { <#= entity #>Validator } from 'App/<#= module.ModuleName #>/<#= entity #>/Validator/<#= entity #>Validator';
 import * as _ from 'underscore';
 
-export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
-    public securityAndITPolicy: SecurityAndITPolicy = null;
+export class <#= entity #>CreateViewModel extends BaseViewModel {
+    public <#= LowerInitial(entity) #>: <#= entity #> = null;
 	 constructor() {
         super();
 
-        this.setViewTitle('SecurityAndITPolicy');
+        this.setViewTitle('<#= entity #>');
         this.setViewIconClass('fal fa-shiel-alt');
 
-        this.entityName = 'SecurityAndITPolicy';
+        this.entityName = '<#= entity #>';
 
         super.init(this);
     }
 
     public loadData(): void {
-        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+        this.set('<#= LowerInitial(entity) #>', new <#= entity #>());
 
         this.initializeValidation();
 
@@ -45,22 +39,21 @@ export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
     public afterLoadData(): void {
         super.afterLoadData();
 
-        this.loadRelatedEntitiesForSecurityAndITPolicy();
+        this.loadRelatedEntitiesFor<#= entity #>();
     }
 
-	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+	 public loadRelatedEntitiesFor<#= entity #>(): void {
 
 	}
 
 	public initializeValidators(viewDom: JQuery): void {
-        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
+        this.validator = new <#= entity #>Validator('create<#= entity #>ContentContainer', viewDom, this);
     }
 
-    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
+    public create(callback: (success: boolean, <#= LowerInitial(entity) #>Id: string) => void): void {
 
 	}
 }
-
 
 <#+
  private string LowerInitial(string name)

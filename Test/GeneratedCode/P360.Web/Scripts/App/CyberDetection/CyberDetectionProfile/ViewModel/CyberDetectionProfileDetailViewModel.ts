@@ -1,55 +1,5 @@
 
-import { BaseViewModel } from 'App/Base/BaseViewModel';
-import { Constants } from 'App/Base/Constants';
-import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
-import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
-import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
-import { ValidationResult } from 'App/Base/Model/ValidationResult';
-import { Site } from 'App/Core/Site/Model/Site';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
-import * as _ from 'underscore';
 
-export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
-    public securityAndITPolicy: SecurityAndITPolicy = null;
-	 constructor() {
-        super();
-
-        this.setViewTitle('SecurityAndITPolicy');
-        this.setViewIconClass('fal fa-shiel-alt');
-
-        this.entityName = 'SecurityAndITPolicy';
-
-        super.init(this);
-    }
-
-    public loadData(): void {
-        this.set('securityAndITPolicy', new SecurityAndITPolicy());
-
-        this.initializeValidation();
-
-        this.trigger(Constants.afterLoadDataEventName);
-    }
-
-    public afterLoadData(): void {
-        super.afterLoadData();
-
-        this.loadRelatedEntitiesForSecurityAndITPolicy();
-    }
-
-	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
-
-	}
-
-	public initializeValidators(viewDom: JQuery): void {
-        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
-    }
-
-    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
-
-	}
-}
 
 
 
@@ -60,26 +10,26 @@ import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOpt
 import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
 import { Site } from 'App/Core/Site/Model/Site';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import { CyberDetectionProfileDataProvider } from 'App/CyberDetection/CyberDetectionProfile/Data/CyberDetectionProfileDataProvider';
+import { CyberDetectionProfile } from 'App/CyberDetection/CyberDetectionProfile/Model/CyberDetectionProfile';
+import { CyberDetectionProfileValidator } from 'App/CyberDetection/CyberDetectionProfile/Validator/CyberDetectionProfileValidator';
 import * as _ from 'underscore';
 
-export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
-    public securityAndITPolicy: SecurityAndITPolicy = null;
+export class CyberDetectionProfileCreateViewModel extends BaseViewModel {
+    public cyberDetectionProfile: CyberDetectionProfile = null;
 	 constructor() {
         super();
 
-        this.setViewTitle('SecurityAndITPolicy');
+        this.setViewTitle('CyberDetectionProfile');
         this.setViewIconClass('fal fa-shiel-alt');
 
-        this.entityName = 'SecurityAndITPolicy';
+        this.entityName = 'CyberDetectionProfile';
 
         super.init(this);
     }
 
     public loadData(): void {
-        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+        this.set('cyberDetectionProfile', new CyberDetectionProfile());
 
         this.initializeValidation();
 
@@ -89,20 +39,76 @@ export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
     public afterLoadData(): void {
         super.afterLoadData();
 
-        this.loadRelatedEntitiesForSecurityAndITPolicy();
+        this.loadRelatedEntitiesForCyberDetectionProfile();
     }
 
-	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+	 public loadRelatedEntitiesForCyberDetectionProfile(): void {
 
 	}
 
 	public initializeValidators(viewDom: JQuery): void {
-        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
+        this.validator = new CyberDetectionProfileValidator('createCyberDetectionProfileContentContainer', viewDom, this);
     }
 
-    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
+    public create(callback: (success: boolean, cyberDetectionProfileId: string) => void): void {
 
 	}
 }
 
+
+
+
+
+
+import { BaseViewModel } from 'App/Base/BaseViewModel';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { Site } from 'App/Core/Site/Model/Site';
+import { CyberDetectionProfileDataProvider } from 'App/CyberDetection/CyberDetectionProfile/Data/CyberDetectionProfileDataProvider';
+import { CyberDetectionProfile } from 'App/CyberDetection/CyberDetectionProfile/Model/CyberDetectionProfile';
+import { CyberDetectionProfileValidator } from 'App/CyberDetection/CyberDetectionProfile/Validator/CyberDetectionProfileValidator';
+import * as _ from 'underscore';
+
+export class CyberDetectionProfileCreateViewModel extends BaseViewModel {
+    public cyberDetectionProfile: CyberDetectionProfile = null;
+	 constructor() {
+        super();
+
+        this.setViewTitle('CyberDetectionProfile');
+        this.setViewIconClass('fal fa-shiel-alt');
+
+        this.entityName = 'CyberDetectionProfile';
+
+        super.init(this);
+    }
+
+    public loadData(): void {
+        this.set('cyberDetectionProfile', new CyberDetectionProfile());
+
+        this.initializeValidation();
+
+        this.trigger(Constants.afterLoadDataEventName);
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+
+        this.loadRelatedEntitiesForCyberDetectionProfile();
+    }
+
+	 public loadRelatedEntitiesForCyberDetectionProfile(): void {
+
+	}
+
+	public initializeValidators(viewDom: JQuery): void {
+        this.validator = new CyberDetectionProfileValidator('createCyberDetectionProfileContentContainer', viewDom, this);
+    }
+
+    public create(callback: (success: boolean, cyberDetectionProfileId: string) => void): void {
+
+	}
+}
 

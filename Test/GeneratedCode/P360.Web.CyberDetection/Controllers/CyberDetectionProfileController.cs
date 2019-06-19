@@ -1,9 +1,6 @@
 
 
 
-
-
-
 using System.Web.Mvc;
 using System.Web.UI;
 
@@ -39,4 +36,3 @@ namespace _360.Portal.CyberDetection.Controllers
         }
     }
 }
-

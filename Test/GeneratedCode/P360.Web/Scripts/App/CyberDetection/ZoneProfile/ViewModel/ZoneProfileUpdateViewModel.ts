@@ -1,4 +1,8 @@
 
+
+
+
+
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
@@ -78,9 +82,4 @@ export class ZoneProfileUpdateViewModel extends BaseViewModel {
             callback(false, null);
         }
     }
-
-
 }
-
-
-

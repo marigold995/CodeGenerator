@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Backend.Controller
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Backend.Controller
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiWebControllerTemplate : ApiWebControllerTemplateBase
     {
@@ -35,27 +31,23 @@ namespace _360Generator.Templates.Backend.Controller
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\nusing _360.Api.Model.");
+            this.Write("\nusing _360.Api.Model.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(";\nusing _360.Api.Repository.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(";\nusing _360.Api.Web.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
@@ -75,98 +67,98 @@ using System.Web.Http.Description;
 
 namespace _360.Api.Web.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(".Controllers\n{\n\t[Route(\"api/v1/");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("s\")]\n\t[P360AuthorizeApi]\n\t[");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ExceptionFilter]\n\tpublic class ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Controller : ApiController {\n\t\tprivate readonly I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Repository _");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Repository;\n\n        public ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Controller(I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Repository ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Repository)\n        {\n            _");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Repository = ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Repository;\n        }\n\n\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 if (screens.Contains(Entity.screenEnum.GetAll)){
             
             #line default
             #line hidden
             this.Write("                \n\t\t[HttpGet]\n\t\t[Route(\"~/api/v1/companies/{companyId}/");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("s\")]\n\t\t[ResponseType(typeof(CollectionResult<");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -174,126 +166,126 @@ if (screens.Contains(Entity.screenEnum.GetAll)){
             this.Write("Dto>))]\n\t\tpublic IHttpActionResult GetAll(string companyId, [FromUri] string fiel" +
                     "ds = \"\")\n\t\t{           \n\t\t\treturn Ok(new NotImplementedException());\n\t\t}");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\t        \n\t\t\t\n\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Get)){
             
             #line default
             #line hidden
             this.Write("\n\t\t[HttpGet]\n\t\t[Route(\"~/api/v1/companies/{companyId}/");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("s/{");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Id}\", Name = \"Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ById\")]\n        [ResponseType(typeof(");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Dto))]\n\t\t public IHttpActionResult GetById(string companyId, string ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Id)\n        {\n\t\t\treturn Ok(new NotImplementedException());\n\t\t}");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\n\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Post)){
             
             #line default
             #line hidden
             this.Write("\n\t\t[HttpPost]       \n        public IHttpActionResult Post([FromBody] ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Dto ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Dto)\n        {\n\t\t\treturn BadRequest();\n\t\t}");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\n\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Put)){
             
             #line default
             #line hidden
             this.Write("\n\t\t[HttpPut]       \n        public IHttpActionResult Put([FromBody] ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Dto ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write("Dto)\n        {\n           return Ok(new NotImplementedException());\n        }");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t\n\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Delete)){
             
             #line default
             #line hidden
             this.Write("\n\t\t[HttpDelete]\n\t\tpublic IHttpActionResult Delete(string companyId, string ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
@@ -301,7 +293,7 @@ if (screens.Contains(Entity.screenEnum.Delete)){
             this.Write("Id)\n        {\n            return StatusCode(HttpStatusCode.NoContent);\n        }\n" +
                     "\t\t");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
  }
             
             #line default
@@ -310,7 +302,7 @@ if (screens.Contains(Entity.screenEnum.Delete)){
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -319,7 +311,7 @@ if (screens.Contains(Entity.screenEnum.Delete)){
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\CodeGenerator-branch2\CodeGenerator-branch2\P360Code_generator\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

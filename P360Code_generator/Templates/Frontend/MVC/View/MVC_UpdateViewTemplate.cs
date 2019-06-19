@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.MVC.View
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -33,11 +29,10 @@ namespace _360Generator.Templates.Frontend.MVC.View
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\n@using P360.Localizations\r\n<div class=\"baseview-detail\">\r\n    @Html.Partial(\".." +
-                    "/../Views/Base/ViewTitle\")\r\n    <div id=\"update");
+            this.Write("\n@using P360.Localizations\r\n<div class=\"baseview-detail\">\r\n    @Html.Partial(\"../" +
+                    "../Views/Base/ViewTitle\")\r\n    <div id=\"update");
             
-            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
+            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -66,15 +61,6 @@ namespace _360Generator.Templates.Frontend.MVC.View
 ");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 30 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
-
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-
-        
-        #line default
-        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
 

@@ -1,4 +1,8 @@
 
+
+
+
+
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
@@ -6,26 +10,26 @@ import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOpt
 import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
 import { Site } from 'App/Core/Site/Model/Site';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import { SecurityAndItPolicyDataProvider } from 'App/CyberDetection/SecurityAndItPolicy/Data/SecurityAndItPolicyDataProvider';
+import { SecurityAndItPolicy } from 'App/CyberDetection/SecurityAndItPolicy/Model/SecurityAndItPolicy';
+import { SecurityAndItPolicyValidator } from 'App/CyberDetection/SecurityAndItPolicy/Validator/SecurityAndItPolicyValidator';
 import * as _ from 'underscore';
 
-export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
-    public securityAndITPolicy: SecurityAndITPolicy = null;
+export class SecurityAndItPolicyCreateViewModel extends BaseViewModel {
+    public securityAndItPolicy: SecurityAndItPolicy = null;
 	 constructor() {
         super();
 
-        this.setViewTitle('SecurityAndITPolicy');
+        this.setViewTitle('SecurityAndItPolicy');
         this.setViewIconClass('fal fa-shiel-alt');
 
-        this.entityName = 'SecurityAndITPolicy';
+        this.entityName = 'SecurityAndItPolicy';
 
         super.init(this);
     }
 
     public loadData(): void {
-        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+        this.set('securityAndItPolicy', new SecurityAndItPolicy());
 
         this.initializeValidation();
 
@@ -35,20 +39,19 @@ export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
     public afterLoadData(): void {
         super.afterLoadData();
 
-        this.loadRelatedEntitiesForSecurityAndITPolicy();
+        this.loadRelatedEntitiesForSecurityAndItPolicy();
     }
 
-	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+	 public loadRelatedEntitiesForSecurityAndItPolicy(): void {
 
 	}
 
 	public initializeValidators(viewDom: JQuery): void {
-        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
+        this.validator = new SecurityAndItPolicyValidator('createSecurityAndItPolicyContentContainer', viewDom, this);
     }
 
-    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
+    public create(callback: (success: boolean, securityAndItPolicyId: string) => void): void {
 
 	}
 }
-
 

@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Backend.FacadeProxy
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Backend.FacadeProxy
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiFacadeProxyTemplate : ApiFacadeProxyTemplateBase
     {
@@ -35,26 +31,24 @@ namespace _360Generator.Templates.Backend.FacadeProxy
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
             this.Write("\nusing _360.Api.Facade.Document;\nusing _360.Api.Facade.FileSystem;\nusing _360.Api" +
                     ".Facade.");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".Contracting;\nusing _360.Api.Facade.");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
@@ -64,259 +58,259 @@ namespace _360Generator.Templates.Backend.FacadeProxy
                     "iguration;\nusing System.Diagnostics.CodeAnalysis;\n\nnamespace _360.Api.FacadeProx" +
                     "y.");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("\n{\n    public partial class ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("FacadeProxy : BaseFacadeProxy\n    {\n\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (facade.Equals (Entity.facadeEnum.GBM)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (screens.Contains(Entity.screenEnum.GetAll)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t\tpublic PagedCollection<");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("s(string companyContext)\n\t\t\t\t{\n\t\t\t\t\treturn ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("Facade.Get");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("s(companyContext);\n\t\t\t\t}\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Get)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t\tpublic ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" Get");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(string companyContext, string id)\n\t\t\t\t{\n\t\t\t\t\treturn ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("Facade.Get");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(companyContext, id);\n\t\t\t\t}\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Post)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t\tpublic ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" Add");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(")\n\t\t\t\t{\n\t\t\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(".LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(".CompanyContext, \"VAS-CD-2019\")?.LegalContractId;\n\t\t\t\t\treturn ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(";\n\t\t\t\t}\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Put)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t\tpublic ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" Update");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(")\n\t\t\t\t{\n\t\t\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(".LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(".CompanyContext, \"VAS-CD-2019\")?.LegalContractId;\n\t\t\t\t\treturn ");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity )));
             
             #line default
             #line hidden
             this.Write(";\n\t\t\t\t}\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 if (screens.Contains(Entity.screenEnum.Delete)){
             
             #line default
             #line hidden
             this.Write("  \n\t\t\t\tpublic void Delete");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(string id)\n\t\t\t\t{\n\t\t\t\t\t// placeholder\n\t\t\t\t}\n\t\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n\t\t");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
  }
             
             #line default
@@ -325,7 +319,7 @@ if (screens.Contains(Entity.screenEnum.Delete)){
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -334,7 +328,7 @@ if (screens.Contains(Entity.screenEnum.Delete)){
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

@@ -2,13 +2,6 @@
 
 
 
-
-
-
-
-
-
-
 import { EntityParameters } from 'App/Base/Framework/EntityParameters';
 import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
 
@@ -20,10 +13,10 @@ export class ZoneProfileInitializer {
 
         System.config({
             map: {
-                ZoneProfileListView: 'App/_360Generator.Metadata.Module/ZoneProfile/View/zoneProfileListView',
-                ZoneProfileDetailView: 'App/_360Generator.Metadata.Module/ZoneProfile/View/zoneProfileDetailView',
-                ZoneProfileCreateView: 'App/_360Generator.Metadata.Module/ZoneProfile/View/zoneProfileCreateView',
-                ZoneProfileUpdateView: 'App/_360Generator.Metadata.Module/ZoneProfile/View/zoneProfileUpdateView'
+                ZoneProfileListView: 'App/CyberDetection/ZoneProfile/View/zoneProfileListView',
+                ZoneProfileDetailView: 'App/CyberDetection/ZoneProfile/View/zoneProfileDetailView',
+                ZoneProfileCreateView: 'App/CyberDetection/ZoneProfile/View/zoneProfileCreateView',
+                ZoneProfileUpdateView: 'App/CyberDetection/ZoneProfile/View/zoneProfileUpdateView'
             }
         });
     }

@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.ViewModel
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Frontend.ViewModel
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalCreateViewModelTemplate : PortalCreateViewModelTemplateBase
     {
@@ -30,33 +26,197 @@ namespace _360Generator.Templates.Frontend.ViewModel
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nimport { BaseViewModel } from \'App/Base/BaseViewModel\';\nimport { Constants } fr" +
-                    "om \'App/Base/Constants\';\nimport { DataProviderCallOptions } from \'App/Base/Data/" +
-                    "DataProviderCallOptions\';\nimport { DataProviderExecuteOptions } from \'App/Base/D" +
-                    "ata/DataProviderExecuteOptions\';\nimport { DataSourceHelper } from \'App/Base/Help" +
-                    "ers/DataSourceHelper\';\nimport { ValidationResult } from \'App/Base/Model/Validati" +
-                    "onResult\';\nimport { Site } from \'App/Core/Site/Model/Site\';\nimport { ZoneProfile" +
-                    "DataProvider } from \'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider" +
-                    "\';\nimport { ZoneProfile } from \'App/CyberDetection/ZoneProfile/Model/ZoneProfile" +
-                    "\';\nimport { ZoneProfileValidator } from \'App/CyberDetection/ZoneProfile/Validato" +
-                    "r/ZoneProfileValidator\';\nimport * as _ from \'underscore\';\n\nexport class Security" +
-                    "AndITPolicyCreateViewModel extends BaseViewModel {\n    public securityAndITPolic" +
-                    "y: SecurityAndITPolicy = null;\n\t constructor() {\n        super();\n\n        this." +
-                    "setViewTitle(\'SecurityAndITPolicy\');\n        this.setViewIconClass(\'fal fa-shiel" +
-                    "-alt\');\n\n        this.entityName = \'SecurityAndITPolicy\';\n\n        super.init(th" +
-                    "is);\n    }\n\n    public loadData(): void {\n        this.set(\'securityAndITPolicy\'" +
-                    ", new SecurityAndITPolicy());\n\n        this.initializeValidation();\n\n        thi" +
-                    "s.trigger(Constants.afterLoadDataEventName);\n    }\n\n    public afterLoadData(): " +
-                    "void {\n        super.afterLoadData();\n\n        this.loadRelatedEntitiesForSecuri" +
-                    "tyAndITPolicy();\n    }\n\n\t public loadRelatedEntitiesForSecurityAndITPolicy(): vo" +
-                    "id {\n\n\t}\n\n\tpublic initializeValidators(viewDom: JQuery): void {\n        this.val" +
-                    "idator = new SecurityAndITPolicyValidator(\'createSecurityAndITPolicyContentConta" +
-                    "iner\', viewDom, this);\n    }\n\n    public create(callback: (success: boolean, sec" +
-                    "urityAndITPolicyId: string) => void): void {\n\n\t}\n}\n\r\n\r\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write(@"
+import { BaseViewModel } from 'App/Base/BaseViewModel';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { Site } from 'App/Core/Site/Model/Site';
+import { ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Data/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("DataProvider\';\nimport { ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Model/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\nimport { ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator } from \'App/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("/Validator/");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator\';\nimport * as _ from \'underscore\';\n\nexport class ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("CreateViewModel extends BaseViewModel {\n    public ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" = null;\n\t constructor() {\n        super();\n\n        this.setViewTitle(\'");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\');\n        this.setViewIconClass(\'fal fa-shiel-alt\');\n\n        this.entityName =" +
+                    " \'");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\';\n\n        super.init(this);\n    }\n\n    public loadData(): void {\n        this.s" +
+                    "et(\'");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("\', new ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("());\n\n        this.initializeValidation();\n\n        this.trigger(Constants.afterL" +
+                    "oadDataEventName);\n    }\n\n    public afterLoadData(): void {\n        super.after" +
+                    "LoadData();\n\n        this.loadRelatedEntitiesFor");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("();\n    }\n\n\t public loadRelatedEntitiesFor");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("(): void {\n\n\t}\n\n\tpublic initializeValidators(viewDom: JQuery): void {\n        thi" +
+                    "s.validator = new ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Validator(\'create");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("ContentContainer\', viewDom, this);\n    }\n\n    public create(callback: (success: b" +
+                    "oolean, ");
+            
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Id: string) => void): void {\n\n\t}\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -65,7 +225,7 @@ namespace _360Generator.Templates.Frontend.ViewModel
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\ViewModel\PortalCreateViewModelTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

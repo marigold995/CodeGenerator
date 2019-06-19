@@ -2,13 +2,6 @@
 
 
 
-
-
-
-
-
-
-
 import { EntityParameters } from 'App/Base/Framework/EntityParameters';
 import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
 
@@ -20,10 +13,10 @@ export class SecurityAndItPolicyInitializer {
 
         System.config({
             map: {
-                SecurityAndItPolicyListView: 'App/_360Generator.Metadata.Module/SecurityAndItPolicy/View/securityAndItPolicyListView',
-                SecurityAndItPolicyDetailView: 'App/_360Generator.Metadata.Module/SecurityAndItPolicy/View/securityAndItPolicyDetailView',
-                SecurityAndItPolicyCreateView: 'App/_360Generator.Metadata.Module/SecurityAndItPolicy/View/securityAndItPolicyCreateView',
-                SecurityAndItPolicyUpdateView: 'App/_360Generator.Metadata.Module/SecurityAndItPolicy/View/securityAndItPolicyUpdateView'
+                SecurityAndItPolicyListView: 'App/CyberDetection/SecurityAndItPolicy/View/securityAndItPolicyListView',
+                SecurityAndItPolicyDetailView: 'App/CyberDetection/SecurityAndItPolicy/View/securityAndItPolicyDetailView',
+                SecurityAndItPolicyCreateView: 'App/CyberDetection/SecurityAndItPolicy/View/securityAndItPolicyCreateView',
+                SecurityAndItPolicyUpdateView: 'App/CyberDetection/SecurityAndItPolicy/View/securityAndItPolicyUpdateView'
             }
         });
     }

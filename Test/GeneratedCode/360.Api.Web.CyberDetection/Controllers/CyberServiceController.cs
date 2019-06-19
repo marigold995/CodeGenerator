@@ -4,11 +4,6 @@
 
 
 
-
-
-
-
-
 using _360.Api.Model.CyberDetection;
 using _360.Api.Repository.CyberDetection;
 using _360.Api.Web.CyberDetection.Infrastructure;

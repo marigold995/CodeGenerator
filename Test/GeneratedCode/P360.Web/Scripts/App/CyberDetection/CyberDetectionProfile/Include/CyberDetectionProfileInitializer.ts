@@ -2,13 +2,6 @@
 
 
 
-
-
-
-
-
-
-
 import { EntityParameters } from 'App/Base/Framework/EntityParameters';
 import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
 
@@ -20,10 +13,10 @@ export class CyberDetectionProfileInitializer {
 
         System.config({
             map: {
-                CyberDetectionProfileListView: 'App/_360Generator.Metadata.Module/CyberDetectionProfile/View/cyberDetectionProfileListView',
-                CyberDetectionProfileDetailView: 'App/_360Generator.Metadata.Module/CyberDetectionProfile/View/cyberDetectionProfileDetailView',
-                CyberDetectionProfileCreateView: 'App/_360Generator.Metadata.Module/CyberDetectionProfile/View/cyberDetectionProfileCreateView',
-                CyberDetectionProfileUpdateView: 'App/_360Generator.Metadata.Module/CyberDetectionProfile/View/cyberDetectionProfileUpdateView'
+                CyberDetectionProfileListView: 'App/CyberDetection/CyberDetectionProfile/View/cyberDetectionProfileListView',
+                CyberDetectionProfileDetailView: 'App/CyberDetection/CyberDetectionProfile/View/cyberDetectionProfileDetailView',
+                CyberDetectionProfileCreateView: 'App/CyberDetection/CyberDetectionProfile/View/cyberDetectionProfileCreateView',
+                CyberDetectionProfileUpdateView: 'App/CyberDetection/CyberDetectionProfile/View/cyberDetectionProfileUpdateView'
             }
         });
     }

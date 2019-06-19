@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.View
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Frontend.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalListViewTemplate : PortalListViewTemplateBase
     {
@@ -30,8 +26,9 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
             this.Write(@"
-
 import { BaseGridView } from 'App/Base/BaseGridView';
 import { Constants } from 'App/Base/Constants';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
@@ -43,65 +40,65 @@ import { DateHelper } from 'App/Base/Helpers/DateHelper';
 import { Permissions } from 'App/Base/Permissions';
 import { ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" } from \'App/CyberDetection/");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/Model/");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("\';\nimport { ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListViewModel } from \'App/CyberDetection/");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/ViewModel/");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListViewModel\';\nimport { CompanyHelper } from \'App/Base/Helpers/CompanyHelper\';\ni" +
                     "mport { Security } from \'App/Base/Framework/Security\';\nimport { CompanyInfo } fr" +
-                    "om \"App/Base/Framework/CompanyInfo\";\n\r\nexport class ");
+                    "om \"App/Base/Framework/CompanyInfo\";\n\nexport class ");
             
-            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListView extends BaseGridView<");
             
-            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListViewModel> {\n\n    constructor() {\n        super(new ");
             
-            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -149,44 +146,44 @@ import { ");
     public onGridDataSourceChanged(): void {
         this.setDataSource(this.viewModel.");
             
-            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write("DataSource);\n    }\n\n    protected onNavigateTo(e: NavigateToEvent<");
             
-            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(">): void {\n\n    }\n\n    protected onCommand(e: CommandEvent<");
             
-            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(">): void {\n\n    }\n\n    public static create(): ");
             
-            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("ListView {\n        return new ");
             
-            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("ListView();\n    }\r\n\r\n}\r\n\r\n");
+            this.Write("ListView();\n    }\n\n}\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 23 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -195,20 +192,7 @@ import { ");
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
-
-private global::_360Generator.Metadata.Module _moduleField;
-
-/// <summary>
-/// Access the module parameter of the template.
-/// </summary>
-private global::_360Generator.Metadata.Module module
-{
-    get
-    {
-        return this._moduleField;
-    }
-}
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalListViewTemplate.tt"
 
 private string _entityField;
 
@@ -223,19 +207,6 @@ private string entity
     }
 }
 
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
-
-/// <summary>
-/// Access the screens parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
-{
-    get
-    {
-        return this._screensField;
-    }
-}
-
 
 /// <summary>
 /// Initialize the template
@@ -244,20 +215,6 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool moduleValueAcquired = false;
-if (this.Session.ContainsKey("module"))
-{
-    this._moduleField = ((global::_360Generator.Metadata.Module)(this.Session["module"]));
-    moduleValueAcquired = true;
-}
-if ((moduleValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("module");
-    if ((data != null))
-    {
-        this._moduleField = ((global::_360Generator.Metadata.Module)(data));
-    }
-}
 bool entityValueAcquired = false;
 if (this.Session.ContainsKey("entity"))
 {
@@ -270,20 +227,6 @@ if ((entityValueAcquired == false))
     if ((data != null))
     {
         this._entityField = ((string)(data));
-    }
-}
-bool screensValueAcquired = false;
-if (this.Session.ContainsKey("screens"))
-{
-    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
-    screensValueAcquired = true;
-}
-if ((screensValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
-    if ((data != null))
-    {
-        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 

@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.View
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Frontend.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class PortalDetailsViewTemplate : PortalDetailsViewTemplateBase
     {
@@ -30,49 +26,52 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nimport { BaseDetailView } from \"App/Base/BaseDetailView\";\nimport { PopUpOptions" +
-                    " } from \'App/Base/Dialog/PopUpOptions\';\nimport { ViewAction } from \"App/Base/Con" +
-                    "trols/SideNavbar/ViewAction\";\nimport { ");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\nimport { BaseDetailView } from \"App/Base/BaseDetailView\";\nimport { PopUpOptions " +
+                    "} from \'App/Base/Dialog/PopUpOptions\';\nimport { ViewAction } from \"App/Base/Cont" +
+                    "rols/SideNavbar/ViewAction\";\nimport { ");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailViewModel } from \"App/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("/ViewModel/");
             
-            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailViewModel\";\nimport { GridOptions } from \"App/Base/Controls/Grid/GridOptions" +
                     "\";\nimport { GridColumnOption } from \"App/Base/Controls/Grid/GridColumnOption\";\ni" +
-                    "mport { GridControl } from \"App/Base/Controls/Grid/GridControl\";\r\n\r\nexport class" +
-                    " ");
+                    "mport { GridControl } from \"App/Base/Controls/Grid/GridControl\";\n\nexport class ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailView<T extends ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -113,7 +112,7 @@ namespace _360Generator.Templates.Frontend.View
     }
 ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 if(screens.Contains(Entity.screenEnum.Post)){
             
             #line default
@@ -121,14 +120,14 @@ if(screens.Contains(Entity.screenEnum.Post)){
             this.Write("\n    protected onCreate(callback: (success: boolean) => void): void {\n        cal" +
                     "lback(true);\n    }\n");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 }
             
             #line default
             #line hidden
             this.Write("\n");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 if(screens.Contains(Entity.screenEnum.Put)){
             
             #line default
@@ -136,14 +135,14 @@ if(screens.Contains(Entity.screenEnum.Put)){
             this.Write("\n    protected onEdit(callback: (success: boolean) => void): void {\n        callb" +
                     "ack(true);\n    }\n");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 } 
             
             #line default
             #line hidden
             this.Write("\n");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 if(screens.Contains(Entity.screenEnum.Delete)){
             
             #line default
@@ -151,14 +150,14 @@ if(screens.Contains(Entity.screenEnum.Delete)){
             this.Write("\n    protected onDelete(callback: (success: boolean) => void): void {\n        var" +
                     " displayName: string = this.viewModel.");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
@@ -182,44 +181,44 @@ if(screens.Contains(Entity.screenEnum.Delete)){
     }
 ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("\n    public static create(): ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailView<");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailViewModel> {\n        return new ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("DetailView(new ");
             
-            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("DetailViewModel());\n    }\r\n\r\n");
+            this.Write("DetailViewModel());\n    }\n\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 16 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -228,7 +227,7 @@ if(screens.Contains(Entity.screenEnum.Delete)){
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

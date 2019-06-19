@@ -2,13 +2,6 @@
 
 
 
-
-
-
-
-
-
-
 import { EntityParameters } from 'App/Base/Framework/EntityParameters';
 import { DefaultParameterText } from 'App/Base/Controls/Breadcrumbs/DefaultParameterText';
 
@@ -20,10 +13,10 @@ export class CyberServiceInitializer {
 
         System.config({
             map: {
-                CyberServiceListView: 'App/_360Generator.Metadata.Module/CyberService/View/cyberServiceListView',
-                CyberServiceDetailView: 'App/_360Generator.Metadata.Module/CyberService/View/cyberServiceDetailView',
-                CyberServiceCreateView: 'App/_360Generator.Metadata.Module/CyberService/View/cyberServiceCreateView',
-                CyberServiceUpdateView: 'App/_360Generator.Metadata.Module/CyberService/View/cyberServiceUpdateView'
+                CyberServiceListView: 'App/CyberDetection/CyberService/View/cyberServiceListView',
+                CyberServiceDetailView: 'App/CyberDetection/CyberService/View/cyberServiceDetailView',
+                CyberServiceCreateView: 'App/CyberDetection/CyberService/View/cyberServiceCreateView',
+                CyberServiceUpdateView: 'App/CyberDetection/CyberService/View/cyberServiceUpdateView'
             }
         });
     }

@@ -1,14 +1,7 @@
 ﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
 <#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-
 import { BaseDetailView } from 'App/Base/BaseDetailView';
 import { CommandButton } from 'App/Base/Controls/CommandButton';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
@@ -20,10 +13,8 @@ import { TemplateDialogOptions } from 'App/Base/Dialog/TemplateDialogOptions';
 import { NavigateParameters } from 'App/Base/Framework/NavigateParameters';
 import { UserInfo } from 'App/Base/Framework/UserInfo';
 import { TemplateBody } from 'App/Base/Model/TemplateBody';
-
 import { <#=entity #>Validator } from 'App/<#=module.ModuleName #>/<#=entity #>/Validator/<#=entity #>Validator';
 import { <#=entity #>CreateViewModel } from 'App/<#=module.ModuleName #>/<#=entity #>/ViewModel/<#=entity #>CreateViewModel';
-
 import { Site } from 'App/Core/Site/Model/Site';
 import { Permissions } from 'App/Base/Permissions';
 import { Security } from 'App/Base/Framework/Security';
@@ -85,7 +76,6 @@ export class <#=entity #>CreateView<T extends <#=entity #>CreateViewModel> exten
     public static create(): <#=entity #>CreateView<<#=entity #>CreateViewModel> {
         return new <#=entity #>CreateView(new <#=entity #>CreateViewModel());
     }
-
 }
 
 <#+

@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Backend.Facade
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -20,7 +16,7 @@ namespace _360Generator.Templates.Backend.Facade
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiFacadeConverterTemplate : ApiFacadeConverterTemplateBase
     {
@@ -32,16 +28,18 @@ namespace _360Generator.Templates.Backend.Facade
         {
             this.Write("\n");
             this.Write("\n");
-            this.Write("\r\nusing _360.Api.Facade.");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\nusing _360.Api.Facade.");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".Core.Converters;\nusing _360.Api.Facade.");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
@@ -49,67 +47,58 @@ namespace _360Generator.Templates.Backend.Facade
             this.Write(".Document.Converters;\nusing _360.Framework.Libs.Extensions;\nusing BusinessMap.Cli" +
                     "ent.Rest.Models;\nusing System.Collections.Generic;\nusing System.Linq;\nusing ");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" = _360.Domain.");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(";\nusing CDConfigZoneType = _360.Domain.");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(".CDConfigZoneType;\n\nnamespace _360.Api.Facade.");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("\n{\n    public static class ");
             
-            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Converter\n    {\n       \n    }\n}\n\n");
+            this.Write("Converter\n    {\n       \n    }\n}\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
-
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-
-        
-        #line default
-        #line hidden
-        
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 
@@ -134,19 +123,6 @@ private string entity
     get
     {
         return this._entityField;
-    }
-}
-
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
-
-/// <summary>
-/// Access the screens parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
-{
-    get
-    {
-        return this._screensField;
     }
 }
 
@@ -197,20 +173,6 @@ if ((entityValueAcquired == false))
     if ((data != null))
     {
         this._entityField = ((string)(data));
-    }
-}
-bool screensValueAcquired = false;
-if (this.Session.ContainsKey("screens"))
-{
-    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
-    screensValueAcquired = true;
-}
-if ((screensValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
-    if ((data != null))
-    {
-        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 bool facadeValueAcquired = false;

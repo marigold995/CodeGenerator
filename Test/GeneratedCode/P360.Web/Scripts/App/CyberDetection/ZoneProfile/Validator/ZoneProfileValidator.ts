@@ -1,14 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
 import { BaseValidator } from 'App/Base/BaseValidator';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
 import { Localization } from 'App/Base/Framework/Localization';
@@ -35,4 +27,3 @@ export class ZoneProfileValidator extends BaseValidator {
         return super.validate();
     }
 }
-

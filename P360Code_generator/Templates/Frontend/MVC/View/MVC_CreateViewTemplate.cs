@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.MVC.View
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -31,13 +27,10 @@ namespace _360Generator.Templates.Frontend.MVC.View
         public virtual string TransformText()
         {
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\n@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../." +
-                    "./Views/Base/ViewTitle\")\n    <div id=\"create");
+            this.Write("\n@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../.." +
+                    "/Views/Base/ViewTitle\")\n    <div id=\"create");
             
-            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
+            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -67,19 +60,6 @@ namespace _360Generator.Templates.Frontend.MVC.View
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
 
-private global::_360Generator.Metadata.Module _moduleField;
-
-/// <summary>
-/// Access the module parameter of the template.
-/// </summary>
-private global::_360Generator.Metadata.Module module
-{
-    get
-    {
-        return this._moduleField;
-    }
-}
-
 private string _entityField;
 
 /// <summary>
@@ -93,19 +73,6 @@ private string entity
     }
 }
 
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
-
-/// <summary>
-/// Access the screens parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
-{
-    get
-    {
-        return this._screensField;
-    }
-}
-
 
 /// <summary>
 /// Initialize the template
@@ -114,20 +81,6 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool moduleValueAcquired = false;
-if (this.Session.ContainsKey("module"))
-{
-    this._moduleField = ((global::_360Generator.Metadata.Module)(this.Session["module"]));
-    moduleValueAcquired = true;
-}
-if ((moduleValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("module");
-    if ((data != null))
-    {
-        this._moduleField = ((global::_360Generator.Metadata.Module)(data));
-    }
-}
 bool entityValueAcquired = false;
 if (this.Session.ContainsKey("entity"))
 {
@@ -140,20 +93,6 @@ if ((entityValueAcquired == false))
     if ((data != null))
     {
         this._entityField = ((string)(data));
-    }
-}
-bool screensValueAcquired = false;
-if (this.Session.ContainsKey("screens"))
-{
-    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
-    screensValueAcquired = true;
-}
-if ((screensValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
-    if ((data != null))
-    {
-        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 

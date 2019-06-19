@@ -1,4 +1,8 @@
 
+
+
+
+
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
@@ -11,21 +15,21 @@ import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
 import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
 import * as _ from 'underscore';
 
-export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
-    public securityAndITPolicy: SecurityAndITPolicy = null;
+export class ZoneProfileCreateViewModel extends BaseViewModel {
+    public zoneProfile: ZoneProfile = null;
 	 constructor() {
         super();
 
-        this.setViewTitle('SecurityAndITPolicy');
+        this.setViewTitle('ZoneProfile');
         this.setViewIconClass('fal fa-shiel-alt');
 
-        this.entityName = 'SecurityAndITPolicy';
+        this.entityName = 'ZoneProfile';
 
         super.init(this);
     }
 
     public loadData(): void {
-        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+        this.set('zoneProfile', new ZoneProfile());
 
         this.initializeValidation();
 
@@ -35,20 +39,19 @@ export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
     public afterLoadData(): void {
         super.afterLoadData();
 
-        this.loadRelatedEntitiesForSecurityAndITPolicy();
+        this.loadRelatedEntitiesForZoneProfile();
     }
 
-	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+	 public loadRelatedEntitiesForZoneProfile(): void {
 
 	}
 
 	public initializeValidators(viewDom: JQuery): void {
-        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
+        this.validator = new ZoneProfileValidator('createZoneProfileContentContainer', viewDom, this);
     }
 
-    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
+    public create(callback: (success: boolean, zoneProfileId: string) => void): void {
 
 	}
 }
-
 

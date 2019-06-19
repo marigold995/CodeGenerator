@@ -1,5 +1,8 @@
 
 
+
+
+
 using _360.Domain.CyberDetection;
 using _360.Framework.Libs;
 
@@ -12,4 +15,3 @@ namespace _360.Api.Facade.GBM.CyberDetection
         ZoneProfile GetZoneProfile(string id, string companyContext);
     }
 }
-

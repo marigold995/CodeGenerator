@@ -1,13 +1,17 @@
 
+
+
+
+
 import { BaseViewModel } from 'App/Base/BaseViewModel';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
 import { ValidationResult } from 'App/Base/Model/ValidationResult';
-import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
-import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
+import { SecurityAndItPolicyDataProvider } from 'App/CyberDetection/SecurityAndItPolicy/Data/SecurityAndItPolicyDataProvider';
+import { SecurityAndItPolicy } from 'App/CyberDetection/SecurityAndItPolicy/Model/SecurityAndItPolicy';
 import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
 import { CustomZoneType } from 'App/CyberDetection/CustomZoneType/Model/CustomZoneType';
-import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import { SecurityAndItPolicyValidator } from 'App/CyberDetection/SecurityAndItPolicy/Validator/SecurityAndItPolicyValidator';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
 import * as _ from 'underscore';
 
@@ -78,9 +82,4 @@ export class SecurityAndItPolicyUpdateViewModel extends BaseViewModel {
             callback(false, null);
         }
     }
-
-
 }
-
-
-

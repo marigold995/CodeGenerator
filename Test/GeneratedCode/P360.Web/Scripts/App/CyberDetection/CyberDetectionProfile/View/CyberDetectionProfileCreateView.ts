@@ -1,4 +1,7 @@
 
+
+
+
 import { BaseDetailView } from 'App/Base/BaseDetailView';
 import { CommandButton } from 'App/Base/Controls/CommandButton';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
@@ -10,10 +13,8 @@ import { TemplateDialogOptions } from 'App/Base/Dialog/TemplateDialogOptions';
 import { NavigateParameters } from 'App/Base/Framework/NavigateParameters';
 import { UserInfo } from 'App/Base/Framework/UserInfo';
 import { TemplateBody } from 'App/Base/Model/TemplateBody';
-
 import { CyberDetectionProfileValidator } from 'App/CyberDetection/CyberDetectionProfile/Validator/CyberDetectionProfileValidator';
 import { CyberDetectionProfileCreateViewModel } from 'App/CyberDetection/CyberDetectionProfile/ViewModel/CyberDetectionProfileCreateViewModel';
-
 import { Site } from 'App/Core/Site/Model/Site';
 import { Permissions } from 'App/Base/Permissions';
 import { Security } from 'App/Base/Framework/Security';
@@ -75,6 +76,5 @@ export class CyberDetectionProfileCreateView<T extends CyberDetectionProfileCrea
     public static create(): CyberDetectionProfileCreateView<CyberDetectionProfileCreateViewModel> {
         return new CyberDetectionProfileCreateView(new CyberDetectionProfileCreateViewModel());
     }
-
 }
 

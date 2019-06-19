@@ -1,13 +1,7 @@
 ﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
 <#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
 using _360.Api.Core.Models;
 using _360.Framework.Api.Models;
 using _360Generator.Templates;
@@ -21,8 +15,3 @@ namespace _360.Api.Model.<#= module.ModuleName #>
 
 	}
 }
-
-<#+
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-#>

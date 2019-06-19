@@ -1,9 +1,4 @@
-﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="_360Generator" #>
+﻿<#@ template language="C#"#>
 <#@ import namespace="_360Generator.Metadata" #>
 <#@ parameter name="module" type="_360Generator.Metadata.Module"#>
 <#@ parameter name="entity" type="System.String"#>
@@ -37,8 +32,3 @@ namespace _360.Api.Repository.<#= module.ModuleName #>
 		<# }#> 
     }
 }
-
-<#+
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-#>

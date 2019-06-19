@@ -1,3 +1,8 @@
+
+
+
+
+
 import { CyberDetectionBaseDataService } from 'App/CyberDetection/CyberDetectionBaseDataService';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
@@ -50,5 +55,6 @@ export class CyberServiceDataService extends CyberDetectionBaseDataService {
 
         return this.getSearchablePagingDataSource(url, callOptions);
     }
+
 
 

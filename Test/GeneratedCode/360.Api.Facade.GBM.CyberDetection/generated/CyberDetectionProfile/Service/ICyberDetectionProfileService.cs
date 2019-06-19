@@ -1,6 +1,8 @@
 
 
 
+
+
 using _360.Framework.Api.GBM;
 
 namespace _360.Api.Facade.GBM.CyberDetection.Service
@@ -9,4 +11,3 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
     {
     }
 }
-

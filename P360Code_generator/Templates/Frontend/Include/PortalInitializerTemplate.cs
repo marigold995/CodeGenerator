@@ -9,10 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Frontend.Include
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
     using _360Generator.Metadata;
     using System;
     
@@ -33,15 +29,9 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("\n");
             this.Write("\n");
             this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\nimport { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport " +
-                    "{ DefaultParameterText } from \'App/Base/Controls/Breadcrumbs/DefaultParameterTex" +
-                    "t\';\n\nexport class ");
+            this.Write("\nimport { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport {" +
+                    " DefaultParameterText } from \'App/Base/Controls/Breadcrumbs/DefaultParameterText" +
+                    "\';\n\nexport class ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
@@ -73,7 +63,7 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("ListView: \'App/");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
@@ -101,7 +91,7 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("DetailView: \'App/");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
@@ -129,7 +119,7 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("CreateView: \'App/");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
@@ -157,7 +147,7 @@ namespace _360Generator.Templates.Frontend.Include
             this.Write("UpdateView: \'App/");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module));
+            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
@@ -216,19 +206,6 @@ private string entity
     }
 }
 
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> _screensField;
-
-/// <summary>
-/// Access the screens parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum> screens
-{
-    get
-    {
-        return this._screensField;
-    }
-}
-
 
 /// <summary>
 /// Initialize the template
@@ -263,20 +240,6 @@ if ((entityValueAcquired == false))
     if ((data != null))
     {
         this._entityField = ((string)(data));
-    }
-}
-bool screensValueAcquired = false;
-if (this.Session.ContainsKey("screens"))
-{
-    this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(this.Session["screens"]));
-    screensValueAcquired = true;
-}
-if ((screensValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("screens");
-    if ((data != null))
-    {
-        this._screensField = ((global::System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>)(data));
     }
 }
 
