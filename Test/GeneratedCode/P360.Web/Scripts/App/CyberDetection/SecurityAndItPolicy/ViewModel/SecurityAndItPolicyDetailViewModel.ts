@@ -1,64 +1,108 @@
 
-import { BaseViewModel } from "App/Base/BaseViewModel";
-import { Constants } from "App/Base/Constants";
-import { DataProviderExecuteOptions } from "App/Base/Data/DataProviderExecuteOptions";
-import { SecurityAndItPolicyDataProvider } from "App/CyberDetection/SecurityAndItPolicy/Data/SecurityAndItPolicyDataProvider";
-import { SecurityAndItPolicy } from "App/CyberDetection/SecurityAndItPolicy/Model/SecurityAndItPolicy";
-import { Security } from 'App/Base/Framework/Security';
-import { Permissions } from 'App/Base/Permissions';
-import { CompanyHelper } from 'App/Base/Helpers/CompanyHelper';
-import { CompanyInfo } from "App/Base/Framework/CompanyInfo";
+import { BaseViewModel } from 'App/Base/BaseViewModel';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { Site } from 'App/Core/Site/Model/Site';
+import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
+import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
+import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import * as _ from 'underscore';
 
-export class SecurityAndItPolicyDetailViewModel extends BaseViewModel {
-
-    public securityAndItPolicy: SecurityAndItPolicy;
-
-	constructor() {
+export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
+    public securityAndITPolicy: SecurityAndITPolicy = null;
+	 constructor() {
         super();
 
-        this.setViewTitle('SecurityAndItPolicy');
+        this.setViewTitle('SecurityAndITPolicy');
         this.setViewIconClass('fal fa-shiel-alt');
-        this.entityName = 'SecurityAndItPolicy';
 
-        this.securityAndItPolicy = null;
+        this.entityName = 'SecurityAndITPolicy';
 
         super.init(this);
     }
 
     public loadData(): void {
-        var promiseSecurityAndItPolicy = SecurityAndItPolicyDataProvider.getDetailAsync(new DataProviderExecuteOptions(this), this.dp.securityAndItPolicyId);
-        promiseSecurityAndItPolicy
-            .then((securityAndItPolicy: SecurityAndItPolicy) => {
-                this.set('securityAndItPolicy', securityAndItPolicy);
-            });
-        
-        Promise.all([promiseSecurityAndItPolicy])
-            .then(() => this.trigger(Constants.afterLoadDataEventName));
+        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+
+        this.initializeValidation();
+
+        this.trigger(Constants.afterLoadDataEventName);
     }
 
     public afterLoadData(): void {
         super.afterLoadData();
+
+        this.loadRelatedEntitiesForSecurityAndITPolicy();
+    }
+
+	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+
 	}
 
-	public refresh(): void {
-        this.loadData();
-    }
-    
-  
-
-    public getEditPermission(): boolean {
-        return Security.hasPermission(Permissions.updateSITPolicy)
-            && !CompanyHelper.isRootCompany(this.dp.companyContext)
-            && CompanyInfo.hasCyberDetectionContract;
+	public initializeValidators(viewDom: JQuery): void {
+        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
     }
 
-  
-    public getAddPermission(): boolean {
-        return Security.hasPermission(Permissions.createSITPolicy)
-            && !CompanyHelper.isRootCompany(this.dp.companyContext)
-            && CompanyInfo.hasCyberDetectionContract;
-    }
+    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
 
-
+	}
 }
+
+
+
+import { BaseViewModel } from 'App/Base/BaseViewModel';
+import { Constants } from 'App/Base/Constants';
+import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
+import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
+import { DataSourceHelper } from 'App/Base/Helpers/DataSourceHelper';
+import { ValidationResult } from 'App/Base/Model/ValidationResult';
+import { Site } from 'App/Core/Site/Model/Site';
+import { ZoneProfileDataProvider } from 'App/CyberDetection/ZoneProfile/Data/ZoneProfileDataProvider';
+import { ZoneProfile } from 'App/CyberDetection/ZoneProfile/Model/ZoneProfile';
+import { ZoneProfileValidator } from 'App/CyberDetection/ZoneProfile/Validator/ZoneProfileValidator';
+import * as _ from 'underscore';
+
+export class SecurityAndITPolicyCreateViewModel extends BaseViewModel {
+    public securityAndITPolicy: SecurityAndITPolicy = null;
+	 constructor() {
+        super();
+
+        this.setViewTitle('SecurityAndITPolicy');
+        this.setViewIconClass('fal fa-shiel-alt');
+
+        this.entityName = 'SecurityAndITPolicy';
+
+        super.init(this);
+    }
+
+    public loadData(): void {
+        this.set('securityAndITPolicy', new SecurityAndITPolicy());
+
+        this.initializeValidation();
+
+        this.trigger(Constants.afterLoadDataEventName);
+    }
+
+    public afterLoadData(): void {
+        super.afterLoadData();
+
+        this.loadRelatedEntitiesForSecurityAndITPolicy();
+    }
+
+	 public loadRelatedEntitiesForSecurityAndITPolicy(): void {
+
+	}
+
+	public initializeValidators(viewDom: JQuery): void {
+        this.validator = new SecurityAndITPolicyValidator('createSecurityAndITPolicyContentContainer', viewDom, this);
+    }
+
+    public create(callback: (success: boolean, securityAndITPolicyId: string) => void): void {
+
+	}
+}
+
 

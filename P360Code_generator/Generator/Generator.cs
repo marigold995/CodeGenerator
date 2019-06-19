@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _360Generator.Templates;
-using _360Generator.Domain;
-using _360Generator.Metadata;
+﻿using _360Generator.Metadata;
+using _360Generator.Layer.Frontend;
+using _360Generator.Layer.Backend;
 
 namespace _360Generator.Generator
 {
@@ -48,23 +43,29 @@ namespace _360Generator.Generator
 
         public void CreateFrontend()
         {
-            var portalData = new PortalData(this.Module);
+            var portalData = new PortalData(Module);
             portalData.CreatePortalDataTemplate();
 
-            var portalInitializer = new PortalInitializer(this.Module);
+            var portalInitializer = new PortalInitializer(Module);
             portalInitializer.CreatePortalInitializerTemplate();
 
-            var portalModel = new PortalModel(this.Module);
+            var portalModel = new PortalModel(Module);
             portalModel.CreatePortalModelTemplate();
 
-            var portalValidator = new PortalValidator(this.Module);
+            var portalValidator = new PortalValidator(Module);
             portalValidator.CreatePortalValidatorTemplate();
 
-            var portalView = new PortalView(this.Module);
+            var portalView = new PortalView(Module);
             portalView.CreatePortalViewTemplate();
 
-            var portalViewModel = new PortalViewModel(this.Module);
+            var portalViewModel = new PortalViewModel(Module);
             portalViewModel.CreatePortalViewModelTemplate();
+
+            var mvcController = new MVC_Controller(Module);
+            mvcController.CreateMVCControllerTemplate();
+
+            var mvcView = new MVC_View(Module);
+            mvcView.CreateMVCViewTemplate();
         }
 
     }

@@ -2,14 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _360Generator.Domain;
 using _360Generator.Templates;
 
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer
 {
     public abstract class LayerBase
     {
@@ -25,12 +21,10 @@ namespace _360Generator.Domain
         public List<string> LayerPrefixList { get; set; }
         public string FolderPrefix { get; set; }        
 
-        protected Module Module { get; set; }
-        //protected string path0 { get; set; }
+        protected Module Module { get; set; }        
         public string rootPath = "../../GeneratedCode";
         public string CreateFolder(string path, string folderName)
         {
-            //string path = "../../GeneratedCode/" + folderName;
             path += "/" + folderName;
 
             try

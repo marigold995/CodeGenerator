@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer.Frontend
 {
     class PortalModel: LayerBase
     {
@@ -32,12 +32,12 @@ namespace _360Generator.Domain
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathData = CreateFolder(pathEntity, "Model");
+                string pathLayerModel = CreateFolder(pathEntity, "Model");
 
                 LayerPrefixList.Add("");
                 LayerSuffixList.Add("");
                 portalModelTemplate = new PortalModelTemplate();
-                InitializeParameters(portalModelTemplate, entity, pathData);
+                InitializeParameters(portalModelTemplate, entity, pathLayerModel);
                 
             }
         }

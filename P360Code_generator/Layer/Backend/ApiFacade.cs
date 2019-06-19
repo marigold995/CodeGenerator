@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using _360Generator.Metadata;
-using _360Generator.Templates;
 using _360Generator.Templates.Backend.Facade;
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer.Backend
 {
     class ApiFacade : LayerBase
     {

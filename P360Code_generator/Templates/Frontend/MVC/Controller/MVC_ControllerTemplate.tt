@@ -1,0 +1,51 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="_360Generator" #>
+<#@ import namespace="_360Generator.Metadata" #>
+<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
+<#@ parameter name="entity" type="System.String"#>
+<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
+
+using System.Web.Mvc;
+using System.Web.UI;
+
+namespace _360.Portal.<#= module.ModuleName #>.Controllers
+{
+    [Authorize]
+    [OutputCache(Duration = 0, NoStore = true, Location = OutputCacheLocation.None)]
+    public class <#= entity #>Controller : Controller
+    {
+        public ActionResult Index()
+        {
+            return View("<#= entity #>List");
+        }
+
+        public ActionResult <#= entity #>List()
+        {
+            return View();
+        }
+
+        public ActionResult <#= entity #>Detail()
+        {
+            return View();
+        }
+
+        public ActionResult <#= entity #>Create()
+        {
+            return View();
+        }
+
+        public ActionResult <#= entity #>Update()
+        {
+            return View();
+        }
+    }
+}
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

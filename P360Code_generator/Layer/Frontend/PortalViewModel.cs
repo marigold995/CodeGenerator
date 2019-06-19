@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer.Frontend
 {
     class PortalViewModel: LayerBase
     {       
@@ -17,90 +17,57 @@ namespace _360Generator.Domain
 
         public PortalViewModel(Module portalViewModelModule)
         {
-            this.Module = portalViewModelModule;
+            Module = portalViewModelModule;
+
+            LayerSuffixList = new List<string>();
+            LayerPrefixList = new List<string>();
+
+            Extension = ExtensionEnum.ts;
+            FolderPrefix = "P360.Web.";
         }
 
         public void CreatePortalViewModelTemplate()
         {
-            string path0 = CreateFolder(rootPath, "P360.Web");
-            string pathDomain = CreateFolder(path0, "Scripts");
-            string pathApp = CreateFolder(pathDomain, "App");
-            string pathModule = CreateFolder(pathApp, Module.ModuleName);
-
             foreach (var entity in Module.Entities)
             {
-                var module = this.Module;
-                var screensList = entity.Screens;
+                string path0 = CreateFolder(rootPath, FolderPrefix);
+                string pathDomain = CreateFolder(path0, "Scripts");
+                string pathApp = CreateFolder(pathDomain, "App");
+                string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathData = CreateFolder(pathEntity, "ViewModel");
+                string pathLayerViewModel = CreateFolder(pathEntity, "ViewModel");
 
                 //create
                 if (entity.Screens.Contains(Entity.screenEnum.Post))
                 {
                     portalCreateViewModelTemplate = new PortalCreateViewModelTemplate();
-                    portalCreateViewModelTemplate.Session = new Dictionary<string, object>();
-                    portalCreateViewModelTemplate.Session["module"] = module;
-                    portalCreateViewModelTemplate.Session["entity"] = entity.EntityName;
-                    portalCreateViewModelTemplate.Session["screens"] = screensList;
-
-                    portalCreateViewModelTemplate.Initialize();
-
-                    string pathCreate = pathData;
-                    pathCreate += "/" + entity.EntityName + "CreateViewModel.ts";
-
-                    string pageContentCreate = portalCreateViewModelTemplate.TransformText();
-                    System.IO.File.WriteAllText(pathCreate.ToString(), pageContentCreate);
+                    LayerPrefixList.Add("");
+                    LayerSuffixList.Add("CreateViewModel");
+                    InitializeParameters(portalCreateViewModelTemplate, entity, pathLayerViewModel);
                 }
                 //details
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
                     portalDetailsViewModelTemplate = new PortalDetailsViewModelTemplate();
-                    portalDetailsViewModelTemplate.Session = new Dictionary<string, object>();
-                    portalDetailsViewModelTemplate.Session["module"] = module;
-                    portalDetailsViewModelTemplate.Session["entity"] = entity.EntityName;
-                    portalDetailsViewModelTemplate.Session["screens"] = screensList;
-
-                    portalDetailsViewModelTemplate.Initialize();
-
-                    string pathDetails = pathData;
-                    pathDetails += "/" + entity.EntityName + "DetailViewModel.ts";
-
-                    string pageContentDetails = portalDetailsViewModelTemplate.TransformText();
-                    System.IO.File.WriteAllText(pathDetails.ToString(), pageContentDetails);
+                    LayerPrefixList.Add("");
+                    LayerSuffixList.Add("DetailViewModel");
+                    InitializeParameters(portalCreateViewModelTemplate, entity, pathLayerViewModel);
                 }
                 //list
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
                     portalListViewModelTemplate = new PortalListViewModelTemplate();
-                    portalListViewModelTemplate.Session = new Dictionary<string, object>();
-                    portalListViewModelTemplate.Session["module"] = module;
-                    portalListViewModelTemplate.Session["entity"] = entity.EntityName;
-                    portalListViewModelTemplate.Session["screens"] = screensList;
-
-                    portalListViewModelTemplate.Initialize();
-
-                    string pathList = pathData;
-                    pathList += "/" + entity.EntityName + "ListViewModel.ts";
-
-                    string pageContentList = portalListViewModelTemplate.TransformText();
-                    System.IO.File.WriteAllText(pathList.ToString(), pageContentList);
+                    LayerPrefixList.Add("");
+                    LayerSuffixList.Add("ListViewModel");
+                    InitializeParameters(portalListViewModelTemplate, entity, pathLayerViewModel);
                 }
                 //update
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
                     portalUpdateViewModelTemplate = new PortalUpdateViewModelTemplate();
-                    portalUpdateViewModelTemplate.Session = new Dictionary<string, object>();
-                    portalUpdateViewModelTemplate.Session["module"] = module;
-                    portalUpdateViewModelTemplate.Session["entity"] = entity.EntityName;
-                    portalUpdateViewModelTemplate.Session["screens"] = screensList;
-
-                    portalUpdateViewModelTemplate.Initialize();
-
-                    string pathUpdate = pathData;
-                    pathUpdate += "/" + entity.EntityName + "UpdateViewModel.ts";
-
-                    string pageContentUpdate = portalUpdateViewModelTemplate.TransformText();
-                    System.IO.File.WriteAllText(pathUpdate.ToString(), pageContentUpdate);
+                    LayerPrefixList.Add("");
+                    LayerSuffixList.Add("UpdateViewModel");
+                    InitializeParameters(portalUpdateViewModelTemplate, entity, pathLayerViewModel);
                 }
             }
         }

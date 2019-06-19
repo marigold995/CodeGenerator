@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using _360Generator.Templates;
+﻿using System.Collections.Generic;
 using _360Generator.Metadata;
-using System.IO;
-using _360Generator.Domain;
 using _360Generator.Templates.Backend.Controller;
 
-
-namespace _360Generator
+namespace _360Generator.Layer.Backend
 {
     public class ApiWebController : LayerBase
     {

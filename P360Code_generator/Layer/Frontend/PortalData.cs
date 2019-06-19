@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer.Frontend
 {
     class PortalData: LayerBase
     {

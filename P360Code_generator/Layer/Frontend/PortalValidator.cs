@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _360Generator.Domain
+namespace _360Generator.Layer.Frontend
 {
     class PortalValidator:LayerBase
     {       
@@ -33,12 +33,12 @@ namespace _360Generator.Domain
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathData = CreateFolder(pathEntity, "Validator");
+                string pathLayerValidator = CreateFolder(pathEntity, "Validator");
 
                 LayerPrefixList.Add("");
                 LayerSuffixList.Add("Validator");
                 portalValidatorTemplate = new PortalValidatorTemplate();
-                InitializeParameters(portalValidatorTemplate, entity, pathData);
+                InitializeParameters(portalValidatorTemplate, entity, pathLayerValidator);
             }
         }
     }
