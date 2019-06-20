@@ -18,13 +18,23 @@ namespace _360Generator.Layer
         }
 
         public ExtensionEnum Extension { get; set; }
-        public List<string> LayerSuffixList { get; set; }        
-        public List<string> LayerPrefixList { get; set; }
-        public string FolderPrefix { get; set; }        
+        public string LayerSuffix { get; set; }
+        public string LayerPrefix { get; set; }
+
+        //public List<string> LayerSuffixList { get; set; }        
+        //public List<string> LayerPrefixList { get; set; }
+        public string FolderPrefix { get; set; }
 
         protected Module Module { get; set; }
-       
+
         public string rootPath = "../../GeneratedCode";
+
+        public LayerBase()
+        {
+            LayerSuffix = "";
+            LayerPrefix = "";
+        }
+
         public string CreateFolder(string path, string folderName)
         {
             path += "/" + folderName;
@@ -33,13 +43,20 @@ namespace _360Generator.Layer
             {
                 DirectoryInfo di = Directory.CreateDirectory(path);
             }
-            catch 
+            catch
             {
                 throw new CreateFolderException("Create folder attempt failed. ");
-            }           
-           
+            }
+
             return path;
-            
+
+        }
+
+        public void CreateFile(ITemplate template, Entity entity, string path,  string suffix = "", string prefix = "")
+        {
+            LayerPrefix = prefix;
+            LayerSuffix = suffix;            
+            InitializeParameters(template, entity, path);
         }
 
         public void InitializeParameters(ITemplate template, Entity entity, string pathLayer)
@@ -52,7 +69,7 @@ namespace _360Generator.Layer
             template.Initialize();
 
             List<string> pathList = new List<string>();            
-            pathList.Add(pathLayer + "/" + LayerPrefixList[LayerPrefixList.Count-1] + entity.EntityName + LayerSuffixList[LayerSuffixList.Count-1] + "." + Extension);
+            pathList.Add(pathLayer + "/" + LayerPrefix + entity.EntityName + LayerSuffix + "." + Extension);
                        
             string pageContent = template.TransformText();
             System.IO.File.WriteAllText(pathList[pathList.Count-1].ToString(), pageContent);

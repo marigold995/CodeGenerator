@@ -8,12 +8,9 @@ namespace _360Generator.Layer.Frontend
     {
         public MVC_ControllerTemplate controllerTemplate { get; set; }
 
-        public MVC_Controller(Module controllerModule)
+        public MVC_Controller(Module controllerModule) : base()
         {
             Module = controllerModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.cs;
             FolderPrefix = "P360.Web." + controllerModule.ModuleName;
@@ -26,10 +23,8 @@ namespace _360Generator.Layer.Frontend
                 string path0 = CreateFolder(rootPath, FolderPrefix);
                 string pathLayer = CreateFolder(path0, "Controllers");
 
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("Controller");
                 controllerTemplate = new MVC_ControllerTemplate();
-                InitializeParameters(controllerTemplate, entity, pathLayer);
+                CreateFile(controllerTemplate, entity, pathLayer, "Controller");
             }
         }
     }

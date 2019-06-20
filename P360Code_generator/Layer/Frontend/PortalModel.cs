@@ -12,12 +12,9 @@ namespace _360Generator.Layer.Frontend
     {
         public PortalModelTemplate portalModelTemplate { get; set; }
 
-        public PortalModel(Module portalModelModule)
+        public PortalModel(Module portalModelModule) : base()
         {
             Module = portalModelModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
@@ -32,13 +29,10 @@ namespace _360Generator.Layer.Frontend
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayerModel = CreateFolder(pathEntity, "Model");
-
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("");
+                string pathLayer = CreateFolder(pathEntity, "Model");
+               
                 portalModelTemplate = new PortalModelTemplate();
-                InitializeParameters(portalModelTemplate, entity, pathLayerModel);
-                
+                CreateFile(portalModelTemplate, entity, pathLayer);
             }
         }
     }

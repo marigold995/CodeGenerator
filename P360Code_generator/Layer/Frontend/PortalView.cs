@@ -20,9 +20,6 @@ namespace _360Generator.Layer.Frontend
         {
             Module = portalViewModule;
 
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
-
             Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
         }
@@ -36,38 +33,29 @@ namespace _360Generator.Layer.Frontend
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayerView = CreateFolder(pathEntity, "View");
-
-                //create
+                string pathLayer = CreateFolder(pathEntity, "View");
+                
                 if (entity.Screens.Contains(Entity.screenEnum.Post)){ 
-                    portalCreateViewTemplate = new PortalCreateViewTemplate();
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("CreateView");
-                    InitializeParameters(portalCreateViewTemplate, entity, pathLayerView);
+                    portalCreateViewTemplate = new PortalCreateViewTemplate(); 
+                    CreateFile(portalCreateViewTemplate, entity, pathLayer, "CreateView");
                 }
-                //details
+                
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
                     portalDetailsViewTemplate = new PortalDetailsViewTemplate();
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("DetailView");
-                    InitializeParameters(portalCreateViewTemplate, entity, pathLayerView);
+                    CreateFile(portalDetailsViewTemplate, entity, pathLayer, "DetailView");
                 }
-                //list
+                
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
                     portalListViewTemplate = new PortalListViewTemplate();
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("ListView");
-                    InitializeParameters(portalListViewTemplate, entity, pathLayerView);
+                    CreateFile(portalListViewTemplate, entity, pathLayer, "ListView");
                 }
-                //update
+                
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
                     portalUpdateViewTemplate = new PortalUpdateViewTemplate();
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("UpdateView");
-                    InitializeParameters(portalUpdateViewTemplate, entity, pathLayerView);
+                    CreateFile(portalUpdateViewTemplate, entity, pathLayer, "UpdateView");
                 }
             }
         }

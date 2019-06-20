@@ -11,7 +11,7 @@ namespace _360Generator.Generator
 
         public Generator(Module newModule)
         {
-            this.Module = newModule;
+            Module = newModule;
         }
 
         public void Generate()
@@ -25,7 +25,7 @@ namespace _360Generator.Generator
             }
             try
             {               
-                CreateFrontend();
+                //CreateFrontend();
             }
             catch
             {
@@ -35,23 +35,23 @@ namespace _360Generator.Generator
 
         public void CreateBackend()
         {      
-            var apiWebController = new ApiWebController(Module);
-            apiWebController.CreateApiWebControllerTemplate();
+            //var apiWebController = new ApiWebController(Module);
+            //apiWebController.CreateApiWebControllerTemplate();
 
-            var apiRepository = new ApiRepository(Module);
-            apiRepository.CreateApiRepositoryTemplate();
+            //var apiRepository = new ApiRepository(Module);
+            //apiRepository.CreateApiRepositoryTemplate();
 
-            var apiModelDTO = new ApiModelDTO(Module);
-            apiModelDTO.CreateApiModelTemplate();
+            //var apiModelDTO = new ApiModelDTO(Module);
+            //apiModelDTO.CreateApiModelTemplate();
 
-            var apiFacadeProxy = new ApiFacadeProxy(Module);
-            apiFacadeProxy.CreateApiFacadeProxyTemplate();
+            //var apiFacadeProxy = new ApiFacadeProxy(Module);
+            //apiFacadeProxy.CreateApiFacadeProxyTemplate();
 
             var apiFacade = new ApiFacade(Module);
             apiFacade.CreateApiFacadeTemplate();
 
-            var domainModel = new DomainModel(Module);
-            domainModel.CreateDomainModelTemplate();
+            //var domainModel = new DomainModel(Module);
+            //domainModel.CreateDomainModelTemplate();
         }
 
         public void CreateFrontend()

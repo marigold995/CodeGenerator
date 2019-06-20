@@ -9,12 +9,9 @@ namespace _360Generator.Layer.Backend
         public ApiInterfaceRepositoryTemplate apiInterfaceRepositoryTemplate { get; set; }
         public ApiRepositoryTemplate apiRepositoryTemplate { get; set; }
 
-        public ApiRepository(Module repositoryModule)
+        public ApiRepository(Module repositoryModule): base()
         {
             Module = repositoryModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Api.Repository.";                   
@@ -23,23 +20,18 @@ namespace _360Generator.Layer.Backend
         public void CreateApiRepositoryTemplate()
         {
             string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
-            string pathLayer = path0;
-
-            LayerPrefixList.Add("");
-            LayerSuffixList.Add("Repository");          
+            string pathLayer = path0;       
            
             foreach (var entity in Module.Entities)
             {
                 apiRepositoryTemplate = new ApiRepositoryTemplate();
-                InitializeParameters(apiRepositoryTemplate, entity, pathLayer);                
+                CreateFile(apiRepositoryTemplate, entity, pathLayer, "Repository");
             }
 
-            LayerPrefixList.Add("I");
-            LayerSuffixList.Add("Repository");
             foreach (var entity in Module.Entities)
             {
                 apiInterfaceRepositoryTemplate = new ApiInterfaceRepositoryTemplate();
-                InitializeParameters(apiInterfaceRepositoryTemplate, entity, pathLayer);
+                CreateFile(apiInterfaceRepositoryTemplate, entity, pathLayer, "Repository", "I");
             }
         }
     }

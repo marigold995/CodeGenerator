@@ -8,12 +8,9 @@ namespace _360Generator.Layer.Backend
     {
         public ApiModelDTOTemplate apiModelDTOTemplate { get; set; }
 
-        public ApiModelDTO(Module apiModelModule)
+        public ApiModelDTO(Module apiModelModule): base()
         {
             Module = apiModelModule;
-
-            LayerPrefixList = new List<string>();
-            LayerSuffixList = new List<string>();
 
             Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Api.Model.";
@@ -22,15 +19,12 @@ namespace _360Generator.Layer.Backend
         public void CreateApiModelTemplate()
         {
             string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
-            string pathLayer = path0;
-
-            LayerPrefixList.Add("");
-            LayerSuffixList.Add("DTO");
+            string pathLayer = path0;  
 
             foreach (var entity in Module.Entities)
             {
                 apiModelDTOTemplate = new ApiModelDTOTemplate();
-                InitializeParameters(apiModelDTOTemplate, entity, pathLayer);
+                CreateFile(apiModelDTOTemplate, entity, pathLayer, "DTO");
             }
 
         }

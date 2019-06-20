@@ -12,12 +12,9 @@ namespace _360Generator.Layer.Frontend
     {       
         public PortalValidatorTemplate portalValidatorTemplate { get; set; }
 
-        public PortalValidator(Module portalValidatorModule)
+        public PortalValidator(Module portalValidatorModule) : base()
         {
             Module = portalValidatorModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
@@ -33,12 +30,10 @@ namespace _360Generator.Layer.Frontend
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayerValidator = CreateFolder(pathEntity, "Validator");
+                string pathLayer = CreateFolder(pathEntity, "Validator");
 
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("Validator");
                 portalValidatorTemplate = new PortalValidatorTemplate();
-                InitializeParameters(portalValidatorTemplate, entity, pathLayerValidator);
+                CreateFile(portalValidatorTemplate, entity, pathLayer, "Validator");
             }
         }
     }

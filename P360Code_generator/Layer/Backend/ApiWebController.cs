@@ -8,13 +8,10 @@ namespace _360Generator.Layer.Backend
     {
         public ApiWebControllerTemplate apiWebControllerTemplate { get; set; }
 
-        public ApiWebController(Module apiWebModule)
+        public ApiWebController(Module apiWebModule): base()
         {
             Module = apiWebModule;
-
-            LayerPrefixList = new List<string>();
-            LayerSuffixList = new List<string>();
-
+            
             Extension = ExtensionEnum.cs;           
             FolderPrefix = "360.Api.Web.";
         }
@@ -24,13 +21,10 @@ namespace _360Generator.Layer.Backend
             string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
             string pathLayer = CreateFolder(path0, "Controllers");
 
-            LayerPrefixList.Add("");
-            LayerSuffixList.Add("Controller");
-            
             foreach (var entity in Module.Entities)
             {
                 apiWebControllerTemplate = new ApiWebControllerTemplate();
-                InitializeParameters(apiWebControllerTemplate, entity, pathLayer);
+                CreateFile(apiWebControllerTemplate, entity, pathLayer, "Controller");
             }
         }       
     }

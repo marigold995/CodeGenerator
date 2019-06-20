@@ -15,12 +15,9 @@ namespace _360Generator.Layer.Frontend
         public MVC_ListViewTemplate listViewTemplate{ get; set; }
         public MVC_UpdateViewTemplate updateViewTemplate{ get; set; }
 
-        public MVC_View(Module viewModule)
+        public MVC_View(Module viewModule) : base()
         {
             Module = viewModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.cshtml;
             FolderPrefix = "P360.Web." + viewModule.ModuleName;
@@ -35,34 +32,24 @@ namespace _360Generator.Layer.Frontend
                 string pathLayerEntity = CreateFolder(pathLayer, entity.EntityName);
 
                 if (entity.Screens.Contains(Entity.screenEnum.Post))
-                {
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("Create");
+                {                    
                     createViewTemplate = new MVC_CreateViewTemplate();
-                    InitializeParameters(createViewTemplate, entity, pathLayerEntity);
+                    CreateFile(createViewTemplate, entity, pathLayer, "Create");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("Detail");
                     detailsViewTemplate = new MVC_DetailsViewTemplate();
-                    InitializeParameters(detailsViewTemplate, entity, pathLayerEntity);
-
+                    CreateFile(detailsViewTemplate, entity, pathLayer, "Detail");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("List");
                     listViewTemplate = new MVC_ListViewTemplate();
-                    InitializeParameters(listViewTemplate, entity, pathLayerEntity);
-
+                    CreateFile(listViewTemplate, entity, pathLayer, "List");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
-                    LayerPrefixList.Add("");
-                    LayerSuffixList.Add("Update");
                     updateViewTemplate = new MVC_UpdateViewTemplate();
-                    InitializeParameters(updateViewTemplate, entity, pathLayerEntity);
+                    CreateFile(updateViewTemplate, entity, pathLayer, "Update");
                 }
             }
         }

@@ -14,12 +14,9 @@ namespace _360Generator.Layer.Frontend
         public PortalDataProviderTemplate portalDataProviderTemplate { get; set; }
         public PortalDataServiceTemplate portalDataServiceTemplate{ get; set; }
 
-        public PortalData(Module portalDataModule)
+        public PortalData(Module portalDataModule) : base()
         {
             Module = portalDataModule;
-
-            LayerSuffixList = new List<string>();
-            LayerPrefixList = new List<string>();
 
             Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
@@ -35,15 +32,11 @@ namespace _360Generator.Layer.Frontend
                 string pathModule = CreateFolder(pathApp, Module.ModuleName); 
                 string pathEntity = CreateFolder(pathModule, entity.EntityName);
                 string pathData = CreateFolder(pathEntity, "Data");
-                
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("DataProvider");
+              
                 portalDataProviderTemplate = new PortalDataProviderTemplate();
-                InitializeParameters(portalDataProviderTemplate, entity, pathData);
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("DataService");
+                CreateFile(portalDataProviderTemplate, entity, pathData, "DataProvider");
                 portalDataServiceTemplate = new PortalDataServiceTemplate();
-                InitializeParameters(portalDataServiceTemplate, entity, pathData);              
+                CreateFile(portalDataServiceTemplate, entity, pathData, "DataService");
             }
         }
     }

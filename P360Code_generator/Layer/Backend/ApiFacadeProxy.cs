@@ -8,12 +8,9 @@ namespace _360Generator.Layer.Backend
     {
         public ApiFacadeProxyTemplate apiFacadeProxyTemplate { get; set; }
 
-        public ApiFacadeProxy(Module apiFacadeProxyModule)
+        public ApiFacadeProxy(Module apiFacadeProxyModule): base()
         {
-            Module = apiFacadeProxyModule;
-
-            LayerPrefixList = new List<string>();
-            LayerSuffixList = new List<string>();
+            Module = apiFacadeProxyModule;            
 
             Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Api.FacadeProxy.";
@@ -26,11 +23,9 @@ namespace _360Generator.Layer.Backend
 
             foreach (var entity in Module.Entities)
             {         
-                string pathLayer = CreateFolder(pathGenerated, entity.EntityName);
-                LayerPrefixList.Add("");
-                LayerSuffixList.Add("");
+                string pathLayer = CreateFolder(pathGenerated, entity.EntityName);                
                 apiFacadeProxyTemplate = new ApiFacadeProxyTemplate();
-                InitializeParameters(apiFacadeProxyTemplate, entity, pathLayer);               
+                CreateFile(apiFacadeProxyTemplate, entity, pathLayer);
             }
         }
     }
