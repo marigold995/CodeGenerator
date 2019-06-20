@@ -20,8 +20,7 @@ namespace _360Generator.Generator
         }
 
         public void CreateBackend()
-        {            
-            
+        {      
             var apiWebController = new ApiWebController(this.Module);
             apiWebController.CreateApiWebControllerTemplate();
 

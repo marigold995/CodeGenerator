@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using _360Generator.Templates;
+using _360Generator.Exceptions;
 
 
 namespace _360Generator.Layer
@@ -21,7 +22,8 @@ namespace _360Generator.Layer
         public List<string> LayerPrefixList { get; set; }
         public string FolderPrefix { get; set; }        
 
-        protected Module Module { get; set; }        
+        protected Module Module { get; set; }
+       
         public string rootPath = "../../GeneratedCode";
         public string CreateFolder(string path, string folderName)
         {
@@ -31,13 +33,13 @@ namespace _360Generator.Layer
             {
                 DirectoryInfo di = Directory.CreateDirectory(path);
             }
-            catch (Exception e)
+            catch 
             {
-                Console.WriteLine("The process failed: {0}", e.ToString());
-            }
-            finally { }
-
+                throw new CreateFolderException("Create folder attempt failed. ");
+            }           
+           
             return path;
+            
         }
 
         public void InitializeParameters(ITemplate template, Entity entity, string pathLayer)
@@ -55,6 +57,5 @@ namespace _360Generator.Layer
             string pageContent = template.TransformText();
             System.IO.File.WriteAllText(pathList[pathList.Count-1].ToString(), pageContent);
         }
-
     }
 }
