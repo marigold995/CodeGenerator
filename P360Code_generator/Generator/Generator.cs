@@ -1,6 +1,7 @@
 ﻿using _360Generator.Metadata;
 using _360Generator.Layer.Frontend;
 using _360Generator.Layer.Backend;
+using _360Generator.Exceptions;
 
 namespace _360Generator.Generator
 {
@@ -15,28 +16,41 @@ namespace _360Generator.Generator
 
         public void Generate()
         {
-            CreateBackend();
-            CreateFrontend();
+            try { 
+                CreateBackend();            
+            }
+            catch
+            {
+                throw new CreateBackendException("Create backend attempt failed! ");
+            }
+            try
+            {               
+                CreateFrontend();
+            }
+            catch
+            {
+                throw new CreateFrontendException("Create frontend attempt failed! ");
+            }
         }
 
         public void CreateBackend()
         {      
-            var apiWebController = new ApiWebController(this.Module);
+            var apiWebController = new ApiWebController(Module);
             apiWebController.CreateApiWebControllerTemplate();
 
-            var apiRepository = new ApiRepository(this.Module);
+            var apiRepository = new ApiRepository(Module);
             apiRepository.CreateApiRepositoryTemplate();
 
-            var apiModelDTO = new ApiModelDTO(this.Module);
+            var apiModelDTO = new ApiModelDTO(Module);
             apiModelDTO.CreateApiModelTemplate();
 
-            var apiFacadeProxy = new ApiFacadeProxy(this.Module);
+            var apiFacadeProxy = new ApiFacadeProxy(Module);
             apiFacadeProxy.CreateApiFacadeProxyTemplate();
 
-            var apiFacade = new ApiFacade(this.Module);
+            var apiFacade = new ApiFacade(Module);
             apiFacade.CreateApiFacadeTemplate();
 
-            var domainModel = new DomainModel(this.Module);
+            var domainModel = new DomainModel(Module);
             domainModel.CreateDomainModelTemplate();
         }
 

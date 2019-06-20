@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\CreateBackendException.cs" />
     <Compile Include="Exceptions\CreateFolderException.cs" />
+    <Compile Include="Exceptions\CreateFrontendException.cs" />
     <Compile Include="Layer\Backend\ApiFacade.cs" />
     <Compile Include="Layer\Backend\ApiFacadeProxy.cs" />
     <Compile Include="Layer\Backend\ApiModelDTO.cs" />
