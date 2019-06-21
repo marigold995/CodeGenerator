@@ -19,7 +19,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 
 namespace _360.Api.Web.<#=module.ModuleName #>.Controllers
-{
+{	
 	[Route("api/v1/<#= LowerInitial(entity ) #>s")]
 	[P360AuthorizeApi]
 	[<#= entity  #>ExceptionFilter]
@@ -31,45 +31,49 @@ namespace _360.Api.Web.<#=module.ModuleName #>.Controllers
             _<#= LowerInitial(entity ) #>Repository = <#= LowerInitial(entity ) #>Repository;
         }
 
-		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>                
+<#if (screens.Contains(Entity.screenEnum.GetAll)){#>
 		[HttpGet]
 		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s")]
 		[ResponseType(typeof(CollectionResult<<#= entity  #>Dto>))]
 		public IHttpActionResult GetAll(string companyId, [FromUri] string fields = "")
 		{           
 			return Ok(new NotImplementedException());
-		}<# }#>	        
-			
-		<#if (screens.Contains(Entity.screenEnum.Get)){#>
+		}
+<#			}
+#><#if (screens.Contains(Entity.screenEnum.Get)){#>
+
 		[HttpGet]
 		[Route("~/api/v1/companies/{companyId}/<#= LowerInitial(entity ) #>s/{<#= LowerInitial(entity ) #>Id}", Name = "Get<#= entity  #>ById")]
         [ResponseType(typeof(<#= entity  #>Dto))]
 		 public IHttpActionResult GetById(string companyId, string <#= LowerInitial(entity ) #>Id)
         {
 			return Ok(new NotImplementedException());
-		}<# }#>
+		}
+<#			}
+#><#if (screens.Contains(Entity.screenEnum.Post)){#>
 
-		<#if (screens.Contains(Entity.screenEnum.Post)){#>
 		[HttpPost]       
         public IHttpActionResult Post([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
 			return BadRequest();
-		}<# }#>
+		}
+<#			}
+#><#if (screens.Contains(Entity.screenEnum.Put)){#>
 
-		<#if (screens.Contains(Entity.screenEnum.Put)){#>
 		[HttpPut]       
         public IHttpActionResult Put([FromBody] <#= entity  #>Dto <#= LowerInitial(entity ) #>Dto)
         {
            return Ok(new NotImplementedException());
-        }<# }#>
-		
-		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
+        }
+<#			}
+#><#if (screens.Contains(Entity.screenEnum.Delete)){#>
+
 		[HttpDelete]
 		public IHttpActionResult Delete(string companyId, string <#= LowerInitial(entity ) #>Id)
         {
             return StatusCode(HttpStatusCode.NoContent);
         }
-		<# }#>
+<#			}#>
 	}
 }
 

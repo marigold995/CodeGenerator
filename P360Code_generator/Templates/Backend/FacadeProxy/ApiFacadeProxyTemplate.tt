@@ -18,41 +18,40 @@ using System.Diagnostics.CodeAnalysis;
 namespace _360.Api.FacadeProxy.<#= module.ModuleName #>
 {
     public partial class <#= entity #>FacadeProxy : BaseFacadeProxy
-    {
-		<#if (facade.Equals (Entity.facadeEnum.GBM)){#>  
-			<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
-				public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
-				{
-					return <#= module.ModuleName #>Facade.Get<#= entity #>s(companyContext);
-				}
-			<# }#>
-			<#if (screens.Contains(Entity.screenEnum.Get)){#>  
-				public <#= entity #> Get<#= entity #>(string companyContext, string id)
-				{
-					return <#= module.ModuleName #>Facade.Get<#= entity #>(companyContext, id);
-				}
-			<# }#>
-			<#if (screens.Contains(Entity.screenEnum.Post)){#>  
-				public <#= entity #> Add<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
-				{
-					<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity ) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
-					return <#= LowerInitial(entity ) #>;
-				}
-			<# }#>
-			<#if (screens.Contains(Entity.screenEnum.Put)){#>  
-				public <#= entity #> Update<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
-				{
-					<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity ) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
-					return <#= LowerInitial(entity ) #>;
-				}
-			<# }#>
-			<#if (screens.Contains(Entity.screenEnum.Delete)){#>  
-				public void Delete<#= entity #>(string id)
-				{
-					// placeholder
-				}
-			<# }#>
-		<# }#>
+    {<#if (facade.Equals (Entity.facadeEnum.GBM)){
+#><#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+		public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
+		{
+			return <#= module.ModuleName #>Facade.Get<#= entity #>s(companyContext);
+		}	
+<# }#>
+<#if (screens.Contains(Entity.screenEnum.Get)){#>  
+		public <#= entity #> Get<#= entity #>(string companyContext, string id)
+		{
+			return <#= module.ModuleName #>Facade.Get<#= entity #>(companyContext, id);
+		}	
+<# }#>
+<#if (screens.Contains(Entity.screenEnum.Post)){#>  
+		public <#= entity #> Add<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
+		{
+			<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
+			return <#= LowerInitial(entity ) #>;
+		}
+<# }#>
+<#if (screens.Contains(Entity.screenEnum.Put)){#>  
+		public <#= entity #> Update<#= entity #>(<#= entity #> <#= LowerInitial(entity ) #>)
+		{
+			<#= LowerInitial(entity ) #>.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(<#= LowerInitial(entity) #>.CompanyContext, "VAS-CD-2019")?.LegalContractId;
+			return <#= LowerInitial(entity ) #>;
+		}
+<# }#>
+<#if (screens.Contains(Entity.screenEnum.Delete)){#>  
+		public void Delete<#= entity #>(string id)
+		{
+			// placeholder
+		}
+<# }#>
+<# }#>
 	}
 }
 
