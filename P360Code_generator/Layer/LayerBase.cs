@@ -39,28 +39,28 @@ namespace _360Generator.Layer
 
         public string CreateFolder(string path, string folderName)
         {
-            path = Path.Combine(path,folderName);
+            path = Path.Combine(path, folderName);
 
             try
             {
                 DirectoryInfo di = Directory.CreateDirectory(path);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new CreateFolderException("Create folder attempt failed. ", e.InnerException);
             }
             return path;
         }
 
-        public void CreateFile(ITemplate template, Entity entity, string path,  string suffix = "", string prefix = "")
+        public void CreateFile(ITemplate template, Entity entity, string path, string suffix = "", string prefix = "")
         {
             LayerPrefix = prefix;
-            LayerSuffix = suffix;            
+            LayerSuffix = suffix;
             InitializeParameters(template, entity, path);
         }
 
         public void InitializeParameters(ITemplate template, Entity entity, string pathLayer)
-        {          
+        {
             template.Session = new Dictionary<string, object>();
             var screensList = entity.Screens;
             template.Session["module"] = Module;
@@ -68,14 +68,21 @@ namespace _360Generator.Layer
             template.Session["screens"] = screensList;
             template.Initialize();
             string layerName = LayerPrefix + entity.EntityName + LayerSuffix;
+            string fullPath = GetFullPath(pathLayer, layerName, Extension.ToString());            
+            TransformAndWrite(fullPath, template);            
+        }
 
-            string path = Path.Combine(pathLayer, layerName);
-            string fullPath = Path.ChangeExtension(path, Extension.ToString());
-            
-                //pathList.Add(pathLayer + "/" + LayerPrefix + entity.EntityName + LayerSuffix + "." + Extension);
-                       
+        private string GetFullPath(string pathLayer, string layerName, string extension)
+        {
+            pathLayer = Path.Combine(pathLayer, layerName);
+            pathLayer = Path.ChangeExtension(pathLayer, extension);
+            return pathLayer;
+        }
+
+        private void TransformAndWrite(string path, ITemplate template)
+        {
             string pageContent = template.TransformText();
-            System.IO.File.WriteAllText(fullPath, pageContent);
+            System.IO.File.WriteAllText(path, pageContent);
         }
     }
 }
