@@ -13,8 +13,8 @@ namespace _360Generator.Exceptions
         {
 
         }
-        public CreateFolderException(string message)
-            :base(message)
+        public CreateFolderException(string message, Exception innerException)
+            :base(message, innerException)
         {
 
         }

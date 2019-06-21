@@ -45,9 +45,9 @@ namespace _360Generator.Layer
             {
                 DirectoryInfo di = Directory.CreateDirectory(path);
             }
-            catch
+            catch(Exception e)
             {
-                throw new CreateFolderException("Create folder attempt failed. ");
+                throw new CreateFolderException("Create folder attempt failed. ", e.InnerException);
             }
             return path;
         }

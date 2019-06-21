@@ -3,6 +3,7 @@ using _360Generator.Layer.Frontend;
 using _360Generator.Layer.Backend;
 using _360Generator.Exceptions;
 using _360Generator.Layer;
+using System;
 
 namespace _360Generator.Generator
 {
@@ -21,17 +22,17 @@ namespace _360Generator.Generator
             try { 
                 CreateBackend();            
             }
-            catch
+            catch(Exception e)
             {
-                throw new CreateBackendException("Create backend attempt failed! ");
+                throw new CreateBackendException("Create backend attempt failed! ", e.InnerException);
             }
             try
             {               
                 CreateFrontend();
             }
-            catch
+            catch(Exception e)
             {
-                throw new CreateFrontendException("Create frontend attempt failed! ");
+                throw new CreateFrontendException("Create frontend attempt failed! ", e.InnerException);
             }
         }
 

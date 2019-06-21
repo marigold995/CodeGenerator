@@ -8,8 +8,8 @@ namespace _360Generator.Exceptions
 {
     public class CreateFrontendException: Exception
     {
-        public CreateFrontendException(string message)
-            : base(message)
+        public CreateFrontendException(string message, Exception innerException)
+            : base(message, innerException)
         {
 
         }
