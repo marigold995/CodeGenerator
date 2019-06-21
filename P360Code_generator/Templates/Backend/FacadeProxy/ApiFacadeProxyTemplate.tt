@@ -1,10 +1,10 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-<#@ parameter name="facade" type="_360Generator.Metadata.Entity.facadeEnum"#>
-using _360.Api.Facade.Document;
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#><#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"
+#><#@ parameter name="facade" type="_360Generator.Metadata.Entity.facadeEnum"
+#>using _360.Api.Facade.Document;
 using _360.Api.Facade.FileSystem;
 using _360.Api.Facade.<#= facade #>.Contracting;
 using _360.Api.Facade.<#= facade #>.<#= module.ModuleName #>;

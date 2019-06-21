@@ -1,8 +1,8 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-import { BaseDetailView } from 'App/Base/BaseDetailView';
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#>import { BaseDetailView } from 'App/Base/BaseDetailView';
 import { CommandButton } from 'App/Base/Controls/CommandButton';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
 import { GridColumnOption } from "App/Base/Controls/Grid/GridColumnOption";

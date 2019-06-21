@@ -26,10 +26,8 @@ namespace _360Generator.Templates.Frontend.Model
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nimport { BaseEntity } from \'App/Base/BaseEntity\';\nimport { Site } from \'App/Core" +
-                    "/Site/Model/Site\';\n\nexport class ");
+            this.Write("import { BaseEntity } from \'App/Base/BaseEntity\';\nimport { Site } from \'App/Core/" +
+                    "Site/Model/Site\';\n\nexport class ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Model\PortalModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));

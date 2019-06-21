@@ -1,8 +1,3 @@
-
-
-
-
-
 using _360.Framework.Api.CyberDetection;
 using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;

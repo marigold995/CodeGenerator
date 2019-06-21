@@ -26,11 +26,7 @@ namespace _360Generator.Templates.Backend.Facade
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nusing _360.Api.Facade.");
+            this.Write("using _360.Api.Facade.");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
 using _360Generator.Generator;
+using _360Generator.Layer;
 
 namespace Test
 {
@@ -12,7 +13,7 @@ namespace Test
     {
         static void Main(string[] args)
         {           
-            var newModule = new Module("CyberDetection");
+            var newModule = new Module("CyberDetection");            
 
             Entity cyberDetectionProfile = new Entity("CyberDetectionProfile").AddScreenCreate().AddScreenDetails().AddScreenList().AddScreenUpdate().AddGBMFacade(); 
             Entity cyberService = new Entity("CyberService").AddScreenList().AddGBMFacade(); 
@@ -25,7 +26,7 @@ namespace Test
             newModule.AddEntity(zoneProfile);
            
             var generator = new Generator(newModule);
-            generator.Generate();            
+            generator.Generate("..\\..\\GeneratedCode");            
 
             Console.ReadKey();
         }

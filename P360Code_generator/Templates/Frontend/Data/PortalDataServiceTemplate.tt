@@ -1,9 +1,9 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-import { <#= module.ModuleName #>BaseDataService } from 'App/<#= module.ModuleName #>/<#= module.ModuleName #>BaseDataService';
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#><#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"
+#>import { <#= module.ModuleName #>BaseDataService } from 'App/<#= module.ModuleName #>/<#= module.ModuleName #>BaseDataService';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
 import { <#= module.ModuleName #>Initializer } from 'App/<#= module.ModuleName #>/<#= module.ModuleName #>Initializer';

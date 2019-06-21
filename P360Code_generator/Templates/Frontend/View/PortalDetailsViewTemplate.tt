@@ -1,9 +1,9 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-import { BaseDetailView } from "App/Base/BaseDetailView";
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#><#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"
+#>import { BaseDetailView } from "App/Base/BaseDetailView";
 import { PopUpOptions } from 'App/Base/Dialog/PopUpOptions';
 import { ViewAction } from "App/Base/Controls/SideNavbar/ViewAction";
 import { <#= entity #>DetailViewModel } from "App/<#= module.ModuleName #>/<#= entity #>/ViewModel/<#= entity #>DetailViewModel";

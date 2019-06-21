@@ -20,14 +20,11 @@ namespace _360Generator.Layer
         public ExtensionEnum Extension { get; set; }
         public string LayerSuffix { get; set; }
         public string LayerPrefix { get; set; }
-
-        //public List<string> LayerSuffixList { get; set; }        
-        //public List<string> LayerPrefixList { get; set; }
         public string FolderPrefix { get; set; }
 
         protected Module Module { get; set; }
 
-        public string rootPath = "../../GeneratedCode";
+        public static string rootPath { get; set; }
 
         public LayerBase()
         {
@@ -35,9 +32,14 @@ namespace _360Generator.Layer
             LayerPrefix = "";
         }
 
+        public static void SetBasePath(string path)
+        {
+            rootPath = path;
+        }
+
         public string CreateFolder(string path, string folderName)
         {
-            path += "/" + folderName;
+            path = Path.Combine(path,folderName);
 
             try
             {
@@ -47,9 +49,7 @@ namespace _360Generator.Layer
             {
                 throw new CreateFolderException("Create folder attempt failed. ");
             }
-
             return path;
-
         }
 
         public void CreateFile(ITemplate template, Entity entity, string path,  string suffix = "", string prefix = "")
@@ -67,12 +67,15 @@ namespace _360Generator.Layer
             template.Session["entity"] = entity.EntityName;
             template.Session["screens"] = screensList;
             template.Initialize();
+            string layerName = LayerPrefix + entity.EntityName + LayerSuffix;
 
-            List<string> pathList = new List<string>();            
-            pathList.Add(pathLayer + "/" + LayerPrefix + entity.EntityName + LayerSuffix + "." + Extension);
+            string path = Path.Combine(pathLayer, layerName);
+            string fullPath = Path.ChangeExtension(path, Extension.ToString());
+            
+                //pathList.Add(pathLayer + "/" + LayerPrefix + entity.EntityName + LayerSuffix + "." + Extension);
                        
             string pageContent = template.TransformText();
-            System.IO.File.WriteAllText(pathList[pathList.Count-1].ToString(), pageContent);
+            System.IO.File.WriteAllText(fullPath, pageContent);
         }
     }
 }

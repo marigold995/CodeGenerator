@@ -26,12 +26,9 @@ namespace _360Generator.Templates.Frontend.Include
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nimport { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport {" +
-                    " DefaultParameterText } from \'App/Base/Controls/Breadcrumbs/DefaultParameterText" +
-                    "\';\n\nexport class ");
+            this.Write("import { EntityParameters } from \'App/Base/Framework/EntityParameters\';\nimport { " +
+                    "DefaultParameterText } from \'App/Base/Controls/Breadcrumbs/DefaultParameterText\'" +
+                    ";\n\nexport class ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Include\PortalInitializerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));

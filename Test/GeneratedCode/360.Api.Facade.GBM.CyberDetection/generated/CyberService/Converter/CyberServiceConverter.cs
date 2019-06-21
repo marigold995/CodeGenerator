@@ -1,8 +1,3 @@
-
-
-
-
-
 using _360.Api.Facade.GBM.Core.Converters;
 using _360.Api.Facade.GBM.Document.Converters;
 using _360.Framework.Libs.Extensions;

@@ -1,7 +1,7 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="entity" type="System.String"#>
-import { BaseEntity } from 'App/Base/BaseEntity';
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="entity" type="System.String"
+#>import { BaseEntity } from 'App/Base/BaseEntity';
 import { Site } from 'App/Core/Site/Model/Site';
 
 export class <#= entity #> extends BaseEntity {    

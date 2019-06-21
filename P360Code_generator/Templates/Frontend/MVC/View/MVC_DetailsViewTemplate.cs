@@ -26,9 +26,8 @@ namespace _360Generator.Templates.Frontend.MVC.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../.." +
-                    "/Views/Base/ViewTitle\")\n    <div id=\"");
+            this.Write("@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../../" +
+                    "Views/Base/ViewTitle\")\n    <div id=\"");
             
             #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));

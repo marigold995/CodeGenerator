@@ -26,9 +26,7 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nusing System.Web.Mvc;\nusing System.Web.UI;\n\nnamespace _360.Portal.");
+            this.Write("using System.Web.Mvc;\nusing System.Web.UI;\n\nnamespace _360.Portal.");
             
             #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));

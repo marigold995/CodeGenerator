@@ -26,11 +26,9 @@ namespace _360Generator.Templates.Frontend.Validator
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nimport { BaseValidator } from \'App/Base/BaseValidator\';\nimport { ValidationResul" +
-                    "t } from \'App/Base/Model/ValidationResult\';\nimport { Localization } from \'App/Ba" +
-                    "se/Framework/Localization\';\n\nexport class ");
+            this.Write("import { BaseValidator } from \'App/Base/BaseValidator\';\nimport { ValidationResult" +
+                    " } from \'App/Base/Model/ValidationResult\';\nimport { Localization } from \'App/Bas" +
+                    "e/Framework/Localization\';\n\nexport class ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Validator\PortalValidatorTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));

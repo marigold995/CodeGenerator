@@ -1,8 +1,3 @@
-
-
-
-
-
 using _360.Framework.Api.CyberDetection;
 using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;
@@ -23,11 +18,6 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
         public SecurityAndItPolicyDto GetById(string id) => Execute(() => BusinessMap.Api.SecurityAndItPolicy.GetById(id));
     }
 }
-
-
-
-
-
 using _360.Framework.Api.CyberDetection;
 using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;

@@ -2,6 +2,7 @@
 using _360Generator.Layer.Frontend;
 using _360Generator.Layer.Backend;
 using _360Generator.Exceptions;
+using _360Generator.Layer;
 
 namespace _360Generator.Generator
 {
@@ -14,8 +15,9 @@ namespace _360Generator.Generator
             Module = newModule;
         }
 
-        public void Generate()
+        public void Generate(string basePath)
         {
+            LayerBase.SetBasePath(basePath);
             try { 
                 CreateBackend();            
             }
@@ -25,7 +27,7 @@ namespace _360Generator.Generator
             }
             try
             {               
-                //CreateFrontend();
+                CreateFrontend();
             }
             catch
             {
@@ -34,24 +36,24 @@ namespace _360Generator.Generator
         }
 
         public void CreateBackend()
-        {      
-            //var apiWebController = new ApiWebController(Module);
-            //apiWebController.CreateApiWebControllerTemplate();
+        {
+            var apiWebController = new ApiWebController(Module);
+            apiWebController.CreateApiWebControllerTemplate();
 
-            //var apiRepository = new ApiRepository(Module);
-            //apiRepository.CreateApiRepositoryTemplate();
+            var apiRepository = new ApiRepository(Module);
+            apiRepository.CreateApiRepositoryTemplate();
 
-            //var apiModelDTO = new ApiModelDTO(Module);
-            //apiModelDTO.CreateApiModelTemplate();
+            var apiModelDTO = new ApiModelDTO(Module);
+            apiModelDTO.CreateApiModelTemplate();
 
-            //var apiFacadeProxy = new ApiFacadeProxy(Module);
-            //apiFacadeProxy.CreateApiFacadeProxyTemplate();
+            var apiFacadeProxy = new ApiFacadeProxy(Module);
+            apiFacadeProxy.CreateApiFacadeProxyTemplate();
 
             var apiFacade = new ApiFacade(Module);
             apiFacade.CreateApiFacadeTemplate();
 
-            //var domainModel = new DomainModel(Module);
-            //domainModel.CreateDomainModelTemplate();
+            var domainModel = new DomainModel(Module);
+            domainModel.CreateDomainModelTemplate();
         }
 
         public void CreateFrontend()

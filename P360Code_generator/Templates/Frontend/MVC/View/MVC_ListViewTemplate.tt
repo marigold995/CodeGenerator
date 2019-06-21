@@ -1,7 +1,7 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="entity" type="System.String"#>
-<div class="baseview-list">
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="entity" type="System.String"
+#><div class="baseview-list">
     <div class="w-box white-xxx">        
         @Html.Partial("../../Views/Base/ViewTitle")
         <div id="<#= entity #>GridWidget"></div>

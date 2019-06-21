@@ -26,10 +26,7 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write(@"
-import { BaseGridView } from 'App/Base/BaseGridView';
+            this.Write(@"import { BaseGridView } from 'App/Base/BaseGridView';
 import { Constants } from 'App/Base/Constants';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
 import { GridColumnOption } from 'App/Base/Controls/Grid/GridColumnOption';

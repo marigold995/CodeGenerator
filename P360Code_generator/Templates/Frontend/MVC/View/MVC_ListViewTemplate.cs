@@ -26,9 +26,8 @@ namespace _360Generator.Templates.Frontend.MVC.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n<div class=\"baseview-list\">\n    <div class=\"w-box white-xxx\">        \n        @H" +
-                    "tml.Partial(\"../../Views/Base/ViewTitle\")\n        <div id=\"");
+            this.Write("<div class=\"baseview-list\">\n    <div class=\"w-box white-xxx\">        \n        @Ht" +
+                    "ml.Partial(\"../../Views/Base/ViewTitle\")\n        <div id=\"");
             
             #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_ListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));

@@ -26,13 +26,9 @@ namespace _360Generator.Templates.Frontend.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nimport { BaseDetailView } from \"App/Base/BaseDetailView\";\nimport { PopUpOptions " +
-                    "} from \'App/Base/Dialog/PopUpOptions\';\nimport { ViewAction } from \"App/Base/Cont" +
-                    "rols/SideNavbar/ViewAction\";\nimport { ");
+            this.Write("import { BaseDetailView } from \"App/Base/BaseDetailView\";\nimport { PopUpOptions }" +
+                    " from \'App/Base/Dialog/PopUpOptions\';\nimport { ViewAction } from \"App/Base/Contr" +
+                    "ols/SideNavbar/ViewAction\";\nimport { ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\View\PortalDetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));

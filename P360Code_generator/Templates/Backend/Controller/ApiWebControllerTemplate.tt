@@ -1,10 +1,9 @@
-﻿<#@ template language="C#"  #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"#>
-using _360.Api.Model.<#= module.ModuleName #>;
+﻿<#@ template language="C#"  
+#><#@ import namespace="_360Generator.Metadata" 
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#><#@ parameter name="screens" type="System.Collections.Generic.List<_360Generator.Metadata.Entity.screenEnum>"
+#>using _360.Api.Model.<#= module.ModuleName #>;
 using _360.Api.Repository.<#= module.ModuleName  #>;
 using _360.Api.Web.<#= module.ModuleName  #>.Infrastructure;
 using _360Generator.Templates;

@@ -26,11 +26,7 @@ namespace _360Generator.Templates.Frontend.Data
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nimport { ");
+            this.Write("import { ");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\Data\PortalDataServiceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));

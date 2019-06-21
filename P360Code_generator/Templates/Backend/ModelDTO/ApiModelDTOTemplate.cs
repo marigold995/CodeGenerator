@@ -26,12 +26,9 @@ namespace _360Generator.Templates.Backend.ModelDTO
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nusing _360.Api.Core.Models;\nusing _360.Framework.Api.Models;\nusing _360Generator" +
-                    ".Templates;\nusing System;\nusing System.Collections.Generic;\n\nnamespace _360.Api." +
-                    "Model.");
+            this.Write("using _360.Api.Core.Models;\nusing _360.Framework.Api.Models;\nusing _360Generator." +
+                    "Templates;\nusing System;\nusing System.Collections.Generic;\n\nnamespace _360.Api.M" +
+                    "odel.");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\ModelDTO\ApiModelDTOTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));

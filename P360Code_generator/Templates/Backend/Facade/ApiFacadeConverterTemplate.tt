@@ -1,9 +1,9 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="module" type="_360Generator.Metadata.Module"#>
-<#@ parameter name="entity" type="System.String"#>
-<#@ parameter name="facade" type="_360Generator.Metadata.Entity.facadeEnum"#>
-using _360.Api.Facade.<#= facade #>.Core.Converters;
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="module" type="_360Generator.Metadata.Module"
+#><#@ parameter name="entity" type="System.String"
+#><#@ parameter name="facade" type="_360Generator.Metadata.Entity.facadeEnum"
+#>using _360.Api.Facade.<#= facade #>.Core.Converters;
 using _360.Api.Facade.<#= facade #>.Document.Converters;
 using _360.Framework.Libs.Extensions;
 using BusinessMap.Client.Rest.Models;

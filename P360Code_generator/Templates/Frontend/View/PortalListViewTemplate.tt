@@ -1,7 +1,7 @@
-﻿<#@ template language="C#" #>
-<#@ import namespace="_360Generator.Metadata" #>
-<#@ parameter name="entity" type="System.String"#>
-import { BaseGridView } from 'App/Base/BaseGridView';
+﻿<#@ template language="C#"
+#><#@ import namespace="_360Generator.Metadata"
+#><#@ parameter name="entity" type="System.String"
+#>import { BaseGridView } from 'App/Base/BaseGridView';
 import { Constants } from 'App/Base/Constants';
 import { CommandEvent } from 'App/Base/Controls/CommandEvent';
 import { GridColumnOption } from 'App/Base/Controls/Grid/GridColumnOption';

@@ -9,10 +9,7 @@
 // ------------------------------------------------------------------------------
 namespace _360Generator.Templates.Backend.Domain
 {
-    using System.Linq;
-    using System.Text;
-    using System.Collections.Generic;
-    using _360Generator;
+    using _360Generator.Metadata;
     using System;
     
     /// <summary>
@@ -29,15 +26,8 @@ namespace _360Generator.Templates.Backend.Domain
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n\nusing _360.Domain.Core;\nusing System;\nusing System.Collections.Generic;\n\nnamesp" +
-                    "ace _360.Domain.");
+            this.Write("using _360.Domain.Core;\nusing System;\nusing System.Collections.Generic;\n\nnamespac" +
+                    "e _360.Domain.");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Domain\DomainModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));

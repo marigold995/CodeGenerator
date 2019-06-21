@@ -26,12 +26,7 @@ namespace _360Generator.Templates.Backend.Controller
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\nusing _360.Api.Model.");
+            this.Write("using _360.Api.Model.");
             
             #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Controller\ApiWebControllerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));

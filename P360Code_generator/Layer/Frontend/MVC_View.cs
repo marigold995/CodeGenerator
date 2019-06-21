@@ -34,22 +34,22 @@ namespace _360Generator.Layer.Frontend
                 if (entity.Screens.Contains(Entity.screenEnum.Post))
                 {                    
                     createViewTemplate = new MVC_CreateViewTemplate();
-                    CreateFile(createViewTemplate, entity, pathLayer, "Create");
+                    CreateFile(createViewTemplate, entity, pathLayerEntity, "Create");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
                     detailsViewTemplate = new MVC_DetailsViewTemplate();
-                    CreateFile(detailsViewTemplate, entity, pathLayer, "Detail");
+                    CreateFile(detailsViewTemplate, entity, pathLayerEntity, "Detail");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
                     listViewTemplate = new MVC_ListViewTemplate();
-                    CreateFile(listViewTemplate, entity, pathLayer, "List");
+                    CreateFile(listViewTemplate, entity, pathLayerEntity, "List");
                 }
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
                     updateViewTemplate = new MVC_UpdateViewTemplate();
-                    CreateFile(updateViewTemplate, entity, pathLayer, "Update");
+                    CreateFile(updateViewTemplate, entity, pathLayerEntity, "Update");
                 }
             }
         }

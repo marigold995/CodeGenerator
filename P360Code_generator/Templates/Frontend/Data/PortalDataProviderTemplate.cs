@@ -26,12 +26,7 @@ namespace _360Generator.Templates.Frontend.Data
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write("\n");
-            this.Write(@"
-import { BaseDataProvider } from 'App/Base/BaseDataProvider';
+            this.Write(@"import { BaseDataProvider } from 'App/Base/BaseDataProvider';
 import { Constants } from 'App/Base/Constants';
 import { DataProviderCallOptions } from 'App/Base/Data/DataProviderCallOptions';
 import { DataProviderExecuteOptions } from 'App/Base/Data/DataProviderExecuteOptions';
