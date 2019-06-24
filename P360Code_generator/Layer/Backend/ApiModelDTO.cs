@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using _360Generator.Metadata;
+﻿using _360Generator.Metadata;
 using _360Generator.Templates.Backend.ModelDTO;
 
 namespace _360Generator.Layer.Backend
 {
-    class ApiModelDTO : LayerBase
+    internal class ApiModelDTO : LayerBase
     {
         public ApiModelDTOTemplate apiModelDTOTemplate { get; set; }
 
-        public ApiModelDTO(Module apiModelModule): base()
+        public ApiModelDTO(Module apiModelModule)
         {
             Module = apiModelModule;
 
@@ -18,15 +17,13 @@ namespace _360Generator.Layer.Backend
 
         public void CreateApiModelTemplate()
         {
-            string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
-            string pathLayer = path0;  
+            string pathLayer = CreateFolder(RootPath, FolderPrefix + Module.ModuleName);
 
             foreach (var entity in Module.Entities)
             {
                 apiModelDTOTemplate = new ApiModelDTOTemplate();
                 CreateFile(apiModelDTOTemplate, entity, pathLayer, "DTO");
             }
-
         }
     }
 }

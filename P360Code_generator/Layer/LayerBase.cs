@@ -1,10 +1,9 @@
-﻿using _360Generator.Metadata;
+﻿using _360Generator.Exceptions;
+using _360Generator.Metadata;
+using _360Generator.Templates;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using _360Generator.Templates;
-using _360Generator.Exceptions;
-
 
 namespace _360Generator.Layer
 {
@@ -24,9 +23,9 @@ namespace _360Generator.Layer
 
         protected Module Module { get; set; }
 
-        public static string rootPath { get; set; }
+        public static string RootPath { get; set; }
 
-        public LayerBase()
+        protected LayerBase()
         {
             LayerSuffix = "";
             LayerPrefix = "";
@@ -34,7 +33,7 @@ namespace _360Generator.Layer
 
         public static void SetBasePath(string path)
         {
-            rootPath = path;
+            RootPath = path;
         }
 
         public string CreateFolder(string path, string folderName)
@@ -68,8 +67,8 @@ namespace _360Generator.Layer
             template.Session["screens"] = screensList;
             template.Initialize();
             string layerName = LayerPrefix + entity.EntityName + LayerSuffix;
-            string fullPath = GetFullPath(pathLayer, layerName, Extension.ToString());            
-            TransformAndWrite(fullPath, template);            
+            string fullPath = GetFullPath(pathLayer, layerName, Extension.ToString());
+            TransformAndWrite(fullPath, template);
         }
 
         private string GetFullPath(string pathLayer, string layerName, string extension)

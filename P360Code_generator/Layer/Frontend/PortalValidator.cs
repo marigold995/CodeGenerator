@@ -1,31 +1,25 @@
 ﻿using _360Generator.Metadata;
 using _360Generator.Templates.Frontend.Validator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _360Generator.Layer.Frontend
 {
-    class PortalValidator:LayerBase
-    {       
+    internal class PortalValidator : LayerBase
+    {
         public PortalValidatorTemplate portalValidatorTemplate { get; set; }
 
-        public PortalValidator(Module portalValidatorModule) : base()
+        public PortalValidator(Module portalValidatorModule)
         {
             Module = portalValidatorModule;
 
             Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
-
         }
 
         public void CreatePortalValidatorTemplate()
         {
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
+                string path0 = CreateFolder(RootPath, FolderPrefix);
                 string pathDomain = CreateFolder(path0, "Scripts");
                 string pathApp = CreateFolder(pathDomain, "App");
                 string pathModule = CreateFolder(pathApp, Module.ModuleName);

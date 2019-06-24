@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using _360Generator.Metadata;
+﻿using _360Generator.Metadata;
 using _360Generator.Templates.Backend.Domain;
 
 namespace _360Generator.Layer.Backend
 {
-    class DomainModel : LayerBase
-    {     
+    internal class DomainModel : LayerBase
+    {
         public DomainModelTemplate domainModelTemplate { get; set; }
 
-        public DomainModel(Module domainModelModule) : base()
+        public DomainModel(Module domainModelModule)
         {
             Module = domainModelModule;
 
@@ -18,14 +17,13 @@ namespace _360Generator.Layer.Backend
 
         public void CreateDomainModelTemplate()
         {
-            string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
-            string pathLayer = path0;
-            
+            string pathLayer = CreateFolder(RootPath, FolderPrefix + Module.ModuleName);
+
             foreach (var entity in Module.Entities)
             {
                 domainModelTemplate = new DomainModelTemplate();
                 CreateFile(domainModelTemplate, entity, pathLayer);
             }
-        }   
+        }
     }
 }

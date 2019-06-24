@@ -1,8 +1,8 @@
-﻿using _360Generator.Metadata;
-using _360Generator.Layer.Frontend;
-using _360Generator.Layer.Backend;
-using _360Generator.Exceptions;
+﻿using _360Generator.Exceptions;
 using _360Generator.Layer;
+using _360Generator.Layer.Backend;
+using _360Generator.Layer.Frontend;
+using _360Generator.Metadata;
 using System;
 
 namespace _360Generator.Generator
@@ -19,20 +19,21 @@ namespace _360Generator.Generator
         public void Generate(string basePath)
         {
             LayerBase.SetBasePath(basePath);
-            try { 
-                CreateBackend();            
-            }
-            catch(Exception e)
+            try
             {
-                throw new CreateBackendException("Create backend attempt failed! ", e.InnerException);
+                CreateBackend();
+            }
+            catch (Exception e)
+            {
+                throw new CreateBackendException("Create backend attempt failed! ", e);
             }
             try
-            {               
+            {
                 CreateFrontend();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                throw new CreateFrontendException("Create frontend attempt failed! ", e.InnerException);
+                throw new CreateFrontendException("Create frontend attempt failed! ", e);
             }
         }
 
@@ -83,6 +84,5 @@ namespace _360Generator.Generator
             var mvcView = new MVC_View(Module);
             mvcView.CreateMVCViewTemplate();
         }
-
     }
 }
