@@ -34,7 +34,11 @@ namespace _360.Api.FacadeProxy.CyberDetection
 			zoneProfile.LegalContractId = ContractingFacade.GetLegalContractByBuyerAndPcsVersion(zoneProfile.CompanyContext, "VAS-CD-2019")?.LegalContractId;
 			return zoneProfile;
 		}
+  
+		public void DeleteZoneProfile(string id)
+		{
+			// placeholder
+		}
 	}
 }
-
 

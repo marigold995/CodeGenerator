@@ -20,4 +20,3 @@ namespace _360.Api.FacadeProxy.CyberDetection
 	}
 }
 
-

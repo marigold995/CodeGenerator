@@ -6,22 +6,11 @@ using _360.Framework.Libs;
 namespace _360.Api.Repository.CyberDetection
 {
     public interface ICyberDetectionProfileRepository : IBaseRepository
-    {
-		  
+    {  
         PagedCollection<CyberDetectionProfile> GetCyberDetectionProfiles(string companyContext);
-			        
-			
-		
         CyberDetectionProfile GetCyberDetectionProfile(string companyContext, string serviceOrderId);
-			        
-			
-		
-        CyberDetectionProfile Add(CyberDetectionProfile CyberDetectionProfile);
-		
-
-		
-        void Update(CyberDetectionProfile CyberDetectionProfile); 
-		 
-		 
+        CyberDetectionProfile Add(CyberDetectionProfile cyberDetectionProfile);
+        void Update(CyberDetectionProfile cyberDetectionProfile); 
     }
 }
+
