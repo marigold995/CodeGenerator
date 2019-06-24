@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using _360Generator.Metadata;
+﻿using _360Generator.Metadata;
 using _360Generator.Templates.Frontend.MVC.Controller;
 
 namespace _360Generator.Layer.Frontend
 {
-    class MVC_Controller: LayerBase
+    internal class MVC_Controller : LayerBase
     {
         public MVC_ControllerTemplate controllerTemplate { get; set; }
 
-        public MVC_Controller(Module controllerModule) : base()
+        public MVC_Controller(Module controllerModule)
         {
             Module = controllerModule;
 
@@ -20,7 +19,7 @@ namespace _360Generator.Layer.Frontend
         {
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
+                string path0 = CreateFolder(RootPath, FolderPrefix);
                 string pathLayer = CreateFolder(path0, "Controllers");
 
                 controllerTemplate = new MVC_ControllerTemplate();

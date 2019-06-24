@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using _360Generator.Metadata;
+﻿using _360Generator.Metadata;
 using _360Generator.Templates.Backend.Controller;
 
 namespace _360Generator.Layer.Backend
@@ -8,17 +7,17 @@ namespace _360Generator.Layer.Backend
     {
         public ApiWebControllerTemplate apiWebControllerTemplate { get; set; }
 
-        public ApiWebController(Module apiWebModule): base()
+        public ApiWebController(Module apiWebModule)
         {
             Module = apiWebModule;
-            
-            Extension = ExtensionEnum.cs;           
+
+            Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Api.Web.";
         }
 
         public void CreateApiWebControllerTemplate()
         {
-            string path0 = CreateFolder(rootPath, FolderPrefix + Module.ModuleName);
+            string path0 = CreateFolder(RootPath, FolderPrefix + Module.ModuleName);
             string pathLayer = CreateFolder(path0, "Controllers");
 
             foreach (var entity in Module.Entities)
@@ -26,6 +25,6 @@ namespace _360Generator.Layer.Backend
                 apiWebControllerTemplate = new ApiWebControllerTemplate();
                 CreateFile(apiWebControllerTemplate, entity, pathLayer, "Controller");
             }
-        }       
+        }
     }
 }
