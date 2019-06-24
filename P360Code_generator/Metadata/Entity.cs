@@ -37,39 +37,37 @@ namespace _360Generator.Metadata
         public Entity(string EntityName)
         {
             this.EntityName = EntityName;
-            this.Attributes = new List<string>();
-            this.Screens = new List<screenEnum>();
+            Attributes = new List<string>();
+            Screens = new List<screenEnum>();
         }
-
-        //public void AddScreen(screenEnum screen) {
-        //    Screens.Add(screen);
-        //}
-
+        
         public Entity AddScreenList()
         {
-            var entity = this;
-            entity.Screens.Add(Entity.screenEnum.GetAll);
-            return entity;
+            Screens.Add(Entity.screenEnum.GetAll);
+            return this;
         }
         public Entity AddScreenDetails()
         {
-            var entity = this;
-            entity.Screens.Add(Entity.screenEnum.Get);
-            return entity;            
+            Screens.Add(Entity.screenEnum.Get);
+            return this;            
         }
         public Entity AddScreenCreate()
         {
-            var entity = this;
-            entity.Screens.Add(Entity.screenEnum.Post);
-            return entity;
+            Screens.Add(Entity.screenEnum.Post);
+            return this;
             
         }
         public Entity AddScreenUpdate()
         {
-            var entity = this;
-            entity.Screens.Add(Entity.screenEnum.Put);
-            return entity;
+            Screens.Add(Entity.screenEnum.Put);
+            return this;
         }
+
+        public Entity AddScreenDelete()
+        {            
+            Screens.Add(Entity.screenEnum.Delete);
+            return this;
+        }        
 
         public Entity AddGBMFacade()
         {

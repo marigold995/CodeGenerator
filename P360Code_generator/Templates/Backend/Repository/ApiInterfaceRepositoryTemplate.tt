@@ -11,24 +11,20 @@ using _360.Framework.Libs;
 namespace _360.Api.Repository.<#= module.ModuleName #>
 {
     public interface I<#= entity #>Repository : IBaseRepository
-    {
-		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+    {<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
         PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext);
-		<# }#>	        
-			
-		<#if (screens.Contains(Entity.screenEnum.Get)){#>
+<# }if (screens.Contains(Entity.screenEnum.Get)){#>
         <#= entity #> Get<#= entity #>(string companyContext, string serviceOrderId);
-		<# }#>	        
-			
-		<#if (screens.Contains(Entity.screenEnum.Post)){#>
-        <#= entity #> Add(<#= entity #> <#= entity #>);
-		<# }#>
-
-		<#if (screens.Contains(Entity.screenEnum.Put)){#>
-        void Update(<#= entity #> <#= entity #>); 
-		<# }#> 
-		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
-		void Delete(string companyContext, string serviceOrderId);
-		<# }#> 
+<# }if (screens.Contains(Entity.screenEnum.Post)){#>
+        <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>);
+<# }if (screens.Contains(Entity.screenEnum.Put)){#>
+        void Update(<#= entity #> <#= LowerInitial(entity) #>); 
+<# }if (screens.Contains(Entity.screenEnum.Delete)){#>
+		void Delete(string companyContext, string serviceOrderId);<# }#>
     }
 }
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

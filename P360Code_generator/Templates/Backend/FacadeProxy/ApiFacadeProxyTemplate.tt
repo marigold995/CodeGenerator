@@ -55,7 +55,6 @@ namespace _360.Api.FacadeProxy.<#= module.ModuleName #>
 	}
 }
 
-
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

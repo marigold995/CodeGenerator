@@ -6,16 +6,8 @@ using _360.Framework.Libs;
 namespace _360.Api.Repository.CyberDetection
 {
     public interface ICyberServiceRepository : IBaseRepository
-    {
-		  
+    {  
         PagedCollection<CyberService> GetCyberServices(string companyContext);
-			        
-			
-			        
-			
-		
-
-		 
-		 
     }
 }
+

@@ -305,11 +305,11 @@ if (screens.Contains(Entity.screenEnum.Delete)){
             
             #line default
             #line hidden
-            this.Write("\t}\r\n}\r\n\r\n\r\n");
+            this.Write("\t}\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 59 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
+        #line 58 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\FacadeProxy\ApiFacadeProxyTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

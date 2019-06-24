@@ -41,6 +41,11 @@ namespace _360.Api.Repository.CyberDetection
         }
 		 
 
+		
+			public void Delete(string companyContext, string securityAndItPolicyId)
+        {
+            CyberDetectionFacadeProxy.Delete SecurityAndItPolicy(securityAndItPolicyId);
+        }
 		 
     }
 }
