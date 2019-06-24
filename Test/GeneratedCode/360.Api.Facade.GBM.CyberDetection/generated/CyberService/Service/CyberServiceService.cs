@@ -15,6 +15,6 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
 
         public IEnumerable<CyberServiceDto> GetCyberServices(string companyContext) => Execute(() => BusinessMap.Api.CyberService.GetAllCyberServicesByBuyer(companyContext, null, null));
 
-        public CyberServiceDto GetById(string id) => Execute(() => BusinessMap.Api.CyberService.GetById(id));
+        //public CyberServiceDto GetById(string id) => Execute(() => BusinessMap.Api.CyberService.GetById(id));
     }
 }

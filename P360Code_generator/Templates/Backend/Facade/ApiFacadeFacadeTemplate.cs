@@ -28,149 +28,71 @@ namespace _360Generator.Templates.Backend.Facade
         {
             this.Write("using _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(".Service;\nusing _360.Domain.");
+            this.Write(".Service;\r\nusing _360.Domain.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360.Framework.Libs;\nusing System.Linq;\n\nnamespace _360.Api.Facade.GBM.");
+            this.Write(";\r\nusing _360.Framework.Libs;\r\nusing System.Linq;\r\n\r\nnamespace _360.Api.Facade.GB" +
+                    "M.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public partial class ");
+            this.Write("\r\n{\r\n    public partial class ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("Facade : I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("Facade\n    {\n        private ");
+            this.Write("Facade\r\n    {       \r\n        public PagedCollection<");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Service _");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
-            
-            #line default
-            #line hidden
-            this.Write("Service;\n\n        private ");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Service ");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Service => _");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
-            
-            #line default
-            #line hidden
-            this.Write(" ?? (_");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
-            
-            #line default
-            #line hidden
-            this.Write("Service = new ");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Service());\n\n        public PagedCollection<");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 15 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("s(string companyContext)\n        {\n           return new PagedCollection<");
+            this.Write("s(string companyContext)\r\n        {\r\n           return new PagedCollection<");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
+            #line 17 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write(">(entities);\n        }\n\n        public ");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write(" Get");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("(string companyContext, string id) =>");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Service.GetById(id).Convert();\n    }\n}\n\n");
+            this.Write(">(entities);\r\n        }       \r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
-
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-
-        
-        #line default
-        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeTemplate.tt"
 

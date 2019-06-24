@@ -28,61 +28,47 @@ namespace _360Generator.Templates.Backend.Facade
         {
             this.Write("using _360.Domain.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360.Framework.Libs;\n\nnamespace _360.Api.Facade.");
+            this.Write(";\r\nusing _360.Framework.Libs;\r\n\r\nnamespace _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public partial interface I");
+            this.Write("\r\n{\r\n    public partial interface I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 11 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("Facade\n    {\n        PagedCollection<");
+            this.Write("Facade\r\n    {\r\n        PagedCollection<");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
+            #line 13 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("s(string companyContext);\n\n        ");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write(" Get");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeFacadeInterfaceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("(string id, string companyContext);\n    }\n}\n");
+            this.Write("s(string companyContext);\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

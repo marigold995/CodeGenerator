@@ -28,71 +28,116 @@ namespace _360Generator.Templates.Backend.Facade
         {
             this.Write("using _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
-            this.Write(".Core.Converters;\nusing _360.Api.Facade.");
+            this.Write(".Core.Converters;\r\nusing _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
-            this.Write(".Document.Converters;\nusing _360.Framework.Libs.Extensions;\nusing BusinessMap.Cli" +
-                    "ent.Rest.Models;\nusing System.Collections.Generic;\nusing System.Linq;\nusing ");
+            this.Write(".Document.Converters;\r\nusing _360.Framework.Libs.Extensions;\r\nusing BusinessMap.C" +
+                    "lient.Rest.Models;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing" +
+                    " ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" = _360.Domain.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write(";\nusing CDConfigZoneType = _360.Domain.");
+            this.Write(";\r\n\r\nnamespace _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
-            
-            #line default
-            #line hidden
-            this.Write(".CDConfigZoneType;\n\nnamespace _360.Api.Facade.");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public static class ");
+            this.Write("\r\n{\r\n    public static class ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            #line 16 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Converter\n    {\n       \n    }\n}\n");
+            this.Write("Converter\r\n    {\r\n        public static ");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write(" Convert(this ");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("Dto ");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Dto)\n        {\n            if (!");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
+            
+            #line default
+            #line hidden
+            this.Write("Dto.IsAssigned())\n            {\n                return new ");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("();\n            }\n\n            return new  ");
+            
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
+            
+            #line default
+            #line hidden
+            this.Write("\n            {\n                \n            };\n        }\r\n    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 22 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+
+        
+        #line default
+        #line hidden
         
         #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeConverterTemplate.tt"
 

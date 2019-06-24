@@ -5,12 +5,23 @@ using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;
 using System.Linq;
 using ZoneProfile = _360.Domain.CyberDetection.ZoneProfile;
-using CDConfigZoneType = _360.Domain.CyberDetection.CDConfigZoneType;
 
 namespace _360.Api.Facade.GBM.CyberDetection
 {
     public static class ZoneProfileConverter
     {
-       
+        public static ZoneProfile Convert(this ZoneProfileDto zoneProfileDto)
+        {
+            if (!zoneProfileDto.IsAssigned())
+            {
+                return new ZoneProfile();
+            }
+
+            return new  ZoneProfile
+            {
+                
+            };
+        }
     }
 }
+

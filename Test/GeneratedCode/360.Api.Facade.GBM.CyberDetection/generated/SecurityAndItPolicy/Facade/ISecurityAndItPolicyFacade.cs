@@ -6,7 +6,5 @@ namespace _360.Api.Facade.GBM.CyberDetection
     public partial interface ICyberDetectionFacade
     {
         PagedCollection<SecurityAndItPolicy> GetSecurityAndItPolicys(string companyContext);
-
-        SecurityAndItPolicy GetSecurityAndItPolicy(string id, string companyContext);
     }
 }

@@ -11,21 +11,10 @@ using System.Linq;
 namespace _360.Api.Facade.GBM.<#=module.ModuleName #>
 {
     public partial class <#=module.ModuleName #>Facade : I<#=module.ModuleName #>Facade
-    {
-        private <#=entity #>Service _<#= LowerInitial(entity) #>Service;
-
-        private <#=entity #>Service <#=entity #>Service => _<#= LowerInitial(entity) #> ?? (_<#= LowerInitial(entity) #>Service = new <#=entity #>Service());
-
+    {       
         public PagedCollection<<#=entity #>> Get<#=entity #>s(string companyContext)
         {
            return new PagedCollection<<#=entity #>>(entities);
-        }
-
-        public <#=entity #> Get<#=entity #>(string companyContext, string id) =><#=entity #>Service.GetById(id).Convert();
+        }       
     }
 }
-
-<#+
- private string LowerInitial(string name)
- { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
-#>

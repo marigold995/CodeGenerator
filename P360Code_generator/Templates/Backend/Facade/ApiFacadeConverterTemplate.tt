@@ -10,12 +10,27 @@ using BusinessMap.Client.Rest.Models;
 using System.Collections.Generic;
 using System.Linq;
 using <#= entity #> = _360.Domain.<#= module.ModuleName #>.<#= entity #>;
-using CDConfigZoneType = _360.Domain.<#= module.ModuleName #>.CDConfigZoneType;
 
 namespace _360.Api.Facade.<#= facade #>.<#= module.ModuleName #>
 {
     public static class <#= entity #>Converter
     {
-       
+        public static <#= entity #> Convert(this <#= entity #>Dto <#= LowerInitial(entity) #>Dto)
+        {
+            if (!<#= LowerInitial(entity) #>Dto.IsAssigned())
+            {
+                return new <#= entity #>();
+            }
+
+            return new  <#= entity #>
+            {
+                
+            };
+        }
     }
 }
+
+<#+
+ private string LowerInitial(string name)
+ { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
+#>

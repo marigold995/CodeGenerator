@@ -15,6 +15,6 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
 
         public IEnumerable<SecurityAndItPolicyDto> GetSecurityAndItPolicys(string companyContext) => Execute(() => BusinessMap.Api.SecurityAndItPolicy.GetAllSecurityAndItPolicysByBuyer(companyContext, null, null));
 
-        public SecurityAndItPolicyDto GetById(string id) => Execute(() => BusinessMap.Api.SecurityAndItPolicy.GetById(id));
+        //public SecurityAndItPolicyDto GetById(string id) => Execute(() => BusinessMap.Api.SecurityAndItPolicy.GetById(id));
     }
 }

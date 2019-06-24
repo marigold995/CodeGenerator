@@ -9,5 +9,6 @@ namespace _360.Api.Facade.<#=facade #>.<#=module.ModuleName #>.Service
 {
     internal interface I<#=entity #>Service : IBusinessMapBaseClient
     {
+
     }
 }

@@ -6,7 +6,5 @@ namespace _360.Api.Facade.GBM.CyberDetection
     public partial interface ICyberDetectionFacade
     {
         PagedCollection<CyberService> GetCyberServices(string companyContext);
-
-        CyberService GetCyberService(string id, string companyContext);
     }
 }

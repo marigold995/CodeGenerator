@@ -15,6 +15,6 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
 
         public IEnumerable<ZoneProfileDto> GetZoneProfiles(string companyContext) => Execute(() => BusinessMap.Api.ZoneProfile.GetAllZoneProfilesByBuyer(companyContext, null, null));
 
-        public ZoneProfileDto GetById(string id) => Execute(() => BusinessMap.Api.ZoneProfile.GetById(id));
+        //public ZoneProfileDto GetById(string id) => Execute(() => BusinessMap.Api.ZoneProfile.GetById(id));
     }
 }

@@ -11,7 +11,5 @@ namespace _360.Api.Facade.<#=facade #>.<#=module.ModuleName #>
     public partial interface I<#=module.ModuleName #>Facade
     {
         PagedCollection<<#=entity #>> Get<#=entity #>s(string companyContext);
-
-        <#=entity #> Get<#=entity #>(string id, string companyContext);
     }
 }

@@ -15,7 +15,7 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
 
         public IEnumerable<CyberDetectionProfileDto> GetCyberDetectionProfiles(string companyContext) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetAllCyberDetectionProfilesByBuyer(companyContext, null, null));
 
-        public CyberDetectionProfileDto GetById(string id) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetById(id));
+        //public CyberDetectionProfileDto GetById(string id) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetById(id));
     }
 }
 using _360.Framework.Api.CyberDetection;
@@ -35,6 +35,6 @@ namespace _360.Api.Facade.GBM.CyberDetection.Service
 
         public IEnumerable<CyberDetectionProfileDto> GetCyberDetectionProfiles(string companyContext) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetAllCyberDetectionProfilesByBuyer(companyContext, null, null));
 
-        public CyberDetectionProfileDto GetById(string id) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetById(id));
+        //public CyberDetectionProfileDto GetById(string id) => Execute(() => BusinessMap.Api.CyberDetectionProfile.GetById(id));
     }
 }

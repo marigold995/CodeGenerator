@@ -28,33 +28,33 @@ namespace _360Generator.Templates.Backend.Facade
         {
             this.Write("using _360.Framework.Api.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
-            this.Write(";\n\nnamespace _360.Api.Facade.");
+            this.Write(";\r\n\r\nnamespace _360.Api.Facade.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
+            #line 8 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(facade));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
+            #line 8 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(".Service\n{\n    internal interface I");
+            this.Write(".Service\r\n{\r\n    internal interface I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
+            #line 10 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Facade\ApiFacadeServiceInterfaceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Service : IBusinessMapBaseClient\n    {\n    }\n}\n");
+            this.Write("Service : IBusinessMapBaseClient\r\n    {\r\n\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         

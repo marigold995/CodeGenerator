@@ -20,6 +20,6 @@ namespace _360.Api.Facade.<#=facade #>.<#= module.ModuleName #>.Service
 
         public IEnumerable<<#=entity #>Dto> Get<#=entity #>s(string companyContext) => Execute(() => BusinessMap.Api.<#=entity #>.GetAll<#=entity #>sByBuyer(companyContext, null, null));
 
-        public <#=entity #>Dto GetById(string id) => Execute(() => BusinessMap.Api.<#=entity #>.GetById(id));
+        //public <#=entity #>Dto GetById(string id) => Execute(() => BusinessMap.Api.<#=entity #>.GetById(id));
     }
 }
