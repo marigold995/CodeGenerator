@@ -9,44 +9,34 @@ namespace _360.Api.Repository.CyberDetection
     public class SecurityAndItPolicyRepository : BaseRepository, ISecurityAndItPolicyRepository
     {
         private readonly CyberDetectionFacadeProxy _cyberDetectionFacadeProxy = null;
-		protected CyberDetectionFacadeProxy CyberDetectionFacadeProxy => _cyberDetectionFacadeProxy ?? new CyberDetectionFacadeProxy(CurrentUser);
 
-		  
+		protected CyberDetectionFacadeProxy CyberDetectionFacadeProxy => _cyberDetectionFacadeProxy ?? new CyberDetectionFacadeProxy(CurrentUser);
+ 
         public PagedCollection<SecurityAndItPolicy> GetSecurityAndItPolicys(string companyContext)
         {
             return SecurityAndItPolicyFacadeProxy.GetSecurityAndItPolicys(companyContext);
         }
-			        
-			
-		
+
         public SecurityAndItPolicy GetSecurityAndItPolicy(string companyContext, string serviceOrderId)
         {
             return SecurityAndItPolicyFacadeProxy.GetSecurityAndItPolicy(companyContext, serviceOrderId);
         }
-			        
-			
-		
+
 		public SecurityAndItPolicy Add(SecurityAndItPolicy securityAndItPolicy)
         {
             securityAndItPolicy.CreatedBy = CurrentUser.Name;
             return CyberDetectionFacadeProxy.AddSecurityAndItPolicy(cyberDetection);
         }
-		
 
-		
         public void Update( SecurityAndItPolicy  securityAndItPolicy)
         {
             securityAndItPolicy.LastModifiedBy = CurrentUser.Name;
             CyberDetectionFacadeProxy.Update SecurityAndItPolicy (securityAndItPolicy);
         }
-		 
 
-		
-			public void Delete(string companyContext, string securityAndItPolicyId)
+		public void Delete(string companyContext, string securityAndItPolicyId)
         {
             CyberDetectionFacadeProxy.Delete SecurityAndItPolicy(securityAndItPolicyId);
         }
-		 
-    }
+	}
 }
-

@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates.Frontend.MVC.View
+namespace _360Generator.Templates.Backend.MVC.View
 {
     using _360Generator.Metadata;
     using System;
@@ -16,7 +16,7 @@ namespace _360Generator.Templates.Frontend.MVC.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class MVC_DetailsViewTemplate : MVC_DetailsViewTemplateBase
     {
@@ -26,26 +26,26 @@ namespace _360Generator.Templates.Frontend.MVC.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../../" +
-                    "Views/Base/ViewTitle\")\n    <div id=\"");
+            this.Write("@using P360.Localizations\r\n<div class=\"baseview-detail\">\r\n    @Html.Partial(\"../." +
+                    "./Views/Base/ViewTitle\")\r\n    <div id=\"");
             
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write("ContentContainer\">\n        <div class=\"dashboard\" id=\"");
+            this.Write("ContentContainer\">\r\n        <div class=\"dashboard\" id=\"");
             
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
+            #line 8 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Dashboard\">\n        </div>\n\n\t</div>\n</div>\n\n");
+            this.Write("Dashboard\">\r\n        </div>\r\n\r\n\t</div>\r\n</div>\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
+        #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}
@@ -54,7 +54,7 @@ namespace _360Generator.Templates.Frontend.MVC.View
         #line default
         #line hidden
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt"
 
 private string _entityField;
 

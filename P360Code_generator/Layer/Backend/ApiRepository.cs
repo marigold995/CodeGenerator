@@ -4,7 +4,7 @@ using _360Generator.Templates.Backend.Repository;
 
 namespace _360Generator.Layer.Backend
 {
-    class ApiRepository : LayerBase
+    class ApiRepository : BackendLayerBase
     {
         public ApiInterfaceRepositoryTemplate apiInterfaceRepositoryTemplate { get; set; }
         public ApiRepositoryTemplate apiRepositoryTemplate { get; set; }
@@ -12,8 +12,6 @@ namespace _360Generator.Layer.Backend
         public ApiRepository(Module repositoryModule): base()
         {
             Module = repositoryModule;
-
-            Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Api.Repository.";                   
         }
 

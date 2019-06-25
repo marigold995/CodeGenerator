@@ -9,22 +9,12 @@ namespace _360.Api.Repository.CyberDetection
     public class CyberServiceRepository : BaseRepository, ICyberServiceRepository
     {
         private readonly CyberDetectionFacadeProxy _cyberDetectionFacadeProxy = null;
-		protected CyberDetectionFacadeProxy CyberDetectionFacadeProxy => _cyberDetectionFacadeProxy ?? new CyberDetectionFacadeProxy(CurrentUser);
 
-		  
+		protected CyberDetectionFacadeProxy CyberDetectionFacadeProxy => _cyberDetectionFacadeProxy ?? new CyberDetectionFacadeProxy(CurrentUser);
+ 
         public PagedCollection<CyberService> GetCyberServices(string companyContext)
         {
             return CyberServiceFacadeProxy.GetCyberServices(companyContext);
         }
-			        
-			
-			        
-			
-		
-
-		 
-
-		 
-    }
+	}
 }
-

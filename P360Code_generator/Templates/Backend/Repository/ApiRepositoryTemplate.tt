@@ -1,4 +1,4 @@
-﻿<#@ template language="C#"
+﻿<#@ template language="C#" debug="true"
 #><#@ import namespace="_360Generator.Metadata"
 #><#@ parameter name="module" type="_360Generator.Metadata.Module"
 #><#@ parameter name="entity" type="System.String"
@@ -14,47 +14,42 @@ namespace _360.Api.Repository.<#= module.ModuleName #>
     public class <#= entity #>Repository : BaseRepository, I<#= entity #>Repository
     {
         private readonly <#= module.ModuleName #>FacadeProxy _<#= LowerInitial(module.ModuleName) #>FacadeProxy = null;
-		protected <#= module.ModuleName #>FacadeProxy <#= module.ModuleName #>FacadeProxy => _<#= LowerInitial(module.ModuleName) #>FacadeProxy ?? new <#= module.ModuleName #>FacadeProxy(CurrentUser);
 
-		<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
+		protected <#= module.ModuleName #>FacadeProxy <#= module.ModuleName #>FacadeProxy => _<#= LowerInitial(module.ModuleName) #>FacadeProxy ?? new <#= module.ModuleName #>FacadeProxy(CurrentUser);
+<#if (screens.Contains(Entity.screenEnum.GetAll)){#> 
         public PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext)
         {
             return <#= entity #>FacadeProxy.Get<#= entity #>s(companyContext);
         }
-		<# }#>	        
-			
-		<#if (screens.Contains(Entity.screenEnum.Get)){#>
+<# }if (screens.Contains(Entity.screenEnum.Get)){#>
+
         public <#= entity #> Get<#= entity #>(string companyContext, string serviceOrderId)
         {
             return <#= entity #>FacadeProxy.Get<#= entity #>(companyContext, serviceOrderId);
         }
-		<# }#>	        
-			
-		<#if (screens.Contains(Entity.screenEnum.Post)){#>
+<# }if (screens.Contains(Entity.screenEnum.Post)){#>
+
 		public <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>)
         {
             <#= LowerInitial(entity) #>.CreatedBy = CurrentUser.Name;
             return <#= module.ModuleName #>FacadeProxy.Add<#= entity #>(<#=LowerInitial(module.ModuleName) #>);
         }
-		<# }#>
+<# }if (screens.Contains(Entity.screenEnum.Put)){#>
 
-		<#if (screens.Contains(Entity.screenEnum.Put)){#>
         public void Update( <#= entity #>  <#= LowerInitial(entity) #>)
         {
             <#= LowerInitial(entity) #>.LastModifiedBy = CurrentUser.Name;
             <#= module.ModuleName #>FacadeProxy.Update <#= entity #> (<#= LowerInitial(entity) #>);
         }
-		<# }#> 
+<# }if (screens.Contains(Entity.screenEnum.Delete)){#>
 
-		<#if (screens.Contains(Entity.screenEnum.Delete)){#>
-			public void Delete(string companyContext, string <#= LowerInitial(entity) #>Id)
+		public void Delete(string companyContext, string <#= LowerInitial(entity) #>Id)
         {
             <#= module.ModuleName #>FacadeProxy.Delete <#= entity #>(<#= LowerInitial(entity) #>Id);
         }
-		<# }#> 
-    }
+<#}#>
+	}
 }
-
 <#+
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

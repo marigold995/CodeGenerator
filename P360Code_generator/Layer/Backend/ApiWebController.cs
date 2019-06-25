@@ -4,15 +4,13 @@ using _360Generator.Templates.Backend.Controller;
 
 namespace _360Generator.Layer.Backend
 {
-    public class ApiWebController : LayerBase
+    public class ApiWebController : BackendLayerBase
     {
         public ApiWebControllerTemplate apiWebControllerTemplate { get; set; }
 
         public ApiWebController(Module apiWebModule): base()
         {
-            Module = apiWebModule;
-            
-            Extension = ExtensionEnum.cs;           
+            Module = apiWebModule;                  
             FolderPrefix = "360.Api.Web.";
         }
 

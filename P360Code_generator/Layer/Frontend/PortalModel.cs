@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace _360Generator.Layer.Frontend
 {
-    class PortalModel: LayerBase
+    class PortalModel: FrontendBaseLayer
     {
         public PortalModelTemplate portalModelTemplate { get; set; }
 
         public PortalModel(Module portalModelModule) : base()
         {
             Module = portalModelModule;
-
-            Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
         }
 

@@ -4,15 +4,13 @@ using _360Generator.Templates.Backend.Domain;
 
 namespace _360Generator.Layer.Backend
 {
-    class DomainModel : LayerBase
+    class DomainModel : BackendLayerBase
     {     
         public DomainModelTemplate domainModelTemplate { get; set; }
 
         public DomainModel(Module domainModelModule) : base()
         {
             Module = domainModelModule;
-
-            Extension = ExtensionEnum.cs;
             FolderPrefix = "360.Domain.";
         }
 

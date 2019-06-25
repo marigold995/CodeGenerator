@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _360Generator.Templates.Frontend.MVC.View
+namespace _360Generator.Templates.Backend.MVC.Controller
 {
-    public partial class MVC_CreateViewTemplate: ITemplate
+    public partial class MVC_ControllerTemplate : ITemplate
     {
 
     }

@@ -1,18 +1,16 @@
 ﻿using System.Collections.Generic;
 using _360Generator.Metadata;
-using _360Generator.Templates.Frontend.MVC.Controller;
+using _360Generator.Templates.Backend.MVC.Controller;
 
-namespace _360Generator.Layer.Frontend
+namespace _360Generator.Layer.Backend
 {
-    class MVC_Controller: LayerBase
+    class MVC_Controller: BackendLayerBase
     {
         public MVC_ControllerTemplate controllerTemplate { get; set; }
 
         public MVC_Controller(Module controllerModule) : base()
         {
             Module = controllerModule;
-
-            Extension = ExtensionEnum.cs;
             FolderPrefix = "P360.Web." + controllerModule.ModuleName;
         }
 

@@ -55,9 +55,11 @@
     <Compile Include="Layer\Backend\ApiModelDTO.cs" />
     <Compile Include="Layer\Backend\ApiRepository.cs" />
     <Compile Include="Layer\Backend\ApiWebController.cs" />
+    <Compile Include="Layer\Backend\BackendLayerBase.cs" />
     <Compile Include="Layer\Backend\DomainModel.cs" />
-    <Compile Include="Layer\Frontend\MVC_Controller.cs" />
-    <Compile Include="Layer\Frontend\MVC_View.cs" />
+    <Compile Include="Layer\Frontend\FrontendBaseLayer.cs" />
+    <Compile Include="Layer\Backend\MVC_Controller.cs" />
+    <Compile Include="Layer\Backend\MVC_View.cs" />
     <Compile Include="Layer\Frontend\PortalData.cs" />
     <Compile Include="Layer\Frontend\PortalInitializer.cs" />
     <Compile Include="Layer\Frontend\PortalModel.cs" />
@@ -159,32 +161,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PortalModelTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Frontend\MVC\Controller\Controller.cs" />
-    <Compile Include="Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.cs">
+    <Compile Include="Templates\Backend\MVC\Controller\Controller.cs" />
+    <Compile Include="Templates\Backend\MVC\Controller\MVC_ControllerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MVC_ControllerTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Frontend\MVC\View\UpdateView.cs" />
-    <Compile Include="Templates\Frontend\MVC\View\ListView.cs" />
-    <Compile Include="Templates\Frontend\MVC\View\DetailsView.cs" />
-    <Compile Include="Templates\Frontend\MVC\View\CreateView.cs" />
-    <Compile Include="Templates\Frontend\MVC\View\MVC_ListViewTemplate.cs">
+    <Compile Include="Templates\Backend\MVC\View\UpdateView.cs" />
+    <Compile Include="Templates\Backend\MVC\View\ListView.cs" />
+    <Compile Include="Templates\Backend\MVC\View\DetailsView.cs" />
+    <Compile Include="Templates\Backend\MVC\View\CreateView.cs" />
+    <Compile Include="Templates\Backend\MVC\View\MVC_ListViewTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MVC_ListViewTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.cs">
+    <Compile Include="Templates\Backend\MVC\View\MVC_UpdateViewTemplate.cs">
       <DependentUpon>MVC_UpdateViewTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.cs">
+    <Compile Include="Templates\Backend\MVC\View\MVC_DetailsViewTemplate.cs">
       <DependentUpon>MVC_DetailsViewTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\Frontend\MVC\View\MVC_CreateViewTemplate.cs">
+    <Compile Include="Templates\Backend\MVC\View\MVC_CreateViewTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MVC_CreateViewTemplate.tt</DependentUpon>
@@ -306,23 +308,23 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PortalModelTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt">
+    <Content Include="Templates\Backend\MVC\Controller\MVC_ControllerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MVC_ControllerTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Frontend\MVC\View\MVC_ListViewTemplate.tt">
+    <Content Include="Templates\Backend\MVC\View\MVC_ListViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MVC_ListViewTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt">
+    <Content Include="Templates\Backend\MVC\View\MVC_UpdateViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MVC_UpdateViewTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Frontend\MVC\View\MVC_DetailsViewTemplate.tt">
+    <Content Include="Templates\Backend\MVC\View\MVC_DetailsViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MVC_DetailsViewTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt">
+    <Content Include="Templates\Backend\MVC\View\MVC_CreateViewTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>MVC_CreateViewTemplate.cs</LastGenOutput>
     </Content>

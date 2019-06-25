@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace _360Generator.Layer.Frontend
 {
-    class PortalData: LayerBase
+    class PortalData: FrontendBaseLayer
     {
         public PortalDataProviderTemplate portalDataProviderTemplate { get; set; }
         public PortalDataServiceTemplate portalDataServiceTemplate{ get; set; }
@@ -17,8 +17,6 @@ namespace _360Generator.Layer.Frontend
         public PortalData(Module portalDataModule) : base()
         {
             Module = portalDataModule;
-
-            Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
         }
 

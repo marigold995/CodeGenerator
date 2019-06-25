@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates.Frontend.MVC.Controller
+namespace _360Generator.Templates.Backend.MVC.View
 {
     using _360Generator.Metadata;
     using System;
@@ -16,9 +16,9 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_CreateViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class MVC_ControllerTemplate : MVC_ControllerTemplateBase
+    public partial class MVC_CreateViewTemplate : MVC_CreateViewTemplateBase
     {
 #line hidden
         /// <summary>
@@ -26,78 +26,38 @@ namespace _360Generator.Templates.Frontend.MVC.Controller
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("using System.Web.Mvc;\nusing System.Web.UI;\n\nnamespace _360.Portal.");
+            this.Write("@using P360.Localizations\r\n<div class=\"baseview-detail\">\r\n    @Html.Partial(\"../." +
+                    "./Views/Base/ViewTitle\")\r\n    <div id=\"create");
             
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
-            
-            #line default
-            #line hidden
-            this.Write(".Controllers\n{\n    [Authorize]\n    [OutputCache(Duration = 0, NoStore = true, Loc" +
-                    "ation = OutputCacheLocation.None)]\n    public class ");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_CreateViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Controller : Controller\n    {\n        public ActionResult Index()\n        {\n     " +
-                    "       return View(\"");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("List\");\n        }\n\n        public ActionResult ");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("List()\n        {\n            return View();\n        }\n\n        public ActionResul" +
-                    "t ");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Detail()\n        {\n            return View();\n        }\n\n        public ActionRes" +
-                    "ult ");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Create()\n        {\n            return View();\n        }\n\n        public ActionRes" +
-                    "ult ");
-            
-            #line 2 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(entity));
-            
-            #line default
-            #line hidden
-            this.Write("Update()\n        {\n            return View();\n        }\n    }\n}\n");
+            this.Write(@"Container"">
+        @Html.Partial(""~/Views/Base/ErrorSummary.cshtml"")
+        <div class=""w-box white"" id=""GeneralContainer"">
+            <div class=""form-header"">
+                <h2>@Localization.General</h2>
+            </div>
+           <div class=""form-body"">
+                <form class=""form-light view-edit"">
+                    <div class=""row"">
+                        <div class=""col-md-6"">
+                            <div class=""w-field"">
+
+							</div>
+						</div>
+					</div>
+				 </form>
+			</div>
+		</div>
+	</div>
+</div>");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\Controller\MVC_ControllerTemplate.tt"
-
-private global::_360Generator.Metadata.Module _moduleField;
-
-/// <summary>
-/// Access the module parameter of the template.
-/// </summary>
-private global::_360Generator.Metadata.Module module
-{
-    get
-    {
-        return this._moduleField;
-    }
-}
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_CreateViewTemplate.tt"
 
 private string _entityField;
 
@@ -120,20 +80,6 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool moduleValueAcquired = false;
-if (this.Session.ContainsKey("module"))
-{
-    this._moduleField = ((global::_360Generator.Metadata.Module)(this.Session["module"]));
-    moduleValueAcquired = true;
-}
-if ((moduleValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("module");
-    if ((data != null))
-    {
-        this._moduleField = ((global::_360Generator.Metadata.Module)(data));
-    }
-}
 bool entityValueAcquired = false;
 if (this.Session.ContainsKey("entity"))
 {
@@ -166,7 +112,7 @@ if ((entityValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class MVC_ControllerTemplateBase
+    public class MVC_CreateViewTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

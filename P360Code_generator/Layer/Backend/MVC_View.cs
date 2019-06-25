@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _360Generator.Metadata;
-using _360Generator.Templates.Frontend.MVC.View;
+using _360Generator.Templates.Backend.MVC.View;
 
-namespace _360Generator.Layer.Frontend
+namespace _360Generator.Layer.Backend
 {
     class MVC_View: LayerBase
     {

@@ -4,7 +4,7 @@ using _360Generator.Templates.Backend.Facade;
 
 namespace _360Generator.Layer.Backend
 {
-    class ApiFacade : LayerBase
+    class ApiFacade : BackendLayerBase
     {
         public ApiFacadeConverterTemplate apiFacadeConverterTemplate { get; set; }
         public ApiFacadeServiceTemplate apiFacadeServiceTemplate { get; set; }
@@ -14,9 +14,7 @@ namespace _360Generator.Layer.Backend
 
         public ApiFacade(Module apiFacadeModule) : base()
         {
-            Module = apiFacadeModule;
-
-            Extension = ExtensionEnum.cs;
+            Module = apiFacadeModule;           
             FolderPrefix = "360.Api.Facade.";
         }
 

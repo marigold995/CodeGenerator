@@ -28,332 +28,304 @@ namespace _360Generator.Templates.Backend.Repository
         {
             this.Write("using _360.Api.FacadeProxy.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 6 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360.Domain.");
+            this.Write(";\r\nusing _360.Domain.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write(";\nusing _360Generator.Templates;\nusing _360.Framework.Api.Repositories;\nusing _36" +
-                    "0.Framework.Libs;\n\nnamespace _360.Api.Repository.");
+            this.Write(";\r\nusing _360Generator.Templates;\r\nusing _360.Framework.Api.Repositories;\r\nusing " +
+                    "_360.Framework.Libs;\r\n\r\nnamespace _360.Api.Repository.");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 12 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("\n{\n    public class ");
+            this.Write("\r\n{\r\n    public class ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("Repository : BaseRepository, I");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 14 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("Repository\n    {\n        private readonly ");
+            this.Write("Repository\r\n    {\r\n        private readonly ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 16 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy _");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 16 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(module.ModuleName)));
             
             #line default
             #line hidden
-            this.Write("FacadeProxy = null;\n\t\tprotected ");
+            this.Write("FacadeProxy = null;\r\n\r\n\t\tprotected ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy => _");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(module.ModuleName)));
             
             #line default
             #line hidden
             this.Write("FacadeProxy ?? new ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 18 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
-            this.Write("FacadeProxy(CurrentUser);\n\n\t\t");
+            this.Write("FacadeProxy(CurrentUser);\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 19 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
 if (screens.Contains(Entity.screenEnum.GetAll)){
             
             #line default
             #line hidden
-            this.Write("  \n        public PagedCollection<");
+            this.Write(" \r\n        public PagedCollection<");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("> Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 20 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("s(string companyContext)\n        {\n            return ");
+            this.Write("s(string companyContext)\r\n        {\r\n            return ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 22 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("FacadeProxy.Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 22 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("s(companyContext);\n        }\n\t\t");
+            this.Write("s(companyContext);\r\n        }\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
- }
-            
-            #line default
-            #line hidden
-            this.Write("\t        \n\t\t\t\n\t\t");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
-if (screens.Contains(Entity.screenEnum.Get)){
+            #line 24 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+ }if (screens.Contains(Entity.screenEnum.Get)){
             
             #line default
             #line hidden
-            this.Write("\n        public ");
+            this.Write("\r\n        public ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 26 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 26 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("(string companyContext, string serviceOrderId)\n        {\n            return ");
+            this.Write("(string companyContext, string serviceOrderId)\r\n        {\r\n            return ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 28 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("FacadeProxy.Get");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 28 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write("(companyContext, serviceOrderId);\n        }\n\t\t");
+            this.Write("(companyContext, serviceOrderId);\r\n        }\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
- }
-            
-            #line default
-            #line hidden
-            this.Write("\t        \n\t\t\t\n\t\t");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
-if (screens.Contains(Entity.screenEnum.Post)){
+            #line 30 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+ }if (screens.Contains(Entity.screenEnum.Post)){
             
             #line default
             #line hidden
-            this.Write("\n\t\tpublic ");
+            this.Write("\r\n\t\tpublic ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 32 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" Add(");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 32 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 32 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write(")\n        {\n            ");
+            this.Write(")\r\n        {\r\n            ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 34 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write(".CreatedBy = CurrentUser.Name;\n            return ");
+            this.Write(".CreatedBy = CurrentUser.Name;\r\n            return ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 35 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy.Add");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 35 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 35 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(module.ModuleName)));
             
             #line default
             #line hidden
-            this.Write(");\n        }\n\t\t");
+            this.Write(");\r\n        }\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
- }
-            
-            #line default
-            #line hidden
-            this.Write("\n\n\t\t");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
-if (screens.Contains(Entity.screenEnum.Put)){
+            #line 37 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+ }if (screens.Contains(Entity.screenEnum.Put)){
             
             #line default
             #line hidden
-            this.Write("\n        public void Update( ");
+            this.Write("\r\n        public void Update( ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 39 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("  ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 39 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write(")\n        {\n            ");
+            this.Write(")\r\n        {\r\n            ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 41 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write(".LastModifiedBy = CurrentUser.Name;\n            ");
+            this.Write(".LastModifiedBy = CurrentUser.Name;\r\n            ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 42 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy.Update ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 42 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write(" (");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 42 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write(");\n        }\n\t\t");
+            this.Write(");\r\n        }\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
- }
-            
-            #line default
-            #line hidden
-            this.Write(" \n\n\t\t");
-            
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
-if (screens.Contains(Entity.screenEnum.Delete)){
+            #line 44 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+ }if (screens.Contains(Entity.screenEnum.Delete)){
             
             #line default
             #line hidden
-            this.Write("\n\t\t\tpublic void Delete(string companyContext, string ");
+            this.Write("\r\n\t\tpublic void Delete(string companyContext, string ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 46 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write("Id)\n        {\n            ");
+            this.Write("Id)\r\n        {\r\n            ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 48 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(module.ModuleName));
             
             #line default
             #line hidden
             this.Write("FacadeProxy.Delete ");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 48 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+            #line 48 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(LowerInitial(entity)));
             
             #line default
             #line hidden
-            this.Write("Id);\n        }\n\t\t");
+            this.Write("Id);\r\n        }\r\n");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
- }
+            #line 50 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+}
             
             #line default
             #line hidden
-            this.Write(" \n    }\n}\n\n");
+            this.Write("\t}\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
+        #line 53 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\Repository\ApiRepositoryTemplate.tt"
 
  private string LowerInitial(string name)
  { return name[0].ToString().ToLowerInvariant() + name.Substring(1);}

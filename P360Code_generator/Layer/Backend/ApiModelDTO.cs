@@ -4,15 +4,13 @@ using _360Generator.Templates.Backend.ModelDTO;
 
 namespace _360Generator.Layer.Backend
 {
-    class ApiModelDTO : LayerBase
+    class ApiModelDTO : BackendLayerBase
     {
         public ApiModelDTOTemplate apiModelDTOTemplate { get; set; }
 
         public ApiModelDTO(Module apiModelModule): base()
         {
-            Module = apiModelModule;
-
-            Extension = ExtensionEnum.cs;
+            Module = apiModelModule;          
             FolderPrefix = "360.Api.Model.";
         }
 

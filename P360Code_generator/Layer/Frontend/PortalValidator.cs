@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace _360Generator.Layer.Frontend
 {
-    class PortalValidator:LayerBase
+    class PortalValidator:FrontendBaseLayer
     {       
         public PortalValidatorTemplate portalValidatorTemplate { get; set; }
 
         public PortalValidator(Module portalValidatorModule) : base()
         {
             Module = portalValidatorModule;
-
-            Extension = ExtensionEnum.ts;
             FolderPrefix = "P360.Web.";
 
         }

@@ -4,15 +4,13 @@ using _360Generator.Templates.Backend.FacadeProxy;
 
 namespace _360Generator.Layer.Backend
 {
-    class ApiFacadeProxy : LayerBase
+    class ApiFacadeProxy : BackendLayerBase
     {
         public ApiFacadeProxyTemplate apiFacadeProxyTemplate { get; set; }
 
         public ApiFacadeProxy(Module apiFacadeProxyModule): base()
         {
-            Module = apiFacadeProxyModule;            
-
-            Extension = ExtensionEnum.cs;
+            Module = apiFacadeProxyModule; 
             FolderPrefix = "360.Api.FacadeProxy.";
         }            
 

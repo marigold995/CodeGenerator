@@ -83,6 +83,5 @@ namespace _360Generator.Generator
             var mvcView = new MVC_View(Module);
             mvcView.CreateMVCViewTemplate();
         }
-
     }
 }

@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates.Frontend.MVC.View
+namespace _360Generator.Templates.Backend.MVC.View
 {
     using _360Generator.Metadata;
     using System;
@@ -16,9 +16,9 @@ namespace _360Generator.Templates.Frontend.MVC.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_ListViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class MVC_CreateViewTemplate : MVC_CreateViewTemplateBase
+    public partial class MVC_ListViewTemplate : MVC_ListViewTemplateBase
     {
 #line hidden
         /// <summary>
@@ -26,38 +26,19 @@ namespace _360Generator.Templates.Frontend.MVC.View
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("@using P360.Localizations\n<div class=\"baseview-detail\">\n    @Html.Partial(\"../../" +
-                    "Views/Base/ViewTitle\")\n    <div id=\"create");
+            this.Write("<div class=\"baseview-list\">\r\n    <div class=\"w-box white-xxx\">        \r\n        @" +
+                    "Html.Partial(\"../../Views/Base/ViewTitle\")\r\n        <div id=\"");
             
-            #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
+            #line 7 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_ListViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
             #line hidden
-            this.Write(@"Container"">
-        @Html.Partial(""~/Views/Base/ErrorSummary.cshtml"")
-        <div class=""w-box white"" id=""GeneralContainer"">
-            <div class=""form-header"">
-                <h2>@Localization.General</h2>
-            </div>
-           <div class=""form-body"">
-                <form class=""form-light view-edit"">
-                    <div class=""row"">
-                        <div class=""col-md-6"">
-                            <div class=""w-field"">
-
-							</div>
-						</div>
-					</div>
-				 </form>
-			</div>
-		</div>
-	</div>
-</div>");
+            this.Write("GridWidget\"></div>\r\n\r\n    </div>\r\n</div>");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_CreateViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_ListViewTemplate.tt"
 
 private string _entityField;
 
@@ -112,7 +93,7 @@ if ((entityValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class MVC_CreateViewTemplateBase
+    public class MVC_ListViewTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

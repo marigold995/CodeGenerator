@@ -8,9 +8,13 @@ namespace _360.Api.Repository.CyberDetection
     public interface IZoneProfileRepository : IBaseRepository
     {  
         PagedCollection<ZoneProfile> GetZoneProfiles(string companyContext);
+
         ZoneProfile GetZoneProfile(string companyContext, string serviceOrderId);
+
         ZoneProfile Add(ZoneProfile zoneProfile);
+
         void Update(ZoneProfile zoneProfile); 
+
 		void Delete(string companyContext, string serviceOrderId);    }
 }
 

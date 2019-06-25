@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace _360Generator.Templates.Frontend.MVC.View
+namespace _360Generator.Templates.Backend.MVC.View
 {
     using _360Generator.Metadata;
     using System;
@@ -16,7 +16,7 @@ namespace _360Generator.Templates.Frontend.MVC.View
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
+    #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_UpdateViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class MVC_UpdateViewTemplate : MVC_UpdateViewTemplateBase
     {
@@ -29,7 +29,7 @@ namespace _360Generator.Templates.Frontend.MVC.View
             this.Write("@using P360.Localizations\r\n<div class=\"baseview-detail\">\r\n    @Html.Partial(\"../." +
                     "./Views/Base/ViewTitle\")\r\n    <div id=\"update");
             
-            #line 5 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
+            #line 9 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_UpdateViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(entity));
             
             #line default
@@ -59,7 +59,7 @@ namespace _360Generator.Templates.Frontend.MVC.View
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Frontend\MVC\View\MVC_UpdateViewTemplate.tt"
+        #line 1 "C:\Users\HP\source\repos\Repo1\P360Code_generator\Templates\Backend\MVC\View\MVC_UpdateViewTemplate.tt"
 
 private global::_360Generator.Metadata.Module _moduleField;
 

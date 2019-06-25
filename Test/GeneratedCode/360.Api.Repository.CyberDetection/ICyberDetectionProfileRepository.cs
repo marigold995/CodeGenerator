@@ -8,8 +8,11 @@ namespace _360.Api.Repository.CyberDetection
     public interface ICyberDetectionProfileRepository : IBaseRepository
     {  
         PagedCollection<CyberDetectionProfile> GetCyberDetectionProfiles(string companyContext);
+
         CyberDetectionProfile GetCyberDetectionProfile(string companyContext, string serviceOrderId);
+
         CyberDetectionProfile Add(CyberDetectionProfile cyberDetectionProfile);
+
         void Update(CyberDetectionProfile cyberDetectionProfile); 
     }
 }

@@ -14,12 +14,16 @@ namespace _360.Api.Repository.<#= module.ModuleName #>
     {<#if (screens.Contains(Entity.screenEnum.GetAll)){#>  
         PagedCollection<<#= entity #>> Get<#= entity #>s(string companyContext);
 <# }if (screens.Contains(Entity.screenEnum.Get)){#>
+
         <#= entity #> Get<#= entity #>(string companyContext, string serviceOrderId);
 <# }if (screens.Contains(Entity.screenEnum.Post)){#>
+
         <#= entity #> Add(<#= entity #> <#= LowerInitial(entity) #>);
 <# }if (screens.Contains(Entity.screenEnum.Put)){#>
+
         void Update(<#= entity #> <#= LowerInitial(entity) #>); 
 <# }if (screens.Contains(Entity.screenEnum.Delete)){#>
+
 		void Delete(string companyContext, string serviceOrderId);<# }#>
     }
 }
