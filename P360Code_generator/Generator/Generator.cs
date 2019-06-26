@@ -4,83 +4,88 @@ using _360Generator.Layer.Backend;
 using _360Generator.Exceptions;
 using _360Generator.Layer;
 using System;
+using System.Collections.Generic;
 
 namespace _360Generator.Generator
 {
-    public class Generator
+    public static class Generator
     {
-        public Module Module { get; set; }
+        public static List<Module> Modules = new List<Module>();  
 
-        public Generator(Module newModule)
-        {
-            Module = newModule;
+        public static void AddModule(Module module)
+        {           
+            Modules.Add(module);
         }
 
-        public void Generate(string basePath)
+        public static void Generate(string basePath)
         {
             BaseLayer.SetBasePath(basePath);
-            try { 
-                CreateBackend();            
-            }
-            catch(Exception e)
+            foreach (var module in Modules)
             {
-                throw new CreateBackendException("Create backend attempt failed! ", e.InnerException);
-            }
-            try
-            {               
-                CreateFrontend();
-            }
-            catch(Exception e)
-            {
-                throw new CreateFrontendException("Create frontend attempt failed! ", e.InnerException);
+                try
+                {
+                    CreateBackend(module);
+                }
+                catch (Exception e)
+                {
+                    throw new CreateBackendException("Create backend attempt failed! ", e.InnerException);
+                }
+                try
+                {
+                    CreateFrontend(module);
+                }
+                catch (Exception e)
+                {
+                    throw new CreateFrontendException("Create frontend attempt failed! ", e.InnerException);
+                }
             }
         }
 
-        public void CreateBackend()
+        public static void CreateBackend(Module module)
         {
-            var apiWebController = new ApiWebController(Module);
+            var apiWebController = new ApiWebController(module);
             apiWebController.CreateApiWebControllerTemplate();
 
-            var apiRepository = new ApiRepository(Module);
+            var apiRepository = new ApiRepository(module);
             apiRepository.CreateApiRepositoryTemplate();
 
-            var apiModelDTO = new ApiModelDTO(Module);
+            var apiModelDTO = new ApiModelDTO(module);
             apiModelDTO.CreateApiModelTemplate();
 
-            var apiFacadeProxy = new ApiFacadeProxy(Module);
+            var apiFacadeProxy = new ApiFacadeProxy(module);
             apiFacadeProxy.CreateApiFacadeProxyTemplate();
 
-            var apiFacade = new ApiFacade(Module);
+            var apiFacade = new ApiFacade(module);
             apiFacade.CreateApiFacadeTemplate();
 
-            var domainModel = new DomainModel(Module);
+            var domainModel = new DomainModel(module);
             domainModel.CreateDomainModelTemplate();
         }
 
-        public void CreateFrontend()
+        public static void CreateFrontend(Module module)
         {
-            var portalData = new PortalData(Module);
+            var portalData = new PortalData(module);
             portalData.CreatePortalDataTemplate();
 
-            var portalInitializer = new PortalInitializer(Module);
+            var portalInitializer = new PortalInitializer(module);
             portalInitializer.CreatePortalInitializerTemplate();
 
-            var portalModel = new PortalModel(Module);
+            var portalModel = new PortalModel(module);
             portalModel.CreatePortalModelTemplate();
 
-            var portalValidator = new PortalValidator(Module);
+            var portalValidator = new PortalValidator(module);
             portalValidator.CreatePortalValidatorTemplate();
 
-            var portalView = new PortalView(Module);
+            var portalView = new PortalView(module);
             portalView.CreatePortalViewTemplate();
 
-            var portalViewModel = new PortalViewModel(Module);
+            var portalViewModel = new PortalViewModel(module);
             portalViewModel.CreatePortalViewModelTemplate();
 
-            var mvcController = new MVC_Controller(Module);
+            var mvcController = new MVC_Controller(module);
             mvcController.CreateMVCControllerTemplate();
 
-            var mvcView = new MVC_View(Module);
+            var mvcView = new MVC_View(module);
             mvcView.CreateMVCViewTemplate();
         }
     }

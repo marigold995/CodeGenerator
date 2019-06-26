@@ -13,7 +13,7 @@ namespace Test
     {
         static void Main(string[] args)
         {           
-            var newModule = new Module("CyberDetection");            
+            var moduleCyberDetection = new Module("CyberDetection");            
 
             Entity cyberDetectionProfile = new Entity("CyberDetectionProfile").AddScreenCreate()
                                                                               .AddScreenDetails()
@@ -38,13 +38,25 @@ namespace Test
                                                           .AddScreenDelete()
                                                           .AddGBMFacade();
 
-            newModule.AddEntity(cyberDetectionProfile)
+            moduleCyberDetection.AddEntity(cyberDetectionProfile)
                      .AddEntity(cyberService)
                      .AddEntity(securityAndItPolicy)
                      .AddEntity(zoneProfile);
+            
+            //var moduleInmarsat = new Module("Inmarsat");
 
-            var generator = new Generator(newModule);
-            generator.Generate("..\\..\\GeneratedCode");            
+            //Entity idpSubscription = new Entity("IdpSubscription").AddScreenCreate()
+            //                                                       .AddScreenDetails()
+            //                                                       .AddScreenList()
+            //                                                       .AddScreenUpdate()
+            //                                                       .AddABMFacade();
+
+            //Entity gateway = new Entity("Gateway").AddScreenList().AddABMFacade();
+            //moduleInmarsat.AddEntity(idpSubscription).AddEntity(gateway);
+
+            Generator.AddModule(moduleCyberDetection);
+            //Generator.AddModule(moduleInmarsat);
+            Generator.Generate("..\\..\\GeneratedCode");            
 
             Console.ReadKey();
         }

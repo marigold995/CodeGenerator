@@ -70,10 +70,14 @@ namespace _360Generator.Metadata
         }        
 
         public Entity AddGBMFacade()
+        {            
+            Facade = facadeEnum.GBM;
+            return this;
+        }
+        public Entity AddABMFacade()
         {
-            var entity = this;
-            entity.Facade = Entity.facadeEnum.GBM;
-            return entity;
+            Facade = facadeEnum.ABM;
+            return this;
         }
 
     }
