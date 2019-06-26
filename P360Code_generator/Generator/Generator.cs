@@ -18,7 +18,7 @@ namespace _360Generator.Generator
 
         public void Generate(string basePath)
         {
-            LayerBase.SetBasePath(basePath);
+            BaseLayer.SetBasePath(basePath);
             try { 
                 CreateBackend();            
             }

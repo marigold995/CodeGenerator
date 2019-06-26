@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _360Generator.Layer.Backend
 {
-    public class BackendLayerBase: LayerBase
+    public abstract class BackendLayerBase: BaseLayer
     {
         public BackendLayerBase(): base()
         {

@@ -18,42 +18,36 @@ namespace _360Generator.Layer.Frontend
         public PortalViewModel(Module portalViewModelModule) : base()
         {
             Module = portalViewModelModule;
-            FolderPrefix = "P360.Web.";
         }
 
         public void CreatePortalViewModelTemplate()
         {
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
-                string pathDomain = CreateFolder(path0, "Scripts");
-                string pathApp = CreateFolder(pathDomain, "App");
-                string pathModule = CreateFolder(pathApp, Module.ModuleName);
-                string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayer = CreateFolder(pathEntity, "ViewModel");
-                
+                string frontendPath = CreateFrontendFolders(Module.ModuleName, entity.EntityName, "ViewModel");
+
                 if (entity.Screens.Contains(Entity.screenEnum.Post))
                 {
                     portalCreateViewModelTemplate = new PortalCreateViewModelTemplate();
-                    CreateFile(portalCreateViewModelTemplate, entity, pathLayer, "CreateViewModel");
+                    CreateFile(portalCreateViewModelTemplate, entity, frontendPath, "CreateViewModel");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
                     portalDetailsViewModelTemplate = new PortalDetailsViewModelTemplate();
-                    CreateFile(portalDetailsViewModelTemplate, entity, pathLayer, "DetailViewModel");
+                    CreateFile(portalDetailsViewModelTemplate, entity, frontendPath, "DetailViewModel");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
                     portalListViewModelTemplate = new PortalListViewModelTemplate();                    
-                    CreateFile(portalListViewModelTemplate, entity, pathLayer, "ListViewModel");
+                    CreateFile(portalListViewModelTemplate, entity, frontendPath, "ListViewModel");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
                     portalUpdateViewModelTemplate = new PortalUpdateViewModelTemplate();                    
-                    CreateFile(portalUpdateViewModelTemplate, entity, pathLayer, "UpdateViewModel");
+                    CreateFile(portalUpdateViewModelTemplate, entity, frontendPath, "UpdateViewModel");
                 }
             }
         }

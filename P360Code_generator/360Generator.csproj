@@ -66,7 +66,7 @@
     <Compile Include="Layer\Frontend\PortalValidator.cs" />
     <Compile Include="Layer\Frontend\PortalView.cs" />
     <Compile Include="Layer\Frontend\PortalViewModel.cs" />
-    <Compile Include="Layer\LayerBase.cs" />
+    <Compile Include="Layer\BaseLayer.cs" />
     <Compile Include="Generator\Generator.cs" />
     <Compile Include="Metadata\Entity.cs" />
     <Compile Include="Metadata\Module.cs" />

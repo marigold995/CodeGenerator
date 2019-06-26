@@ -14,23 +14,17 @@ namespace _360Generator.Layer.Frontend
 
         public PortalInitializer(Module portalInitializerModule) : base()
         {
-            Module = portalInitializerModule;
-            FolderPrefix = "P360.Web.";
+            Module = portalInitializerModule;            
         }
 
         public void CreatePortalInitializerTemplate()
         {
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
-                string pathDomain = CreateFolder(path0, "Scripts");
-                string pathApp = CreateFolder(pathDomain, "App");
-                string pathModule = CreateFolder(pathApp, Module.ModuleName);
-                string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayer = CreateFolder(pathEntity, "Include");
-               
+                string frontendPath = CreateFrontendFolders(Module.ModuleName, entity.EntityName, "Include");
+
                 portalInitializerTemplate = new PortalInitializerTemplate();
-                CreateFile(portalInitializerTemplate, entity, pathLayer, "Initializer");
+                CreateFile(portalInitializerTemplate, entity, frontendPath, "Initializer");
             }
         }
     }

@@ -15,23 +15,16 @@ namespace _360Generator.Layer.Frontend
         public PortalValidator(Module portalValidatorModule) : base()
         {
             Module = portalValidatorModule;
-            FolderPrefix = "P360.Web.";
-
         }
 
         public void CreatePortalValidatorTemplate()
         {
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
-                string pathDomain = CreateFolder(path0, "Scripts");
-                string pathApp = CreateFolder(pathDomain, "App");
-                string pathModule = CreateFolder(pathApp, Module.ModuleName);
-                string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayer = CreateFolder(pathEntity, "Validator");
+                string frontendPath = CreateFrontendFolders(Module.ModuleName, entity.EntityName, "Validator");
 
                 portalValidatorTemplate = new PortalValidatorTemplate();
-                CreateFile(portalValidatorTemplate, entity, pathLayer, "Validator");
+                CreateFile(portalValidatorTemplate, entity, frontendPath, "Validator");
             }
         }
     }

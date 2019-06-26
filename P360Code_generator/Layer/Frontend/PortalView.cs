@@ -15,45 +15,38 @@ namespace _360Generator.Layer.Frontend
         public PortalListViewTemplate portalListViewTemplate { get; set; }
         public PortalUpdateViewTemplate portalUpdateViewTemplate { get; set; }
 
-
         public PortalView(Module portalViewModule)
         {
             Module = portalViewModule;
-            FolderPrefix = "P360.Web.";
         }
 
         public void CreatePortalViewTemplate()
         {          
             foreach (var entity in Module.Entities)
             {
-                string path0 = CreateFolder(rootPath, FolderPrefix);
-                string pathDomain = CreateFolder(path0, "Scripts");
-                string pathApp = CreateFolder(pathDomain, "App");
-                string pathModule = CreateFolder(pathApp, Module.ModuleName);
-                string pathEntity = CreateFolder(pathModule, entity.EntityName);
-                string pathLayer = CreateFolder(pathEntity, "View");
-                
+                string frontendPath = CreateFrontendFolders(Module.ModuleName, entity.EntityName, "View");
+
                 if (entity.Screens.Contains(Entity.screenEnum.Post)){ 
                     portalCreateViewTemplate = new PortalCreateViewTemplate(); 
-                    CreateFile(portalCreateViewTemplate, entity, pathLayer, "CreateView");
+                    CreateFile(portalCreateViewTemplate, entity, frontendPath, "CreateView");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.Get))
                 {
                     portalDetailsViewTemplate = new PortalDetailsViewTemplate();
-                    CreateFile(portalDetailsViewTemplate, entity, pathLayer, "DetailView");
+                    CreateFile(portalDetailsViewTemplate, entity, frontendPath, "DetailView");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.GetAll))
                 {
                     portalListViewTemplate = new PortalListViewTemplate();
-                    CreateFile(portalListViewTemplate, entity, pathLayer, "ListView");
+                    CreateFile(portalListViewTemplate, entity, frontendPath, "ListView");
                 }
                 
                 if (entity.Screens.Contains(Entity.screenEnum.Put))
                 {
                     portalUpdateViewTemplate = new PortalUpdateViewTemplate();
-                    CreateFile(portalUpdateViewTemplate, entity, pathLayer, "UpdateView");
+                    CreateFile(portalUpdateViewTemplate, entity, frontendPath, "UpdateView");
                 }
             }
         }

@@ -8,7 +8,7 @@ using _360Generator.Exceptions;
 
 namespace _360Generator.Layer
 {
-    public abstract class LayerBase
+    public abstract class BaseLayer
     {
         public enum ExtensionEnum
         {
@@ -26,7 +26,7 @@ namespace _360Generator.Layer
 
         public static string rootPath { get; set; }
 
-        public LayerBase()
+        public BaseLayer()
         {
             LayerSuffix = "";
             LayerPrefix = "";

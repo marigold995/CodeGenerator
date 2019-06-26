@@ -8,7 +8,7 @@ using _360Generator.Templates.Backend.MVC.View;
 
 namespace _360Generator.Layer.Backend
 {
-    class MVC_View: LayerBase
+    class MVC_View: BaseLayer
     {
         public MVC_CreateViewTemplate createViewTemplate{ get; set; }
         public MVC_DetailsViewTemplate detailsViewTemplate{ get; set; }
