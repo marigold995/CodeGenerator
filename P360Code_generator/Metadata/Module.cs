@@ -19,9 +19,10 @@ namespace _360Generator.Metadata
             this.Entities = new List<Entity>();
         }     
         
-        public void AddEntity(Entity entityName)
+        public Module AddEntity(Entity entityName)
         {
-            this.Entities.Add(entityName);
+            Entities.Add(entityName);
+            return this;
         }
     }
 }

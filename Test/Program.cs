@@ -15,16 +15,34 @@ namespace Test
         {           
             var newModule = new Module("CyberDetection");            
 
-            Entity cyberDetectionProfile = new Entity("CyberDetectionProfile").AddScreenCreate().AddScreenDetails().AddScreenList().AddScreenUpdate().AddGBMFacade(); 
-            Entity cyberService = new Entity("CyberService").AddScreenList().AddGBMFacade(); 
-            Entity securityAndItPolicy = new Entity("SecurityAndItPolicy").AddScreenList().AddScreenDetails().AddScreenCreate().AddScreenUpdate().AddScreenDelete().AddGBMFacade(); 
-            Entity zoneProfile = new Entity("ZoneProfile").AddScreenList().AddScreenDetails().AddScreenCreate().AddScreenUpdate().AddScreenDelete().AddGBMFacade();            
+            Entity cyberDetectionProfile = new Entity("CyberDetectionProfile").AddScreenCreate()
+                                                                              .AddScreenDetails()
+                                                                              .AddScreenList()
+                                                                              .AddScreenUpdate()
+                                                                              .AddGBMFacade(); 
 
-            newModule.AddEntity(cyberDetectionProfile);
-            newModule.AddEntity(cyberService);
-            newModule.AddEntity(securityAndItPolicy);
-            newModule.AddEntity(zoneProfile);
-           
+            Entity cyberService = new Entity("CyberService").AddScreenList()
+                                                            .AddGBMFacade();
+            
+            Entity securityAndItPolicy = new Entity("SecurityAndItPolicy").AddScreenList()
+                                                                          .AddScreenDetails()
+                                                                          .AddScreenCreate()
+                                                                          .AddScreenUpdate()
+                                                                          .AddScreenDelete()
+                                                                          .AddGBMFacade(); 
+
+            Entity zoneProfile = new Entity("ZoneProfile").AddScreenList()
+                                                          .AddScreenDetails()
+                                                          .AddScreenCreate()
+                                                          .AddScreenUpdate()
+                                                          .AddScreenDelete()
+                                                          .AddGBMFacade();
+
+            newModule.AddEntity(cyberDetectionProfile)
+                     .AddEntity(cyberService)
+                     .AddEntity(securityAndItPolicy)
+                     .AddEntity(zoneProfile);
+
             var generator = new Generator(newModule);
             generator.Generate("..\\..\\GeneratedCode");            
 
